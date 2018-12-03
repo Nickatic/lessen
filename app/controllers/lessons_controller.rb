@@ -15,6 +15,12 @@ class LessonsController < ApplicationController
       if query[:keyword].present?
         @lessons = @lessons.search_by_keyword(query[:keyword])
       end
+      if query[:min_date].present?
+        @lessons = @lessons.where(:starts_at >= query[:min_date])
+      end
+      if query[:max_date].present?
+        @lessons = @lessons.where(:starts_at <= query[:max_date])
+      end
     end
   end
 
