@@ -1,5 +1,6 @@
 class Lesson < ApplicationRecord
   has_many :participations, dependent: :destroy
+  belongs_to :teacher, class_name: "User"
   validates :name, presence: true
   validates :topic, presence: true
   validates :subtopic, presence: true
