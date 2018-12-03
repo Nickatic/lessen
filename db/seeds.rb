@@ -20,5 +20,8 @@ anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "An
 nico = User.create!(email: "nico@gmail.com", password: "123456", first_name: "Nicolas", last_name: "Descreux")
 helo = User.create!(email: "helo@gmail.com", password: "123456", first_name: "Héloise", last_name: "Guillemot")
 
-lesson = Lesson.create(teacher: lily, name: "trigo de terminale")
+lesson = Lesson.create(teacher: lily, name: "trigo de terminale", topic: "maths", subtopic: "trigo")
 
+Participation.create(user: anna, lesson: lesson)
+Participation.create(user: nico, lesson: lesson)
+Participation.create(user: helo, lesson: lesson)
