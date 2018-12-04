@@ -5,12 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "destroying all users"
-User.destroy_all
-puts "user destroyed"
+
 puts "destroying all lessons"
 Lesson.destroy_all
 puts "lessons destroyed"
+puts "destroying all users"
+User.destroy_all
+puts "user destroyed"
+
 puts "destroying all participations"
 Participation.destroy_all
 puts "participations destroyed"
@@ -20,7 +22,7 @@ anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "An
 nico = User.create!(email: "nico@gmail.com", password: "123456", first_name: "Nicolas", last_name: "Descreux")
 helo = User.create!(email: "helo@gmail.com", password: "123456", first_name: "Héloise", last_name: "Guillemot")
 
-lesson = Lesson.create(teacher: lily, name: "trigo de terminale", topic: "maths", subtopic: "trigo")
+lesson = Lesson.create(teacher: lily, name: "Identités trigonométriques", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 3, max_num_of_participants: 10, price: 100, grade: "Terminale", description: "Cours sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam, mollitia aliquid magni sint harum sapiente laborum odio nobis saepe sit, provident obcaecati illum. Facilis praesentium similique ex libero possimus iste, reprehenderit laudantium exercitationem sint voluptate dolorum, beatae eligendi labore numquam cumque! Quisquam expedita, incidunt minima at recusandae dolorem aliquid nobis. Sequi, eligendi autem aspernatur. Consequatur obcaecati laborum eligendi atque nostrum odio magnam eaque assumenda, eveniet, aperiam doloremque rem. A dolores omnis deserunt quia labore eveniet ipsam?", duration: 60, starts_at: "2018-12-03 12:00", ends_at: "2018-12-03 13:00")
 
 Participation.create(user: anna, lesson: lesson)
 Participation.create(user: nico, lesson: lesson)

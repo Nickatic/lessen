@@ -1,2 +1,18 @@
-<h1>Lessons#index</h1>
-<p>Find me in app/views/lessons/index.html.erb</p>
+<%=  render "shared/navbar" %>
+<div class="filter-index">
+  <%= form_tag("/lessons", method: "get") do %>
+    <%= select_tag(:grade, options_for_select(Lesson::GRADES), include_blank: true) %>
+    <%= select_tag(:topic, options_for_select(Lesson::TOPICS.keys), include_blank: true) %>
+    <%= select_tag(:subtopic, grouped_options_for_select(Lesson::TOPICS), include_blank: true) %>
+    <%= submit_tag "Appliquer les filtres" %>
+  <% end %>
+</div>
+<div class="container">
+  <% @lessons.each do |lesson| %>
+    <div class="lesson-card">
+      <h1><%= lesson.topic %></h1>
+      <h2><%= lesson.subtopic %></h2>
+      <h3><%= lesson.name %></h3>
+    </div>
+  <% end %>
+</div>

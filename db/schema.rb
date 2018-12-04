@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_145355) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "grade"
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
