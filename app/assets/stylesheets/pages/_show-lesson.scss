@@ -30,11 +30,13 @@
   margin-top: 40px;
   margin-bottom: 40px;
   .price-box {
+    background-color: #ed756f;
     width: 200px;
     padding: 20px 25px;
-    border: 1.2px solid black;
-    border-radius: 5px;
-    color: black;
+    border: 1.2px solid #ed756f;
+    border-radius: 2px;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -62,4 +64,21 @@ border-bottom:1px solid grey;
   justify-content: center;
   align-items: center;
   margin-bottom: 100px;
+}
+
+.background-related{
+  background-color: white;
+  box-shadow: 2px 2px 2px 4px rgba(grey, 0.1);
+  padding-top: 20px;
+  .container-related {
+    padding-bottom: 40px;
+    margin-right: 230px;
+    margin-left: 230px;
+      .container-box {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
 }
