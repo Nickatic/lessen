@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_161628) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "grade"
-    t.date "date"
     t.string "Channel_id"
+    t.date "date"
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 

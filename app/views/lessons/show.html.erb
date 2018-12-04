@@ -24,12 +24,6 @@
     </div>
   </div>
   <div class="second-column">
-    <div class="price text-center" data-aos="fade-up"
-         data-aos-duration="3000">
-         <h4 class="price-box"><strong>Price now </strong><%=@lesson.price_per_user%>€</h4>
-    </div>
-<<<<<<< HEAD
-    <div class="second-column">
       <div class="price text-center">
         <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user%>€</h4>
         <div class="btn-position">
@@ -37,15 +31,6 @@
         </div>
       </div>
       <div class="card-profile">
-      <h3>The teacher</h3>
-      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-      <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
-      <h6><em><%=%> number of classes given</em></h6>
-      <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
-      <h1 class="lign-a"></h1>
-      <h1 class="lign-a"></h1>
-      <%= link_to "See the profile", "#",  class: "text-space-profile" %>
-    <div class="card-profile">
     <h3>The teacher</h3>
     <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
     <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
@@ -57,9 +42,7 @@
     </div>
   </div>
 </div>
-<div class="btn-position">
-  <button class="btn-lessen" >Sign up for a class</button>
-</div>
+
 <div class="background-related">
   <div class="container-related">
     <h4>Related classes</h4>
