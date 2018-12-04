@@ -26,28 +26,41 @@
   padding-top: 10px;
 }
 
-
 .price {
-  background-color: rgba(coral, 0.1);
+  margin-top: 40px;
   margin-bottom: 40px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 2px solid coral;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+  .price-box {
+    width: 200px;
+    padding: 20px 25px;
+    border: 1.2px solid black;
+    border-radius: 5px;
+    color: black;
+  }
 
 .lign-a .h1 {
     letter-spacing: 3px;
 }
 
 div.bordure {
-border-bottom:1px solid black;
+border-bottom:1px solid grey;
 }
 
-hr {
+.text-space-profile {
+  padding-top: 40px;
+}
 
+.avatar-large {
+  width: 50px;
+  border-radius: 50%;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.btn-position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+hr {
 }
