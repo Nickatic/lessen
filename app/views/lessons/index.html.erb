@@ -1,4 +1,3 @@
-<%=  render "shared/navbar" %>
 <div class="filter-index">
   <%= form_tag("/lessons", method: "get") do %>
     <%= select_tag(:grade, options_for_select(Lesson::GRADES), include_blank: true) %>
