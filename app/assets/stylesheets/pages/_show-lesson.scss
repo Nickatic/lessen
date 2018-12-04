@@ -1,0 +1,53 @@
+//page layout
+.container-showlessons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 230px;
+  margin-left: 230px;
+}
+
+.second-column {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  }
+
+//content design
+.first-column {
+  width: 40%;
+  text-align: justify;
+}
+
+.box-description {
+  padding-top: 10px;
+}
+
+
+.price {
+  background-color: rgba(coral, 0.1);
+  margin-bottom: 40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid coral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lign-a .h1 {
+    letter-spacing: 3px;
+}
+
+div.bordure {
+border-bottom:1px solid black;
+}
+
+hr {
+
+}
