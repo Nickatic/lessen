@@ -22,8 +22,10 @@ anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "An
 nico = User.create!(email: "nico@gmail.com", password: "123456", first_name: "Nicolas", last_name: "Descreux")
 helo = User.create!(email: "helo@gmail.com", password: "123456", first_name: "Héloise", last_name: "Guillemot")
 
-lesson = Lesson.create(teacher: lily, name: "Identités trigonométriques", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 3, max_num_of_participants: 10, price: 100, grade: "Terminale", description: "Cours sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam, mollitia aliquid magni sint harum sapiente laborum odio nobis saepe sit, provident obcaecati illum. Facilis praesentium similique ex libero possimus iste, reprehenderit laudantium exercitationem sint voluptate dolorum, beatae eligendi labore numquam cumque! Quisquam expedita, incidunt minima at recusandae dolorem aliquid nobis. Sequi, eligendi autem aspernatur. Consequatur obcaecati laborum eligendi atque nostrum odio magnam eaque assumenda, eveniet, aperiam doloremque rem. A dolores omnis deserunt quia labore eveniet ipsam?", duration: 60, starts_at: "2018-12-03 12:00", ends_at: "2018-12-03 13:00")
+trig_lesson = Lesson.create(teacher: nico, name: "Meilleur cours de Trigo", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 8, grade: "Terminale", description: "Cours sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 60, starts_at: "2018-12-03 12:00", ends_at: "2018-12-03 13:00")
 
-Participation.create(user: anna, lesson: lesson)
-Participation.create(user: nico, lesson: lesson)
-Participation.create(user: helo, lesson: lesson)
+ww2_lesson = Lesson.create(teacher: helo, name: "Helo et l'homme", topic: "Français", subtopic: "La question de l'Homme", min_num_of_participants: 3, max_num_of_participants: 10, price: 7, grade: "Première", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 60, starts_at: "2018-12-05 13:00", ends_at: "2018-12-05 14:00")
+
+Participation.create(user: anna, lesson: ww2_lesson)
+Participation.create(user: nico, lesson: ww2_lesson)
+Participation.create(user: helo, lesson: trig_lesson)

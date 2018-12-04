@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
   def index
     query = params[:query]
     @lessons = Lesson.all
+
     if query.present?
       if query[:grade].present?
         @lessons = @lessons.search_by_grade(query[:grade])
@@ -22,6 +23,7 @@ class LessonsController < ApplicationController
         @lessons = @lessons.where(:starts_at <= query[:max_date])
       end
     end
+
   end
 
   def show
