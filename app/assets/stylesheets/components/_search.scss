@@ -1,0 +1,23 @@
+.search-bar-index {
+  display: flex;
+  align-items :center;
+  div {
+    flex-grow: 1;
+  }
+}
+
+
+.search-input-index {
+  height: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#query_min_time, #query_max_time {
+  width: 50px;
+  margin: 0
+}
+
+.query_range_date {
+  width: 25%
+}

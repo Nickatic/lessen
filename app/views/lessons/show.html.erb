@@ -1,8 +1,9 @@
 <div class="container-showlessons">
     <div class="first-column">
-      <h1>Mathematics</h1>
-      <h4>Trigonometry</h4>
-      <h6><em>45 minutes class</em></h6>
+      <h1><%=@lesson.name%></h1>
+      <h4><%=@lesson.subtopic%></h4>
+      <h4><%=@lesson.topic%></h4>
+      <h6><em><%= @lesson.duration%> minutes</em></h6>
       <div class="box-description">
       <h4>About this class</h4>
       <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique.</p>
@@ -13,9 +14,9 @@
       <p>
       L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
       </p>
-      <br>
-      <hr>
-      <br>
+      <h1 class="lign-a"></h1>
+      <div class="bordure"></div>
+      <h1 class="lign-a"></h1>
       <h4>Objectives</h4>
       <p>1. Formules de multiplication des arcs</p>
       <p>2. Identité remarquable</p>
@@ -23,14 +24,25 @@
       </div>
     </div>
     <div class="second-column">
-      <div class="price">
-        <h4>NOW</h4>
-        <p>15 €</p>
+      <div class="price text-center">
+        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user%>€</h4>
       </div>
       <div class="card-profile">
-      <h4>Profile</h4>
-      <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+      <h3>The teacher</h3>
+      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+      <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
+      <h6><em><%=%> number of classes given</em></h6>
+      <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
+      <h1 class="lign-a"></h1>
+      <h1 class="lign-a"></h1>
+      <%= link_to "See the profile", "#",  class:"text-space-profile" %>
       </div>
     </div>
   </div>
+  <div class="btn-position">
+    <button class="btn-lessen" >Sign up for a class</button>
+  </div>
 </div>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @lesson.Channel_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
