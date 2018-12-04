@@ -1,15 +1,15 @@
 import "bootstrap";
+
+import flatpickr from "flatpickr";
+import { initFlatpickr } from "../plugins/flatpickr"
+
+initFlatpickr()
+
 import { initUpdateNavbarOnScroll } from '../components/navbar'
 
-const selectTopic = document.getElementById("topic")
-const selectSubtopic = document.getElementById("subtopic")
 
-if (selectSubtopic) {
-  selectTopic.addEventListener("change", (event) => {
-    console.log(selectTopic.value)
-  });
-}
 
 initUpdateNavbarOnScroll();
+
 
 
