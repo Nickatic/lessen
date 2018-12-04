@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
   def index
     query = params[:query]
     @lessons = Lesson.all
+
     if query.present?
       @grade = query[:grade]
 
@@ -44,7 +45,6 @@ class LessonsController < ApplicationController
       #   @lessons = @lessons.where("starts_at <= ? ", Date.strptime(query[:max_time], "%H:%M"))
       # end
     end
-    # @lessons.sort_by
   end
 
   def show

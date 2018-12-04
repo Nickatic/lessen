@@ -1,18 +1,13 @@
-.card-profile {
-background-color: white;
-margin-top: 100px;
-padding: 30px;
-padding-top: 10px;
-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
 
-.card {
-  height: 370px;
-  width: 350px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
+
+.lesson-card {
+  height: 380px;
+  width: 270px;
+  // text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+
+  background-color: #FFE8D1;
   background-position: center;
-  color: white;
+  color: #001427;
   position: relative;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -27,23 +22,29 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .card-subject {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 18px;
   font-size: 18px;
   text-transform: uppercase;
+  color: #001427;
 }
 .card-lesson-info {
   position: absolute;
   bottom: 10px;
   left: 10px;
+  text-align: right;
+  margin-right: 15px;
 }
 .card-lesson-info h2 {
-  font-size: 24px;
+  font-size: 20px;
+  color: #001427;
+  font-weight: bold;
 }
 .card-lesson-info p {
-  font-size: 14px;
-  opacity: 0.7;
+  font-size: 12px;
+  opacity: 0.9;
   font-weight: lighter;
+  color: #001427;
 }
 .card-link {
   position: absolute;
@@ -57,4 +58,35 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+
+.card-top-half {
+  height: 220px;
+  width: 270px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover !important;
+}
+
+
+.card-triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.card-position-triangle {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.card-profile {
+  background-color: white;
+  margin-top: 100px;
+  padding: 30px;
+  padding-top: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
