@@ -40,4 +40,8 @@ class Lesson < ApplicationRecord
   validates :date, presence: true
   validates :duration, presence: true
   validates :description, presence: true
+
+  def price_per_user
+    price / participations.count
+  end
 end
