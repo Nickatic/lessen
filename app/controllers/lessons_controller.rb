@@ -19,14 +19,16 @@ class LessonsController < ApplicationController
       if query[:keyword].present?
         @lessons = @lessons.search_by_keyword(query[:keyword])
       end
-      @range_date = query[:range_date]
-      @min_date = @range_date.split(" to ")[0]
-      @max_date = @range_date.split(" to ")[1]
-      if @min_date.present?
-        @lessons = @lessons.where("date >= ?", Date.strptime(@min_date, "%Y-%m-%d"))
-      end
-      if @max_date.present?
-        @lessons = @lessons.where("date <= ?", Date.strptime(@max_date, "%Y-%m-%d"))
+      if query[:range_date].present?
+        @range_date = query[:range_date]
+        @min_date = @range_date.split(" to ")[0]
+        @max_date = @range_date.split(" to ")[1]
+        if @min_date.present?
+          @lessons = @lessons.where("date >= ?", Date.strptime(@min_date, "%Y-%m-%d"))
+        end
+        if @max_date.present?
+          @lessons = @lessons.where("date <= ?", Date.strptime(@max_date, "%Y-%m-%d"))
+        end
       end
       if query[:min_time].present?
         @lessons = @lessons.select do |lesson|
