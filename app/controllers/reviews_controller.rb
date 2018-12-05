@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   def create
     @lesson = Lesson.find(params[:lesson_id])
     @review = Review.new(review_params)
-    @review.lesson = @review
+    @review.lesson = @lesson
     if @review.save
       redirect_to lesson_path(@lesson)
     else
