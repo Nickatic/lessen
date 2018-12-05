@@ -24,27 +24,38 @@
     </div>
   </div>
   <div class="second-column">
-      <div class="price text-center">
-        <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
-          <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user.round(1)%>€</h4>
-          <div class="btn-position">
-            <%= link_to "Join Live", lesson_live_path(@lesson), class: "btn-lessen"%>
-          </div>
-        <% else %>
-          <h4 class="price-box"><strong>Price now: </strong><%=@lesson.next_price_per_user.round%>€</h4>
-          <div class="btn-position">
-            <%= link_to "Sign up for a class", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
-        <% end %>
+    <div class="price text-center review-container">
+      <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
+        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user.round(1)%>€</h4>
+        <div class="btn-position">
+          <%= link_to "Join Live", lesson_live_path(@lesson), class: "btn-lessen"%>
+        </div>
+      <% else %>
+        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.next_price_per_user.round%>€</h4>
+        <div class="btn-position">
+          <%= link_to "Sign up for a class", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
+      <% end %>
       </div>
-      <div class="card-profile">
-    <h3>The teacher</h3>
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-    <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
-    <h6><em><%=%> number of classes given</em></h6>
-    <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
-    <h1 class="lign-a"></h1>
-    <h1 class="lign-a"></h1>
-    <%= link_to "See the profile", "#",  class:"text-space-profile" %>
+      <div class="review-box">
+        <% if @lesson.reviews.blank? %>
+          <strong>Be the first to leave a review for this lesson!</strong>
+        <% else %>
+          <% @lesson.reviews.each do |review| %>
+            <%= render 'reviews/show', review: review %>
+          <% end %>
+        <% end %>
+        <%= render 'reviews/form', lesson: @lesson, review: @review %>
+      </div>
+    </div>
+    <div class="card-profile">
+      <h3>The teacher</h3>
+      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+      <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
+      <h6><em><%=%> number of classes given</em></h6>
+      <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
+      <h1 class="lign-a"></h1>
+      <h1 class="lign-a"></h1>
+      <%= link_to "See the profile", "#",  class:"text-space-profile" %>
     </div>
   </div>
 </div>

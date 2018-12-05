@@ -38,7 +38,7 @@
   <div class="row">
     <% @maths_lessons.each do |lesson| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
-         <div class="lesson-card">
+        <div class="lesson-card">
           <%= link_to "", lesson_path(lesson), class: "card-link" %>
           <div class="card-header">
             <div class="card-title">
@@ -49,37 +49,32 @@
               <p><%= lesson.starts_at.split(":").join("H") %></p>
               <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
             </div>
+
+            <div class="card-body math-color">
+              <div class="card-position-triangle">
+                <svg class="card-triangle" height="80" width="300">
+                  <polygon points="300 0 300 80 0 80" style="fill: #FFE8D1;"  preserveAspectRatio="xMinYMax slice" / >
+                </svg>
+              </div>
+              <div class="card-lesson-info">
+                <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
+                <h2><%= lesson.name %></h2>
+                <p><%= lesson.description.first(300) %></p>
+              </div>
+            </div>
           </div>
-
-
-         <div class="card-body math-color">
-          <div class="card-position-triangle">
-
-           <svg class="card-triangle" height="80" width="300">
-             <polygon points="300 0 300 80 0 80" style="fill: #FFE8D1;"  preserveAspectRatio="xMinYMax slice" / >
-           </svg>
-          </div>
-          <div class="card-lesson-info">
-            <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
-            <h2><%= lesson.name %></h2>
-            <p><%= lesson.description.first(300) %></p>
-          </div>
-
-
-         </div>
-         <div class="card-footer math-color">
-           <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
-           <div class="professor-info">
-              <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
+        </div>
+        <div class="card-footer math-color">
+          <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
+          <div class="professor-info">
+            <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
               <div class="card-stars">
                 <% 5.times do  %>
                   <i class="fas fa-star"></i>
                 <% end %>
               </div>
-
-           </div>
-         </div>
-         </div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
@@ -87,48 +82,43 @@
   <div class="row">
     <% @french_lessons.each do |lesson| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
-         <div class="lesson-card">
+        <div class="lesson-card">
           <%= link_to "", lesson_path(lesson), class: "card-link" %>
           <div class="card-header">
             <div class="card-title">
               <h4> <%= lesson.topic %></h4>
               <h5><em><%= lesson.subtopic %></em></h5>
-              </div>
+            </div>
             <div class="card-date">
               <p><%= lesson.starts_at.split(":").join("H") %></p>
               <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
             </div>
           </div>
 
-
-         <div class="card-body french-color">
-          <div class="card-position-triangle">
-
-           <svg class="card-triangle" height="80" width="300">
-             <polygon points="300 0 300 80 0 80" style="fill: #8EA4D2;"  preserveAspectRatio="xMinYMax slice" / >
-           </svg>
+          <div class="card-body french-color">
+            <div class="card-position-triangle">
+              <svg class="card-triangle" height="80" width="300">
+                <polygon points="300 0 300 80 0 80" style="fill: #8EA4D2;"  preserveAspectRatio="xMinYMax slice" / >
+              </svg>
+            </div>
+            <div class="card-lesson-info">
+              <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
+              <h2><%= lesson.name %></h2>
+              <p><%= lesson.description.first(300) %></p>
+            </div>
           </div>
-          <div class="card-lesson-info">
-            <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
-            <h2><%= lesson.name %></h2>
-            <p><%= lesson.description.first(300) %></p>
-          </div>
-
-
-         </div>
-         <div class="card-footer french-color">
-           <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
-           <div class="professor-info">
+          <div class="card-footer french-color">
+            <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
+            <div class="professor-info">
               <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
               <div class="card-stars">
                 <% 5.times do  %>
                   <i class="fas fa-star"></i>
                 <% end %>
               </div>
-
            </div>
          </div>
-         </div>
+        </div>
       </div>
     <% end %>
   </div>
