@@ -24,7 +24,7 @@
   <h2>Mathématiques</h2>
   <div class="row">
     <% @maths_lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-3">
+      <div class="col-xs-12 col-sm-6 col-md-3">
          <div class="lesson-card">
           <%= link_to "", lesson_path(lesson), class: "card-link" %>
           <div class="card-header">
@@ -73,7 +73,7 @@
   <h2>Français</h2>
   <div class="row">
     <% @french_lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-3">
+      <div class="col-xs-12 col-sm-6 col-md-3">
          <div class="lesson-card">
           <%= link_to "", lesson_path(lesson), class: "card-link" %>
           <div class="card-header">
