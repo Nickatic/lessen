@@ -51,6 +51,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @review = Review.new
   end
 
   def new
