@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_161628) do
   enable_extension "plpgsql"
 
   create_table "lessons", force: :cascade do |t|
-    t.string "starts_at"
+    t.date "starts_at"
+    t.date "ends_at"
     t.integer "duration"
     t.text "description"
     t.string "name"

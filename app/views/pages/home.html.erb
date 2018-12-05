@@ -21,12 +21,11 @@
       </div>
     </div>
   </div>
+  <h2>Mathématiques</h2>
   <div class="row">
-    <h2>Mathématiques</h2>
     <% @maths_lessons.each do |lesson| %>
-      <h2><%= lesson.topic %></h2>
       <div class="col-xs-12 col-sm-3">
-        <% link_to lesson_path(lesson) do %>
+        <%= link_to lesson_path(lesson) do %>
          <div class="lesson-card">
            <div class="card-top-half" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url('https://images.officeworks.com.au/api/2/img/https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JA0352400_B_helix_oxford_blue_9_piece_maths_set.jpg/resize?size=706&auth=MjA5OTcwODkwMg__');">
             <div class="card-position-triangle">
@@ -48,11 +47,11 @@
       </div>
     <% end %>
   </div>
+  <h2>Français</h2>
   <div class="row">
-    <h2>Français</h2>
     <% @french_lessons.each do |lesson| %>
       <div class="col-xs-12 col-sm-3">
-        <% link_to lesson_path(lesson) do %>
+        <%= link_to lesson_path(lesson) do %>
           <div class="lesson-card">
             <div class="card-top-half" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url('https://freerangestock.com/sample/32119/a-stack-of-books-isolated-on-a-white-background.jpg');">
               <div class="card-position-triangle">
