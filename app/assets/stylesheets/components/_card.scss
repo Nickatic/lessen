@@ -1,93 +1,188 @@
 
 
 .lesson-card {
-  height: 380px;
-  width: 270px;
-  // text-shadow: 0 1px 1px rgba(0,0,0,0.6);
-
-  background-color: #FFE8D1;
-  background-position: center;
-  color: #001427;
-  position: relative;
+  height: 400px;
+  width: 300px;
+  color: rgb(30, 30, 30);
   margin-bottom: 30px;
   margin-top: 30px;
+  box-shadow: 3px 3px 5px lightgrey;
+  h4, h5 {
+    margin: 0;
+  }
+  position: relative;
 }
-.card-professor {
-  position: absolute;
-  right: 10px;
-  height: 50px;
-  top: 10px;
-  width: 50px;
-  border-radius: 50%;
+
+.card-header {
+  height: 140px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
 }
-.card-subject {
-  position: absolute;
-  top: 15px;
-  left: 18px;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #001427;
+
+.card-title {
+
 }
+
+.card-body {
+  height: 180px;
+  position: relative;
+
+
+
+}
+.math-color {
+  background-color: #FFE8D1
+}
+
+.french-color {
+  background-color: #8EA4D2
+}
+
 .card-lesson-info {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  text-align: right;
-  margin-right: 12px;
+  padding: 10px 15px;
+  top: -18px;
+  h2 {
+    text-align: right;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
 }
-.card-lesson-info h2 {
-  font-size: 20px;
-  color: #001427;
-  font-weight: bold;
-  margin-bottom: 5px;
+.card-position-triangle {
+  position: absolute;
+  top: -80px
 }
-.card-lesson-info p {
-  font-size: 12px;
-  opacity: 0.9;
-  font-weight: lighter;
-  color: #001427;
+
+.card-footer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
 }
+
+.card-date {
+  p {
+    margin: 0;
+    font-weight: bold;
+  }
+  em {
+    font-size: 14px;
+  }
+  text-align: center;
+}
+
+.professor-info {
+  height: 50px;
+  margin-left: 15px;
+  p {
+    margin: 0;
+  }
+}
+
 .card-link {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 1000;
   background: black;
   opacity: 0;
 }
 .card-link:hover {
-  opacity: 0.1;
+  opacity: 0.02;
 }
 
-
-.card-top-half {
-  height: 220px;
-  width: 270px;
-  overflow: hidden;
-  background-position: center;
-  background-size: cover !important;
-}
-
-
-.card-triangle {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-.card-position-triangle {
+.card-stars {
   display: flex;
-  position: relative;
-  height: 100%;
 }
 
-.card-profile {
-  background-color: white;
-  margin-top: 100px;
-  padding: 30px;
-  padding-top: 10px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
+
+// .card-subject {
+//   position: absolute;
+//   top: 15px;
+//   left: 18px;
+//   font-size: 18px;
+//   color: #001427;
+//   width: 70%;
+// }
+// .card-lesson-info {
+//   text-align: right;
+//   margin:  10px 12px;
+// }
+// .card-lesson-info h2 {
+//   font-size: 20px;
+//   color: #001427;
+//   font-weight: bold;
+//   margin-bottom: 5px;
+// }
+// .card-lesson-info p {
+//   font-size: 12px;
+//   opacity: 0.9;
+//   font-weight: lighter;
+//   color: #001427;
+// }
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index: 1000;
+//   background: black;
+//   opacity: 0;
+// }
+// .card-link:hover {
+//   opacity: 0.1;
+// }
+
+
+// .card-top-half {
+//   height: 140px;
+//   width: 270px;
+//   overflow: hidden;
+//   background-position: center;
+//   background-size: cover !important;
+//   background-color: white;
+// }
+
+
+// .card-triangle {
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+// }
+
+// .card-position-triangle {
+//   display: flex;
+//   position: relative;
+//   height: 100%;
+// }
+
+// .card-profile {
+//   background-color: white;
+//   margin-top: 100px;
+//   padding: 30px;
+//   padding-top: 10px;
+//   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+// }
+
+// .card-footer {
+//   height: 100px;
+//   display: flex;
+//   align-items: center;
+// }
+// .card-professor {
+//   height: 50px;
+//   width: 50px;
+//   border-radius: 50%;
+// }
