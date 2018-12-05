@@ -3,13 +3,17 @@
     <%= f.input :grade, label: "Classe", collection: Lesson::GRADES, selected: @grade, include_blank: "Select your grade", required: false %>
     <%= f.input :topic, label: "Matière", collection: Lesson::TOPICS, selected: @topic, include_blank: "Select your subject", required: false %>
     <%#= f.label :keyword, "Search by keyword" %>
-    <%= f.input :keyword, label: "Mot-clé", input_html: { value: params[:query][:keyword] }, required: false, placeholder: "Trigo, géothermie, ..."  %>
-    <%= f.input :range_date , label: "Disponibilités", input_html: { value: params[:query][:range_date] }, required: false%>
+    <% keyword = params[:query][:keyword] if params[:query].present? %>
+    <%= f.input :keyword, label: "Mot-clé", input_html: { value: keyword }, required: false, placeholder: "Trigo, géothermie, ..."  %>
+    <% range_date =  params[:query][:range_date] if params[:query].present? %>
+    <%= f.input :range_date , label: "Disponibilités", input_html: { value: range_date }, required: false%>
     <div class="search-time-index">
       <p>Entre</p>
-      <%= f.input :min_time , label: false, input_html: { value: params[:query][:min_time] }, required: false%>
+      <% min_time = params[:query][:min_time] if params[:query].present? %>
+      <%= f.input :min_time , label: false, input_html: { value: min_time  }, required: false%>
       <p>h et</p>
-      <%= f.input :max_time , label: false, input_html: { value: params[:query][:max_time] }, required: false%>
+      <% max_time = params[:query][:max_time] if params[:query].present? %>
+      <%= f.input :max_time , label: false, input_html: { value: max_time }, required: false%>
       <p>h</p>
     </div>
 
