@@ -1,7 +1,7 @@
-.both-divs {
-    width: 100%;
+.main-live {
     display:flex;
-
+    justify-content:space-between;
+    align-items:center;
 }
 .livevideo    {
     width: 70%;
@@ -9,16 +9,17 @@
     float: left;
 }
 
-.livemessages  {
+.chat  {
     width: 30%;
     height: 100vh;
     margin-top: 56px;
 }
-
-.chatroom{
-  width:400px;
-  margin-left: 50px;
+.chat-header {
+  color: black;
+  padding: 10px 20px;
+  margin-top: 10px;
 }
+
 .messages {
   font-size: 15px;
   padding: 20px;
@@ -29,10 +30,14 @@
   overflow: scroll;
 }
 
-.message {
-  display: flex;
-  margin-bottom: 5px;
+#create-message {
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border: 1px solid #ececec;
 }
+
+
 .message-content {
   background-color: #F7F7F7;
   color:grey;
@@ -41,20 +46,10 @@
   padding: 12px 10px 8px 10px;
 }
 
-#create-message {
-  padding: 10px;
-  background-color: #ffffff;
-  margin-bottom: 20px;
-  border: 1px solid #ececec;
-}
-.message_content {
-  margin-bottom: 0;
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
 }
 
-.chat-header {
-  background-color: blue;
-  color: white;
-  border-radius:50px;
-  padding: 10px 20px;
-  margin-top: 10px;
-}
+
