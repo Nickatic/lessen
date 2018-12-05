@@ -25,19 +25,19 @@
   </div>
   <div class="second-column">
     <div class="price text-center review-container">
-      <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user%>€</h4>
+      <h4 class="price-box"><strong>Price now: </strong>Waiting for Nico Price €</h4>
       <div class="btn-position">
         <%= link_to "Sign up for a class", lesson_live_path(@lesson), class: "btn-lessen" %>
       </div>
       <div class="review-box">
-        <% if @lesson.reviews.blank %>
-          Be the first to leave a review for this lesson
+        <% if @lesson.reviews.blank? %>
+          <strong>Be the first to leave a review for this lesson!</strong>
         <% else %>
           <% @lesson.reviews.each do |review| %>
             <%= render 'reviews/show', review: review %>
           <% end %>
         <% end %>
-        <% render 'reviews/form', lesson: @lesson, review: @review %>
+        <%= render 'reviews/form', lesson: @lesson, review: @review %>
       </div>
     </div>
     <div class="card-profile">
