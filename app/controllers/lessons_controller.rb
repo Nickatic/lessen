@@ -54,4 +54,8 @@ class LessonsController < ApplicationController
   def new
     @lesson = Lesson.new
   end
+
+  def live
+    @lesson = Lesson.find(params[:lesson_id])
+  end
 end

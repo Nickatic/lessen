@@ -24,11 +24,13 @@
     </div>
   </div>
   <div class="second-column">
-    <div class="price text-center" data-aos="fade-up"
-         data-aos-duration="3000">
-         <h4 class="price-box"><strong>Price now </strong><%=@lesson.price_per_user%>€</h4>
-    </div>
-    <div class="card-profile">
+      <div class="price text-center">
+        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user%>€</h4>
+        <div class="btn-position">
+          <%= link_to "Sign up for a class", lesson_live_path(@lesson), class: "btn-lessen" %>
+        </div>
+      </div>
+      <div class="card-profile">
     <h3>The teacher</h3>
     <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
     <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
@@ -40,9 +42,7 @@
     </div>
   </div>
 </div>
-<div class="btn-position">
-  <button class="btn-lessen" >Sign up for a class</button>
-</div>
+
 <div class="background-related">
   <div class="container-related">
     <h4>Related classes</h4>
@@ -60,6 +60,3 @@
     </div>
   </div>
 </div>
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @lesson.Channel_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
