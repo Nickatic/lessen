@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2018_12_05_105833) do
 
   # These are extensions that must be enabled in order to support this database
@@ -30,7 +31,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_105833) do
     t.bigint "user_id"
     t.string "grade"
     t.date "date"
-    t.string "Channel_id"
+    t.string "channel_id"
     t.float "price_per_user"
     t.float "current_price"
     t.index ["user_id"], name: "index_lessons_on_user_id"
@@ -39,7 +40,11 @@ ActiveRecord::Schema.define(version: 2018_12_05_105833) do
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "content"
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "lesson_id"
+    t.index ["lesson_id"], name: "index_messages_on_lesson_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "participations", force: :cascade do |t|
@@ -67,6 +72,8 @@ ActiveRecord::Schema.define(version: 2018_12_05_105833) do
   end
 
   add_foreign_key "lessons", "users"
+  add_foreign_key "messages", "lessons"
+  add_foreign_key "messages", "users"
   add_foreign_key "participations", "lessons"
   add_foreign_key "participations", "users"
 end
