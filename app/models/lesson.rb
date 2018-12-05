@@ -37,12 +37,19 @@ class Lesson < ApplicationRecord
   validates :min_num_of_participants, presence: true
   validates :max_num_of_participants, presence: true
   validates :price, presence: true
-  validates :starts_at, presence: true
+  # validates :starts_at, presence: true
   validates :date, presence: true
   validates :duration, presence: true
   validates :description, presence: true
 
-  def price_per_user
-    price / participations.count
+  def update_price_per_user
+    self.current_price += self.price.fdiv(2**(self.participations.count - 1))
+    self.price_per_user = self.current_price.fdiv(self.participations.count)
+    self.save
+  end
+
+  def next_price_per_user
+    next_current_price = self.current_price + self.price.fdiv((2 ** (self.participations.count)))
+    return next_current_price.fdiv((self.participations.count + 1))
   end
 end

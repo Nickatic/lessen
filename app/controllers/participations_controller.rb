@@ -5,7 +5,8 @@ class ParticipationsController < ApplicationController
     @participation.lesson = @lesson
     @participation.user = current_user
     if @participation.save
-      redirect_to lesson_path(@lesson)
+      @lesson.update_price_per_user
+      redirect_to lesson_live_path(@lesson)
     else
       render "lessons/show"
     end
