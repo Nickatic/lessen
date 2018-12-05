@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_161628) do
+ActiveRecord::Schema.define(version: 2018_12_05_105833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lessons", force: :cascade do |t|
-    t.date "starts_at"
-    t.date "ends_at"
+    t.string "starts_at"
     t.integer "duration"
     t.text "description"
     t.string "name"
@@ -32,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_161628) do
     t.string "grade"
     t.date "date"
     t.string "Channel_id"
+    t.float "price_per_user"
+    t.float "current_price"
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
