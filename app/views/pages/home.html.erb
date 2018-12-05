@@ -1,10 +1,16 @@
-
 <% content_for :navbar_id, "navbar_home" %>
 <div class="lessen-banner">
   <div class="lessen-banner-content">
     <div class="titles-banner">
       <h1>Cours particuliers en direct, quand vous le souhaitez</h1>
-      <h4>Des prix abordables avec des profs qualifiés</h4>
+      <div id="textSlider">
+        <div class="scroller">
+          <div class="inner">
+            <p>Plus d'élèves participent, plus le prix diminue</p>
+            <p>Partage le cours de ton choix avec tes amis</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="search-group">
     <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-home" }  do |f| %>
@@ -15,17 +21,19 @@
     </div>
   </div>
 </div>
-<div class="cards-container">
+
+
+
+
+<div class="container-how">
   <div class="row">
-    <div class="col-xs-12 col-sm-3 offset-sm-1">
-      <div class="general-info-container">
-        <div class="general-info-title">
-          <h2>How We Work</h2>
-        </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique natus perspiciatis? Quod aliquid distinctio alias, molestiae tenetur rem voluptate maiores sequi sed reiciendis deserunt mollitia odit voluptatem illum modi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. <p>
-      </div>
-    </div>
+    <h2>Vos profésseurs préférés, accessibles dans le monde entier</h2>
+    <%= image_tag("student.png", height: 400) %>>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique natus perspiciatis? Quod aliquid distinctio alias, molestiae tenetur rem voluptate maiores sequi sed reiciendis deserunt mollitia odit voluptatem illum modi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. <p>
   </div>
+</div>
+
+<div class="cards-container">
   <h2>Mathématiques</h2>
   <div class="row">
     <% @maths_lessons.each do |lesson| %>

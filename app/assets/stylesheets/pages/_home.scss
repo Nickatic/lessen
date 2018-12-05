@@ -11,7 +11,7 @@
 }
 
 .titles-banner {
-  padding-top: 30vh;
+  padding-top: 25vh;
 }
 
 .lessen-banner h1 {
@@ -26,9 +26,10 @@
   padding-top: 30vh;
 }
 
-.lessen-banner h4 {
+.lessen-banner p {
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   color:white;
+  font-size: 35px;
 }
 
 .cards-container {
@@ -40,3 +41,53 @@
   font-size: 15px;
 }
 
+.container-how {
+  height: 60vh;
+  background-color: white;
+}
+
+// slider
+
+#textSlider.row {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100% !important;
+}
+#textSlider div {
+  color: #fff;
+  font-size:30pt;
+}
+
+.iamCol {
+    text-align: right;
+  float: left;
+  font-weight: 300;
+  font-size:30pt;
+}
+.iamCol p:nth-child(2) { margin-top: -20pt !important; }
+.slideCol {
+  text-align: left;
+    overflow: hidden;
+  font-weight: 900;
+  display: block;
+  white-space: nowrap;
+}
+.slideCol p { margin: 0px !important; }
+
+.scroller {
+   height: 70pt;
+   line-height: 70pt;
+   overflow: hidden;
+}
+.scroller .inner { animation: 5s normal infinite running scroll; }
+@keyframes scroll {
+   0%   {margin-top: 0px;}
+   40%  {margin-top: 0px;}
+
+   50%  {margin-top: -70pt;}
+   80%  {margin-top: -70pt;}
+
+   100% {margin-top: 0px;}
+}
