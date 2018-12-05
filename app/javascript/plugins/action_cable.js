@@ -12,11 +12,21 @@ const initChannel = () => {
           messages.insertAdjacentHTML('beforeend', data.message_partial);
           const input = document.getElementById("message_content");
           input.value = "";
+          scrollLastMessageIntoView();
         }
       }
     )
   }
 }
 
-export { initChannel }
+const scrollLastMessageIntoView = () => {
+  const messages = document.querySelectorAll(".message-content");
+  const lastMessage = messages[messages.length - 1];
+  if (lastMessage !== undefined) {
+    lastMessage.scrollIntoView();
+  }
+}
+
+
+export { initChannel, scrollLastMessageIntoView }
 
