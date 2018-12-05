@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :lessons, only: [:index, :show, :new, :create] do
     get 'live', to: 'lessons#live'
     resources :participations, only: :create
+    resources :messages, only: :create
   end
   resources :users do
     resources :participants, only: [:show, :edit]
