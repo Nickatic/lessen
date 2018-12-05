@@ -1,29 +1,30 @@
 <!-- Don't delete this line ! 👇 -->
 <div id="chat_lesson" data-lesson-id="<%= @lesson.id %>"></div>
 <!-- Don't delete this line ! ☝️ -->
-<div class="both-divs">
+<div class="main-live">
+
   <div class="livevideo">
     <h1>You are on live broadcast</h1>
-    <iframe width="817" height="500" src="https://www.youtube.com/embed/<%= @lesson.channel_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<%= @lesson.channel_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3 chatroom">
-      <div class="chat-header"><h4><%= @lesson.name %> chatroom</h4></div>
-      <div class="messages">
-        <% @lesson.messages.each do |message| %>
-          <%= render "messages/message", message: message %>
-        <% end %>
-      </div>
-      <div id="create-message">
-        <%= simple_form_for [ @lesson, Message.new ], remote: true, class: "form-chat" do |f| %>
-          <%= f.input :content, label: false %>
-          <%= f.submit "Add message", class: "btn btn-blue" %>
-        <% end %>
-      </div>
+  <div class="chat">
+
+    <div class="chat-header"><h4><%= @lesson.name %> chatroom</h4></div>
+    <div class="messages">
+      <% @lesson.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+      <% end %>
     </div>
+    <div id="create-message">
+      <%= simple_form_for [ @lesson, Message.new ], remote: true do |f| %>
+      <%= f.input :content, label: false %>
+      <%= f.submit "Add message", class: "btn btn-blue", id: "chat-btn" %>
+      <% end %>
+    </div>
+
   </div>
+
 </div>

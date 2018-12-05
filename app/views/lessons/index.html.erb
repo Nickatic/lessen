@@ -1,33 +1,23 @@
-<div class="filter-index">
-  <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
-    <%= f.input :grade, label: "Classe", collection: Lesson::GRADES, selected: @grade, include_blank: "Select your grade", required: false %>
-    <%= f.input :topic, label: "Matière", collection: Lesson::TOPICS, selected: @topic, include_blank: "Select your subject", required: false %>
-    <%#= f.label :keyword, "Search by keyword" %>
-    <% keyword = params[:query][:keyword] if params[:query].present? %>
-    <%= f.input :keyword, label: "Mot-clé", input_html: { value: keyword }, required: false, placeholder: "Trigo, géothermie, ..."  %>
-    <% range_date =  params[:query][:range_date] if params[:query].present? %>
-    <%= f.input :range_date , label: "Disponibilités", input_html: { value: range_date }, required: false%>
-    <div class="search-time-index">
-      <p>Entre</p>
-      <% min_time = params[:query][:min_time] if params[:query].present? %>
-      <%= f.input :min_time , label: false, input_html: { value: min_time  }, required: false%>
-      <p>h et</p>
-      <% max_time = params[:query][:max_time] if params[:query].present? %>
-      <%= f.input :max_time , label: false, input_html: { value: max_time }, required: false%>
-      <p>h</p>
-    </div>
-
-
-    <button type="submit" id="search-button"> <i class="fas fa-search"></i></button>
-  <% end %>
+<div class="container-index">
+  <div class="row title">
+    <h2>Selectionne ton cours</h2>
+  </div>
+  <div class="row search-bar-index">
+    <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
+      <%= f.input :grade, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "Choisi ta classe", required: false %>
+      <%= f.input :topic, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "Choisi ta matière", required: false %>
+      <%#= f.label :keyword, "Search by keyword" %>
+      <% keyword = params[:query][:keyword] if params[:query].present? %>
+      <%= f.input :keyword, label: false, input_html: { value: keyword }, required: false, placeholder: "Trigo, géothermie, ..."  %>
+      <% range_date =  params[:query][:range_date] if params[:query].present? %>
+      <%= f.input :range_date , label: false, input_html: { value: range_date }, required: false, placeholder: "Quand ?"%>
+      <div class="search-time-index">
+        <% min_time = params[:query][:min_time] if params[:query].present? %>
+        <%= f.input :min_time , label: false, input_html: { value: min_time, class: "time-filter"  }, placeholder: "Début", required: false%>
+        <% max_time = params[:query][:max_time] if params[:query].present? %>
+        <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "Fin", required: false%>
+      </div>
+      <button type="submit" id="search-button"> <i class="fas fa-search btn-lessen-search-index"></i></button>
+    <% end %>
+  </div>
 </div>
-<div class="container">
-  <% @lessons.each do |lesson| %>
-    <div class="lesson-card">
-      <h1><%= lesson.topic %></h1>
-      <h2><%= lesson.subtopic %></h2>
-      <h3><%= lesson.name %></h3>
-    </div>
-  <% end %>
-</div>
-
