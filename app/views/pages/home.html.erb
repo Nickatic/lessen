@@ -2,12 +2,17 @@
 <% content_for :navbar_id, "navbar_home" %>
 <div class="lessen-banner">
   <div class="lessen-banner-content">
-    <h1>Learn instantly</h1>
-    <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-show" }  do |f| %>
-      <%= f.input :grade, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "Select your grade", required: false %>
-      <%= f.input :topic, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "Select your subject", required: false %>
-      <button type="submit" id="search-button-show"> <i class="fas fa-search"></i></button>
+    <div class="titles-banner">
+      <h1>Cours particuliers en direct, quand vous le souhaitez</h1>
+      <h4>Des prix abordables avec des profs qualifiés</h4>
+    </div>
+    <div class="search-group">
+    <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-home" }  do |f| %>
+      <%= f.input :grade_home, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "Select your grade", required: false %>
+      <%= f.input :topic_home, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "Select your subject", required: false %>
+      <button type="submit" id="search-button-home"> <i class="btn-lessen-search fas fa-search"></i></button>
     <% end %>
+    </div>
   </div>
 </div>
 <div class="cards-container">
