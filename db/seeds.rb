@@ -46,18 +46,18 @@ Participation.create!(user: anna, lesson: lesson_lily)
 Participation.create!(user: nico, lesson: lesson_lily)
 Participation.create!(user: helo, lesson: lesson_anna)
 
-# review1_lesson_nico = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 2, lesson_id: 1)
+review1_lesson_nico = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 2, lesson: lesson_nico)
 
-# review2_lesson_nico = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 3, lesson_id: 2 )
+review2_lesson_nico = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 3, lesson: lesson_nico)
 
-# review1_lesson_anna = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 2, lesson_id: 3)
-# review2_lesson_anna = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 3, lesson_id: 4 )
+review1_lesson_anna = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 2, lesson: lesson_anna )
+review2_lesson_anna = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 3, lesson: lesson_anna)
 
-# review1_lesson_lily = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 1, lesson_id: 5 )
-# review2_lesson_lily = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 2, lesson_id: 6 )
+review1_lesson_lily = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 1, lesson: lesson_lily )
+review2_lesson_lily = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 2, lesson: lesson_lily )
 
-# review1_lesson_helo = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 2, lesson_id: 7 )
-# review2_lesson_helo = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 4, lesson_id: 8 )
+review1_lesson_helo = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 2, lesson: lesson_helo)
+review2_lesson_helo = Review.create!(content: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", rating: 4, lesson: lesson_helo )
 
 puts "4 users, 8 lessons and 8 reviews created"
 
