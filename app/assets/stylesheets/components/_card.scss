@@ -1,20 +1,20 @@
 
 
 .lesson-card {
-  height: 400px;
+  height: 390px;
   width: 295px;
   color: rgb(30, 30, 30);
   margin-bottom: 30px;
   margin-top: 30px;
   box-shadow: 3px 3px 5px lightgrey;
   h4, h5 {
-    margin: 0;
+    margin: 5px;
   }
   position: relative;
 }
 
 .card-header {
-  height: 140px;
+  height: 190px;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -23,41 +23,24 @@
 
 
 .card-body {
-  height: 180px;
+  height: 120px;
   position: relative;
-
-
-}
-.math-color {
-  background-color: #35A7FF;
-  fill: #35A7FF
+  background-color: #f9ebcc;
+  fill: #f9ebcc;
 }
 
-.french-color {
-  background-color: #FF5964;
-  fill: #FF5964;
-}
-
-.physics-color {
-  background-color: #FFE74C;
-  fill: #FFE74C;
-}
-
-.svt-color {
-  background-color: #6BF178;
-  fill: #6BF178;
-}
-
-.philo-color {
-  background-color: #e75a7c;
-  fill: #e75a7c
+.card-title-topic h4 {
+  display: inline-block;
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
 }
 
 
 
 .card-lesson-info {
   position: absolute;
-  padding: 10px 15px;
+  padding: 15px 15px;
   top: -18px;
   h2 {
     text-align: right;
@@ -81,6 +64,7 @@
   display: flex;
   align-items: center;
   padding: 10px 15px;
+  background-color: #f9ebcc;
 }
 
 .card-date {

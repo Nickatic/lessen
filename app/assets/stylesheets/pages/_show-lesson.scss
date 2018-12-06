@@ -69,8 +69,8 @@ border-bottom:1px solid grey;
   padding-top: 20px;
   .container-related {
     padding-bottom: 40px;
-    margin-right: 230px;
-    margin-left: 230px;
+    margin-right: 160px;
+    margin-left: 160px;
       .container-box {
       padding-top: 20px;
       display: flex;
@@ -83,6 +83,12 @@ border-bottom:1px solid grey;
 .review-box {
   height: 350px;
   overflow: scroll;
+  text-align: center;
+  justify-content: center;
+}
+
+.related-lesson-card {
+  margin: 10px;
 }
 .inline {
   display: inline
