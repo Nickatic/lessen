@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(version: 2018_12_05_130143) do
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
-    t.bigint "lesson_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lesson_id"], name: "index_reviews_on_lesson_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,5 +87,5 @@ ActiveRecord::Schema.define(version: 2018_12_05_130143) do
   add_foreign_key "messages", "users"
   add_foreign_key "participations", "lessons"
   add_foreign_key "participations", "users"
-  add_foreign_key "reviews", "lessons"
+  add_foreign_key "reviews", "users"
 end

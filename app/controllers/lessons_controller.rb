@@ -40,19 +40,14 @@ class LessonsController < ApplicationController
           lesson.starts_at.split(":")[0].to_i <= query[:max_time].to_i
         end
       end
-      # if query[:min_time].present?
-      #   @lessons = @lessons.where("starts_at >= ? ", Date.strptime(query[:min_time], "%H:%M"))
-      # end
-      # if query[:max_time].present?
-      #   @lessons = @lessons.where("starts_at <= ? ", Date.strptime(query[:max_time], "%H:%M"))
-      # end
+
     end
+
   end
 
   def show
     @lesson = Lesson.find(params[:id])
-    @review = Review.new
-    @related_lessons = Lesson.where(topic: @lesson.topic).take(3)
+    @related_lessons = Lesson.where(subtopic: @lesson.subtopic).where.not(id: @lesson.id).first(3)
   end
 
   def new
