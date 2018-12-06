@@ -46,14 +46,14 @@
           <%= link_to "Sign up for a class", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
       <% end %>
       </div>
-      <div class="review-box">
+      <div class="review-box" id="reviews_list">
         <% if @lesson.reviews.blank? %>
           <strong>Be the first to leave a review for this lesson!</strong>
         <% else %>
           <h4>Here is what other students have said about this lesson:</h4>
-          <% @lesson.reviews.each do |review| %>
-            <%= render 'reviews/show', review: review %>
-          <% end %>
+          <div id="reviews_list">
+            <%= render 'reviews/index', reviews: @lesson.reviews.order(created_at: :desc) %>
+          </div>
         <% end %>
         <br>
         <h4><strong>Add your review:</strong></h4>

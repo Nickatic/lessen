@@ -19,4 +19,3 @@ scrollLastMessageIntoView();
 submitChatForm();
 
 
-

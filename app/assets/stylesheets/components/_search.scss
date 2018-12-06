@@ -1,21 +1,28 @@
 .search-bar-index {
-  display: flex;
+  // display: flex;
   align-items : flex-end;
-  justify-content: space-around;
+  // justify-content: space-around;
   color: #ee5f5b;
-  width: 90%;
+  width: 140%;
   margin: 0 auto;
+  height: 60px;
 }
 
 .search-bar-show {
   display: flex;
   align-items : flex-end;
-  justify-content: space-around;
+  // justify-content: space-around;
 }
-
-.search-time-index {
+.search-grade-topic-subtopic {
   display: flex;
   align-items: center;
+}
+
+.search-date-time-index {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  height: 60px;
 }
 .search-input-index {
   height: 50px;
@@ -25,10 +32,16 @@
 }
 
 .query_grade, .query_topic {
-  width: 15%;
+  width: 26%;
+  margin: 5px;
 }
 #query_min_time, #query_max_time {
-  width: 50px;
+  width: 40px;
+  margin: 10px;
+}
+
+.query_keyword {
+  margin: 5px;
 }
 
 #search-button {
@@ -37,7 +50,7 @@
   background: transparent;
   border: none;
   position: relative;
-  top: -18px;
+  top: -2px;
   font-size: 36px;
 
 }
@@ -52,8 +65,8 @@
   font-size: 36px;
 }
 
-.query_grade_home, .query_topic_home {
-  width: 35%;
+.query_grade_home, .query_topic_home, .query_keyword_home {
+  width: 50%;
 }
 
 
@@ -95,5 +108,9 @@ input.form-control {
 }
 
 .end-time-end {
-    margin-left: 30px !important;
+    margin-left: -4px !important;
+}
+
+.form-group {
+  margin-bottom: 0;
 }
