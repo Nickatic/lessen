@@ -27,7 +27,7 @@
 
 <div class="container-how">
   <div class="row-how-first">
-    <h2>Vos profésseurs préférés, accessibles dans le monde entier</h2>
+    <h2>Vos professeurs préférés, accessibles dans le monde entier</h2>
   </div>
   <div class="row-how-second">
     <div class="image-student"><%= image_tag("student.png", height: 270) %></div>
@@ -86,7 +86,12 @@
             <div class="professor-info">
               <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
                 <div class="card-stars">
-                  <% 5.times do  %>
+                  <% sum = 0 %>
+                  <%  lesson.teacher.reviews.each do |review| %>
+                    <% sum += review.rating %>
+                  <% end %>
+                  <%  rating = sum.fdiv(lesson.teacher.reviews.count).round%>
+                  <% rating.times do  %>
                     <i class="fas fa-star"></i>
                   <% end %>
                 </div>

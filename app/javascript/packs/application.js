@@ -9,10 +9,11 @@ initFlatpickr()
 
 import { initUpdateNavbarOnScroll } from '../components/navbar'
 import { submitChatForm } from '../components/submitChatForm'
+import { initFormRefresh } from '../components/sort_by'
 
 
 
-
+initFormRefresh()
 initUpdateNavbarOnScroll();
 initChannel();
 scrollLastMessageIntoView();

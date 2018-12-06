@@ -65,13 +65,13 @@
   font-size: 36px;
 }
 
-.query_grade_home, .query_topic_home, .query_keyword_home {
-  width: 50%;
+.query_grade_home, .query_topic_home {
+  width: 35%;
 }
 
 
 .search-group {
-  padding-top: 8%;
+  padding-top: 8vh;
   padding-right: 170px;
 }
 
@@ -113,4 +113,10 @@ input.form-control {
 
 .form-group {
   margin-bottom: 0;
+}
+
+.sort-by {
+  width: 15%;
+  position: absolute;
+  right: 50px;
 }
