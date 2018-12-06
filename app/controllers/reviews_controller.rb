@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
       end
     end
   end
+  end
 
   private
 
