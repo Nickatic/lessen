@@ -21,24 +21,39 @@
   padding: 10px 15px;
 }
 
-.card-title {
-
-}
 
 .card-body {
   height: 180px;
   position: relative;
 
 
-
 }
 .math-color {
-  background-color: #FFE8D1
+  background-color: #35A7FF;
+  fill: #35A7FF
 }
 
 .french-color {
-  background-color: #8EA4D2
+  background-color: #FF5964;
+  fill: #FF5964;
 }
+
+.physics-color {
+  background-color: #FFE74C;
+  fill: #FFE74C;
+}
+
+.svt-color {
+  background-color: #6BF178;
+  fill: #6BF178;
+}
+
+.philo-color {
+  background-color: #e75a7c;
+  fill: #e75a7c
+}
+
+
 
 .card-lesson-info {
   position: absolute;

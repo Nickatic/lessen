@@ -37,7 +37,7 @@ class Lesson < ApplicationRecord
   validates :min_num_of_participants, presence: true
   validates :max_num_of_participants, presence: true
   validates :price, presence: true
-  # validates :starts_at, presence: true
+  validates :starts_at, presence: true
   validates :date, presence: true
   validates :duration, presence: true
   validates :description, presence: true
