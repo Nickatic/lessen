@@ -8,7 +8,7 @@ class Message < ApplicationRecord
     ActionCable.server.broadcast("lesson_#{lesson.id}", {
       message_partial: ApplicationController.renderer.render(
         partial: "messages/message",
-        locals: { message: self, user_is_messages_author: false }
+        locals: { message: self, user_is_messages_author: false, user_is_teacher: user_is_teacher? }
       ),
       current_user_id: user.id
     })
@@ -16,5 +16,9 @@ class Message < ApplicationRecord
 
   def from?(some_user)
     user == some_user
+  end
+
+  def user_is_teacher?
+    user == lesson.teacher
   end
 end
