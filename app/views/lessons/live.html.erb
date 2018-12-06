@@ -1,5 +1,5 @@
 <!-- Don't delete this line ! 👇 -->
-<div id="chat_lesson" data-lesson-id="<%= @lesson.id %>"></div>
+<div id="chat_lesson" data-lesson-id="<%= @lesson.id %>" data-current-id="<%= current_user.id %>"></div>
 <!-- Don't delete this line ! ☝️ -->
 <div class="main-live">
 
@@ -15,7 +15,7 @@
     <div class="chat-header"><h4><%= @lesson.name %> chatroom</h4></div>
     <div class="messages">
       <% @lesson.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+      <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
       <% end %>
     </div>
     <div id="create-message">

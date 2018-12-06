@@ -5,9 +5,15 @@ class MessagesController < ApplicationController
     @message.lesson = @lesson
     @message.user = current_user
     if @message.save
-      redirect_to lesson_live_path(@lesson)
+      respond_to do |format|
+        format.html { redirect_to lesson_live_path(@lesson) }
+        format.js
+      end
     else
-      render "lessons/live"
+      respond_to do |format|
+        format.html { render "lessons/live" }
+        format.js
+      end
     end
   end
 
@@ -17,3 +23,5 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content)
   end
 end
+
+
