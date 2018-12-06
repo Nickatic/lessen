@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
       format.js  # <-- idem
     end
   end
+  end
 
   private
 
