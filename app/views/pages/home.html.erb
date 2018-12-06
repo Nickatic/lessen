@@ -49,30 +49,30 @@
               <p><%= lesson.starts_at.split(":").join("H") %></p>
               <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
             </div>
-
-            <div class="card-body math-color">
-              <div class="card-position-triangle">
-                <svg class="card-triangle" height="80" width="300">
-                  <polygon points="300 0 300 80 0 80" style="fill: #FFE8D1;"  preserveAspectRatio="xMinYMax slice" / >
-                </svg>
-              </div>
-              <div class="card-lesson-info">
-                <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
-                <h2><%= lesson.name %></h2>
-                <p><%= lesson.description.first(300) %></p>
-              </div>
+          </div>
+          <div class="card-body math-color">
+            <div class="card-position-triangle">
+              <svg class="card-triangle" height="80" width="300">
+                <polygon points="300 0 300 80 0 80" style="fill: #FFE8D1;"  preserveAspectRatio="xMinYMax slice" / >
+              </svg>
+            </div>
+            <div class="card-lesson-info">
+              <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
+              <h2><%= lesson.name %></h2>
+              <p><%= lesson.description.first(300) %></p>
             </div>
           </div>
-        </div>
-        <div class="card-footer math-color">
-          <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
-          <div class="professor-info">
-            <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
-              <div class="card-stars">
-                <% 5.times do  %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-              </div>
+
+          <div class="card-footer math-color">
+            <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
+            <div class="professor-info">
+              <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
+                <div class="card-stars">
+                  <% 5.times do  %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                </div>
+            </div>
           </div>
         </div>
       </div>
