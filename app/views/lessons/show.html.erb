@@ -22,6 +22,16 @@
     <p>2. Identité remarquable</p>
     <p>3. Fonctions trigonométriques</p>
     </div>
+    <div class="card-profile">
+      <h3>The teacher</h3>
+      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+      <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
+      <h6><em><%=%> number of classes given</em></h6>
+      <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
+      <h1 class="lign-a"></h1>
+      <h1 class="lign-a"></h1>
+      <%= link_to "See the profile", "#",  class:"text-space-profile" %>
+    </div>
   </div>
   <div class="second-column">
     <div class="price text-center review-container">
@@ -49,16 +59,6 @@
         <h4><strong>Add your review:</strong></h4>
         <%= render 'reviews/form', lesson: @lesson, review: @review %>
       </div>
-    </div>
-    <div class="card-profile">
-      <h3>The teacher</h3>
-      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-      <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
-      <h6><em><%=%> number of classes given</em></h6>
-      <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
-      <h1 class="lign-a"></h1>
-      <h1 class="lign-a"></h1>
-      <%= link_to "See the profile", "#",  class:"text-space-profile" %>
     </div>
   </div>
 </div>

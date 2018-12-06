@@ -4,8 +4,8 @@
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
-  margin-right: 230px;
-  margin-left: 230px;
+  margin-right: 220px;
+  margin-left: 220px;
 }
 
 .second-column {
@@ -14,12 +14,17 @@
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  margin-left: 40px;
 }
 
 //content design
-.first-column {
-  width: 40%;
+.first-column h4 {
+  width: 30%;
   text-align: justify;
+  margin-right: 30px;
+}
+.first-column h1 {
+ text-align: left;
 }
 
 .box-description {
@@ -66,6 +71,7 @@ border-bottom:1px solid grey;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  margin-right: 64px;
 
 }
 
@@ -86,3 +92,6 @@ border-bottom:1px solid grey;
   }
 }
 
+.review-box {
+  overflow: scroll;
+}
