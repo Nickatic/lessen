@@ -2,23 +2,29 @@
   <div class="row title">
     <h2>Selectionne ton cours</h2>
   </div>
-  <div class="row search-bar-index">
-    <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
-      <%= f.input :grade, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "Choisi ta classe", required: false %>
-      <%= f.input :topic, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "Choisi ta matière", required: false %>
-      <%#= f.label :keyword, "Search by keyword" %>
-      <% keyword = params[:query][:keyword] if params[:query].present? %>
-      <%= f.input :keyword, label: false, input_html: { value: keyword }, required: false, placeholder: "Trigo, géothermie, ..."  %>
-      <% range_date =  params[:query][:range_date] if params[:query].present? %>
-      <%= f.input :range_date , label: false, input_html: { value: range_date }, required: false, placeholder: "Quand ?"%>
-      <div class="search-time-index">
-        <% min_time = params[:query][:min_time] if params[:query].present? %>
-        <%= f.input :min_time , label: false, input_html: { value: min_time, class: "time-filter"  }, placeholder: "Début", required: false%>
-        <% max_time = params[:query][:max_time] if params[:query].present? %>
-        <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "Fin", required: false%>
+  <div class="row entire-search-bar">
+    <div class="col-xs-12 col-md-6">
+      <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
+        <div class="search-grade-topic-subtopic">
+        <%= f.input :grade, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "Choisi ta classe", required: false %>
+        <%= f.input :topic, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "Choisi ta matière", required: false %>
+        <%#= f.label :keyword, "Search by keyword" %>
+        <% keyword = params[:query][:keyword] if params[:query].present? %>
+        <%= f.input :keyword, label: false, input_html: { value: keyword }, required: false, placeholder: "Trigo, géothermie, ..."  %>
+        </div>
       </div>
-      <button type="submit" id="search-button"> <i class="fas fa-search btn-lessen-search-index"></i></button>
-    <% end %>
+      <div class="col-xs-12 col-md-6">
+        <div class="search-date-time-index">
+        <% range_date =  params[:query][:range_date] if params[:query].present? %>
+        <%= f.input :range_date , label: false, input_html: { value: range_date }, required: false, placeholder: "Quand ?"%>
+          <% min_time = params[:query][:min_time] if params[:query].present? %>
+          <%= f.input :min_time , label: false, input_html: { value: min_time, class: "time-filter"  }, placeholder: "Début", required: false%>
+          <% max_time = params[:query][:max_time] if params[:query].present? %>
+          <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "Fin", required: false%>
+        <button type="submit" id="search-button"> <i class="fas fa-search btn-lessen-search-index"></i></button>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -39,17 +45,17 @@
             </div>
           </div>
 
-          <% if lesson.topic == "Français" %>
-            <div class="card-body" style="background-color: #FF5964; fill: #FF5964;" %>
-          <% elsif lesson.topic == "Mathématiques" %>
-            <div class="card-body" style="background-color: #35A7FF; fill: #35A7FF;" %>
-          <% elsif lesson.topic == "Physique-chimie" %>
-            <div class="card-body" style="background-color: #FFE74C; fill: #FFE74C;" %>
-          <% elsif lesson.topic == "SVT" %>
-            <div class="card-body" style="background-color: #6BF178; fill: #6BF178;" %>
-          <% elsif lesson.topic == "Philosophie" %>
-            <div class="card-body" style="background-color: #e75a7c; fill: #e75a7c;" %>
-          <% end %>
+        <% if lesson.topic == "Français" %>
+          <div class="card-body" style="background-color: #FF5964; fill: #FF5964;" %>
+        <% elsif lesson.topic == "Mathématiques" %>
+          <div class="card-body" style="background-color: #35A7FF; fill: #35A7FF;" %>
+        <% elsif lesson.topic == "Physique-chimie" %>
+          <div class="card-body" style="background-color: #FFE74C; fill: #FFE74C;" %>
+        <% elsif lesson.topic == "SVT" %>
+          <div class="card-body" style="background-color: #6BF178; fill: #6BF178;" %>
+        <% elsif lesson.topic == "Philosophie" %>
+          <div class="card-body" style="background-color: #e75a7c; fill: #e75a7c;" %>
+        <% end %>
 
             <div class="card-position-triangle">
               <svg class="card-triangle" height="80" width="300">
