@@ -30,6 +30,17 @@
   overflow: scroll;
 }
 
+.message {
+  display: flex;
+  margin-bottom: 10px;
+  &.right {
+    flex-direction: row-reverse;
+    .message-content {
+      background-color: #F2F9FC;
+    }
+  }
+}
+
 #create-message {
   padding: 10px;
   background-color: #ffffff;
