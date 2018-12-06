@@ -26,10 +26,27 @@
 
 
 <div class="container-how">
-  <div class="row">
+  <div class="row-how-first">
     <h2>Vos profésseurs préférés, accessibles dans le monde entier</h2>
-    <%= image_tag("student.png", height: 400) %>>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique natus perspiciatis? Quod aliquid distinctio alias, molestiae tenetur rem voluptate maiores sequi sed reiciendis deserunt mollitia odit voluptatem illum modi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. <p>
+  </div>
+  <div class="row-how-second">
+    <div class="image-student"><%= image_tag("student.png", height: 270) %></div>
+    <div class="lign-how-icon">
+      <div class="bordure-how"></div>
+      <div class="icon-first">
+        <div class="circle-how"><%= image_tag("education.png", height: 80) %></div>
+        <div class="text-icon"><p>Select</p></div>
+      </div>
+      <div class="icon-second">
+        <div class="circle-how"><%= image_tag("sign.png", height: 70) %></div>
+        <div class="text-icon"><p>Sign up</p></div>
+      </div>
+      <div class="icon-third">
+        <div class="circle-how"><%= image_tag("record.png", height: 60) %></div>
+        <div class="text-icon"><p>Watch</p></div>
+      </div>
+    </div>
+    <div class="image-teacher"><%= image_tag("teacher.png", height: 270) %></div>
   </div>
 </div>
 
