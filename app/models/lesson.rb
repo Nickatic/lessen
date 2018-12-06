@@ -1,6 +1,5 @@
 class Lesson < ApplicationRecord
   has_many :participations, dependent: :destroy
-  has_many :reviews, dependent: :destroy
   has_many :messages
   belongs_to :teacher, class_name: "User", foreign_key: :user_id
   GRADES = ["Terminale", "Première"]

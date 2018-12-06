@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :lessons, foreign_key: :user_id
 
   has_many :messages, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 end
