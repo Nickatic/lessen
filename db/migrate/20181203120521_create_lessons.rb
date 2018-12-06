@@ -4,6 +4,9 @@ class CreateLessons < ActiveRecord::Migration[5.2]
       t.string :starts_at
       t.integer :duration
       t.text :description
+      t.text :summary
+      t.text :skills
+      t.text :objectives
       t.string :name
       t.string :topic
       t.string :subtopic

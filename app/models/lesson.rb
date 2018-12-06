@@ -41,6 +41,10 @@ class Lesson < ApplicationRecord
   validates :date, presence: true
   validates :duration, presence: true
   validates :description, presence: true
+  validates :summary, presence: true
+  validates :objectives, presence: true
+  validates :skills, presence: true
+
 
   def update_price_per_user
     self.current_price += self.price.fdiv(2**(self.participations.count - 1))

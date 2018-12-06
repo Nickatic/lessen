@@ -52,6 +52,7 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @review = Review.new
+    @related_lessons = Lesson.where(topic: @lesson.topic).take(3)
   end
 
   def new
