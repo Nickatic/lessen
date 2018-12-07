@@ -5,7 +5,9 @@
 
 
   <div class="livevideo">
+
     <iframe width="100%" height="100%" src="https://player.twitch.tv/?channel=nickatic" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
     <div class="current-lesson-infos">
       <h4>Prix par élèves : <%= @lesson.price_per_user.round(2) %> €</h4>
     </div>
@@ -28,12 +30,14 @@
       <%= f.submit "Add message", class: "btn btn-blue", id: "chat-btn" %>
       <% end %>
     </div>
-    <h4>Elèves : <%= @lesson.participations.count %></h4>
+    <div class="nombres-participants-live"
+      <h4>Elèves : <%= @lesson.participations.count %></h4>
+    </div>
   </div>
 
 </div>
 
- <div class="container-showlessons">
+ <div class="show-lesson-live">
    <div class="first-column">
      <h1><%=@lesson.name%></h1>
      <h4><strong><%=@lesson.subtopic%></strong> </h4>

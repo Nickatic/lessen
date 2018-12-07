@@ -21,64 +21,70 @@
     <p>1. Formules de multiplication des arcs</p>
     <p>2. Identité remarquable</p>
     <p>3. Fonctions trigonométriques</p>
+    <p>4. Formules de multiplication des arcs</p>
+    <p>5. Identité remarquable</p>
+    <p>6. Fonctions trigonométriques</p>
     </div>
 
   </div>
   <div class="second-column">
     <div class="price text-center review-container">
       <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
-        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user.round(1)%>€</h4>
+        <h4 class="price-box"><strong>Prix: </strong><%=@lesson.price_per_user.round(1)%>€</h4>
         <div class="btn-position">
-          <%= link_to "Join Live", lesson_live_path(@lesson), class: "btn-lessen"%>
+          <%= link_to "Rejoindre le Live", lesson_live_path(@lesson), class: "btn-lessen"%>
         </div>
       <% else %>
         <h4 class="price-box"><strong>Price now: </strong><%=@lesson.next_price_per_user.round%>€</h4>
         <div class="btn-position">
-          <%= link_to "Sign up for a class", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
+          <%= link_to "Rejoindre un cours", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
 
         </div>
       <% end %>
-    </div>
-    <div class="card-profile">
-      <h3>Le professeur</h3>
-      <div class="teacher-title">
-        <% if @lesson.teacher.photo_user.present? %>
-          <%= cl_image_tag(@lesson.teacher.photo_user, class: "avatar-large") %>
+    </div>  
+    <div class="card-review-profile">
+      <div class="card-profile">
+        <h3>Le professeur</h3>
+        <div class="teacher-title">
+          <% if @lesson.teacher.photo_user.present? %>
+            <%= cl_image_tag(@lesson.teacher.photo_user, class: "avatar-large") %>
+          <% else %>
+            <%= cl_image_tag(image_path("user-default.jpg"), class: "avatar-large") %>
+          <% end %>
+          <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
+        </div>
+        <p>I’m a teacher and absolutely love sharing my knowledge. I hope you enjoy these 45 minutes with me :) </p>
+        <h1 class="lign-a"></h1>
+        <h1 class="lign-a"></h1>
+        <%= link_to "Voir le profil", user_path(@lesson.teacher),  class:"text-space-profile" %>
+          <h1 class="lign-a"></h1>
+          <div class="bordure"></div>
+          <h1 class="lign-a"></h1>
+        <h4>Avis sur ce professeur:</h4>
+      </div>
+      <div class="review-box" id="reviews_list">
+        <% if @lesson.teacher.reviews.blank? %>
+          <strong>Pas d'avis d'élèves pour ce professeur</strong>
         <% else %>
-          <%= cl_image_tag(image_path("user-default.jpg"), class: "avatar-large") %>
+          <div id="reviews_list">
+            <%= render 'reviews/index', reviews: @lesson.teacher.reviews.order(created_at: :desc) %>
+          </div>
         <% end %>
-        <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
       </div>
 
-      <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
-      <h1 class="lign-a"></h1>
-      <h1 class="lign-a"></h1>
-      <%= link_to "Voir le profil", user_path(@lesson.teacher),  class:"text-space-profile" %>
-      <h4>Avis sur ce professeur:</h4>
     </div>
-
-    <div class="review-box" id="reviews_list">
-      <% if @lesson.teacher.reviews.blank? %>
-        <strong>Pas d'avis d'élèves pour ce professeur</strong>
-      <% else %>
-        <div id="reviews_list">
-          <%= render 'reviews/index', reviews: @lesson.teacher.reviews.order(created_at: :desc) %>
+  </div>
+</div>
+<div class="background-related-cards">
+  <div class="card-container-show">
+    <h3 class="title-sur">Sur le même sujet</h3>
+    <div class="row">
+      <% @related_lessons.each do |lesson| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= render 'shared/card', lesson: lesson %>
         </div>
       <% end %>
     </div>
-
-
   </div>
 </div>
 
-<div class="card-container-show">
-  <h4>Sur le même sujet :</h4>
-  <div class="row">
-    <% @related_lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= render 'shared/card', lesson: lesson %>
-      </div>
-    <% end %>
-  </div>
-
-</div>

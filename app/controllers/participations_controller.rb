@@ -11,4 +11,11 @@ class ParticipationsController < ApplicationController
       render "lessons/show"
     end
   end
+
+  # def destroy
+  #   @participation = Participation.find(params[:id])
+  #   @participation.destroy
+
+  #   redirect_to participations_path
+  # end
 end
