@@ -13,10 +13,11 @@ import { initFormRefresh } from '../components/sort_by'
 
 
 
-initFormRefresh()
+
 initUpdateNavbarOnScroll();
 initChannel();
 scrollLastMessageIntoView();
 submitChatForm();
+initFormRefresh()
 
 
