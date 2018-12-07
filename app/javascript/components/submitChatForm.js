@@ -4,6 +4,8 @@ function submitChatForm() {
   const input = document.getElementById('message_content');
   input.addEventListener('keyup', (event)=> {
     event.preventDefault();
+      console.log(event.keyCode)
+
     if (event.keyCode === 13) {
       btn.click()
       // form.submit();
