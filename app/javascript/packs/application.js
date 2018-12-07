@@ -16,11 +16,11 @@ import { initFormRefresh } from '../components/sort_by';
 
 
 
-initFormRefresh();
 initUpdateNavbarOnScroll();
 initChannel();
 scrollLastMessageIntoView();
 submitChatForm();
+initFormRefresh()
 
 import { carouselIndex } from '../components/carousel-participations-index.js';
 

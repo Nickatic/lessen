@@ -29,7 +29,7 @@
 
   <div class="row past-classes-row-logic">
   <% is_none = true %>
-  <% if current_user.participations.count < 4 %>
+  <% if current_user.participations.count < 5 %>
     <%current_user.participations.each do |participation|%>
       <% if Date.today > participation.lesson.date %>
         <div class="cards-without-carousel">
@@ -41,9 +41,14 @@
   <% else %>
     <div class="carousel-index">
       <%current_user.participations.each do |participation|%>
-        <div class="carousel-index-card-item card-index">
-          <%= render "shared/card", lesson: participation.lesson %>
-        </div>
+        <% lesson = participation.lesson %>
+        <% if Date.today > participation.lesson.date %>
+          <div class="cards-without-carousel">
+            <%= render "shared/card", lesson: participation.lesson %>
+          </div>
+          <% is_none = false %>
+        <% end %>
+
       <% end %>
     </div>
   <% end %>
