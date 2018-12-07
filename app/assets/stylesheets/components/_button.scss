@@ -20,17 +20,23 @@ text-decoration: none;
   font-weight: lighter;
   background-color: #8a3331;
   color: white;
-  font-size: 30px;
+  font-size: 32px;
   border: none;
+  &:focus {
+    outline: none;
+  }
 }
 
-.btn-lessen-search-index {
+#btn-lessen-search-index {
   background-color: #66DDFF;
   width: 80px;
-  padding: 10px 0px;
+  height: 50px;
   border-radius: 5px;
   font-weight: lighter;
   background-color: #8a3331;
   color: white;
   font-size: 30px;
+  &:focus {
+    outline: none;
+  }
 }

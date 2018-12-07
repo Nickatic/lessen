@@ -21,7 +21,7 @@
           <%= f.input :min_time , label: false, input_html: { value: min_time, class: "time-filter"  }, placeholder: "Début", required: false%>
           <% max_time = params[:query][:max_time] if params[:query].present? %>
           <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "Fin", required: false%>
-        <button type="submit" id="search-button"> <i class="fas fa-search btn-lessen-search-index"></i></button>
+        <button type="submit" id="btn-lessen-search-index"> <i class="fas fa-search "></i></button>
         </div>
 
     </div>
