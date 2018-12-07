@@ -41,13 +41,19 @@
 
         </div>
       <% end %>
-    </div>
+    </div>  
     <div class="card-review-profile">
       <div class="card-profile">
         <h3>Le professeur</h3>
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-        <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
-        <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
+        <div class="teacher-title">
+          <% if @lesson.teacher.photo_user.present? %>
+            <%= cl_image_tag(@lesson.teacher.photo_user, class: "avatar-large") %>
+          <% else %>
+            <%= cl_image_tag(image_path("user-default.jpg"), class: "avatar-large") %>
+          <% end %>
+          <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
+        </div>
+        <p>I’m a teacher and absolutely love sharing my knowledge. I hope you enjoy these 45 minutes with me :) </p>
         <h1 class="lign-a"></h1>
         <h1 class="lign-a"></h1>
         <%= link_to "Voir le profil", user_path(@lesson.teacher),  class:"text-space-profile" %>
@@ -65,6 +71,7 @@
           </div>
         <% end %>
       </div>
+
     </div>
   </div>
 </div>
