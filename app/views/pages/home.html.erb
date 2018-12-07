@@ -30,7 +30,7 @@
     <h2>Vos professeurs préférés, accessibles dans le monde entier</h2>
   </div>
   <div class="row-how-second">
-    <div class="image-student"><%= image_tag("student.png", height: 270) %></div>
+    <div class="image-student"><%= image_tag("student1.svg", height: 350) %></div>
     <div class="lign-how-icon">
       <div class="bordure-how"></div>
       <div class="icon-first">
@@ -46,7 +46,7 @@
         <div class="text-icon"><p>Watch</p></div>
       </div>
     </div>
-    <div class="image-teacher"><%= image_tag("teacher.png", height: 270) %></div>
+    <div class="image-teacher"><%= image_tag("", height: 100) %></div>
   </div>
 </div>
 
@@ -67,7 +67,7 @@
               <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
             </div>
           </div>
-          <div class="card-body math-color">
+          <div class="card-body">
             <div class="card-position-triangle">
               <svg class="card-triangle" height="80" width="300">
                 <polygon points="295 0 295 80 0 80" class="math-color" preserveAspectRatio="xMinYMax slice" / >
@@ -76,7 +76,7 @@
             <div class="card-lesson-info">
               <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
               <h2><%= lesson.name %></h2>
-              <p><%= lesson.description.first(300) %></p>
+              <p><%= lesson.summary %></p>
             </div>
           </div>
 
@@ -118,7 +118,7 @@
             </div>
           </div>
 
-          <div class="card-body french-color">
+          <div class="card-body">
             <div class="card-position-triangle">
               <svg class="card-triangle" height="80" width="300">
                 <polygon points="295 0 295 80 0 80" class="french-color" preserveAspectRatio="xMinYMax slice" / >
@@ -127,7 +127,7 @@
             <div class="card-lesson-info">
               <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
               <h2><%= lesson.name %></h2>
-              <p><%= lesson.description.first(300) %></p>
+              <p><%= lesson.summary %></p>
             </div>
           </div>
           <div class="card-footer french-color">

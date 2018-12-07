@@ -1,0 +1,23 @@
+<div class="container-index-participations">
+  <div class="row-current-user">
+    <h2>Bienvenu <%=current_user.first_name%> !</h2>
+    <h3>Mes lessons à venir</h3>
+  </div>
+  <div class="row-current-lesson">
+    <%current_user.participations.each do |participation|%>
+      <% if Date.today < participation.lesson.date %>
+        <%= render "shared/card", lesson: participation.lesson %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="bordure"></div>
+  <div class="row-past-lessons">
+    <h3>Mes lessons précédentes</h3>
+    <%current_user.participations.each do |participation|%>
+      <% if Date.today > participation.lesson.date %>
+        <%= render "shared/card", lesson: participation.lesson %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

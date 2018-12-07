@@ -58,9 +58,6 @@
           <%= render 'reviews/index', reviews: @lesson.teacher.reviews.order(created_at: :desc) %>
         </div>
       <% end %>
-
-
-
     </div>
 
 
@@ -72,65 +69,7 @@
   <div class="row">
     <% @related_lessons.each do |lesson| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="lesson-card">
-          <%= link_to "", lesson_path(lesson), class: "card-link" %>
-          <div class="card-header">
-            <div class="card-title">
-              <h4> <%= lesson.topic %></h4>
-              <h5><em><%= lesson.subtopic %></em></h5>
-            </div>
-            <div class="card-date">
-              <p><%= lesson.starts_at.split(":").join("H") %></p>
-              <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
-            </div>
-          </div>
-
-          <% if lesson.topic == "Français" %>
-            <div class="card-body" style="background-color: #FF5964; fill: #FF5964;" %>
-          <% elsif lesson.topic == "Mathématiques" %>
-            <div class="card-body" style="background-color: #35A7FF; fill: #35A7FF;" %>
-          <% elsif lesson.topic == "Physique-chimie" %>
-            <div class="card-body" style="background-color: #FFE74C; fill: #FFE74C;" %>
-          <% elsif lesson.topic == "SVT" %>
-            <div class="card-body" style="background-color: #6BF178; fill: #6BF178;" %>
-          <% elsif lesson.topic == "Philosophie" %>
-            <div class="card-body" style="background-color: #e75a7c; fill: #e75a7c;" %>
-          <% end %>
-
-            <div class="card-position-triangle">
-              <svg class="card-triangle" height="80" width="300">
-                <polygon points="300 0 300 80 0 80" preserveAspectRatio="xMinYMax slice" / >
-              </svg>
-            </div>
-            <div class="card-lesson-info">
-              <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
-              <h2><%= lesson.name %></h2>
-              <p><%= lesson.description.first(300) %></p>
-            </div>
-          </div>
-
-          <% if lesson.topic == "Français" %>
-            <div class="card-footer" style="background-color: #FF5964; fill: #FF5964;" %>
-          <% elsif lesson.topic == "Mathématiques" %>
-            <div class="card-footer" style="background-color: #35A7FF; fill: #35A7FF;" %>
-          <% elsif lesson.topic == "Physique-chimie" %>
-            <div class="card-footer" style="background-color: #FFE74C; fill: #FFE74C;" %>
-          <% elsif lesson.topic == "SVT" %>
-            <div class="card-footer" style="background-color: #6BF178; fill: #6BF178;" %>
-          <% elsif lesson.topic == "Philosophie" %>
-            <div class="card-footer" style="background-color: #e75a7c; fill: #e75a7c;" %>
-          <% end %>
-            <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
-            <div class="professor-info">
-              <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
-              <div class="card-stars">
-                <% 5.times do  %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-              </div>
-           </div>
-         </div>
-        </div>
+        <%= render 'shared/card', lesson: lesson %>
       </div>
     <% end %>
   </div>
