@@ -5,10 +5,11 @@
 
 
   <div class="livevideo">
-    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/live_stream?channel=<%= @lesson.channel_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="100%" src="https://player.twitch.tv/?channel=nickatic" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="current-lesson-infos">
       <h4>Prix par élèves : <%= @lesson.price_per_user.round(2) %> €</h4>
     </div>
+
   </div>
 
 
