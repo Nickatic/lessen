@@ -57,13 +57,11 @@ class LessonsController < ApplicationController
       end
     end
 
-
   end
 
   def show
     @lesson = Lesson.find(params[:id])
-    # @popular_lessons = Lesson.where(rating:
-    @upcoming_lessons = Lesson.where(date: "2018-12-07")
+    @related_lessons = Lesson.where(subtopic: @lesson.subtopic).where.not(id: @lesson.id)
   end
 
   def new
