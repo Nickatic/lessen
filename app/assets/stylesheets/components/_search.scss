@@ -115,8 +115,15 @@ input.form-control {
   margin-bottom: 0;
 }
 
-.sort-by {
-  width: 15%;
-  position: absolute;
-  right: 50px;
+
+.container-sort {
+  margin-top: 30px;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  .sort-by {
+    width: 15%;
+    position: absolute;
+    right: 80px;
+  }
 }
