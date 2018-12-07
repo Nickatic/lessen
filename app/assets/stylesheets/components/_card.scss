@@ -2,7 +2,7 @@
 
 .lesson-card {
   height: 390px;
-  width: 295px;
+  width: 280px;
   color: rgb(30, 30, 30);
   margin-bottom: 30px;
   margin-top: 30px;
@@ -11,6 +11,8 @@
     margin: 5px;
   }
   position: relative;
+  margin-right: 4px;
+  margin-left: 4px;
 }
 
 .card-header {
@@ -18,7 +20,7 @@
   background-color: white;
   display: flex;
   justify-content: space-between;
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
 
 
@@ -41,6 +43,7 @@
 .card-lesson-info {
   position: absolute;
   padding: 15px 15px;
+  text-align: right;
   top: -18px;
   h2 {
     text-align: right;
@@ -51,7 +54,7 @@
   }
   p {
     margin: 0;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 .card-position-triangle {
@@ -73,7 +76,7 @@
     font-weight: bold;
   }
   em {
-    font-size: 14px;
+    font-size: 12px;
   }
   text-align: center;
 }
