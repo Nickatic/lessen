@@ -12,10 +12,10 @@ class ParticipationsController < ApplicationController
     end
   end
 
-  def destroy
-    @participation = Participation.find(params[:id])
-    @participation.destroy
+  # def destroy
+  #   @participation = Participation.find(params[:id])
+  #   @participation.destroy
 
-    redirect_to participations_path
-  end
+  #   redirect_to participations_path
+  # end
 end
