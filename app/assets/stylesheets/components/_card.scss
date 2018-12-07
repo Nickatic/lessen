@@ -51,6 +51,7 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 15px;
   }
   p {
     margin: 0;
@@ -74,11 +75,14 @@
   p {
     margin: 0;
     font-weight: bold;
+    font-size: 14px;
+    color: grey;
   }
   em {
     font-size: 12px;
+    color: grey;
   }
-  text-align: center;
+  text-align: right;
 }
 
 .professor-info {
@@ -112,5 +116,5 @@
   padding-top: 10px;
   padding-right: 30px;
   padding-left: 30px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
