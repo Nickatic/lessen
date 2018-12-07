@@ -22,6 +22,9 @@ gem 'carrierwave', '~> 1.2'
 gem "letter_opener", group: :development
 gem 'postmark-rails'
 
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
