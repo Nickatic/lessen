@@ -1,20 +1,22 @@
 <div class="container-profile">
   <div class="row">
     <div class="avatar-photo text-center">
-      <% if current_user.photo_user.present? %>
-        <% avatar =  current_user.photo_user%>
+      <% if @user.photo_user.present? %>
+        <% avatar =  @user.photo_user%>
         <% else %>
-        <% avatar = image_path("Ryan.jpg") %>
+        <% avatar = image_path("user-default.jpg") %>
       <% end %>
       <%= cl_image_tag(avatar, class:"avatar-profile") %>
     </div>
     <div class="text-center">
     <h5>
-      <h3><%= current_user.first_name %> <%= @current_user.last_name %></h3>
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
     </h5>
-    <p><%= current_user.email %></p>
+    <p><%= @user.email %></p>
       <div class="button-profile-position">
-      <%= link_to "Edit profile", edit_user_path(current_user), class:"btn-lessen" %>
+        <% if @user == current_user %>
+          <%= link_to "Edit profile", edit_user_path(@user), class:"btn-lessen" %>
+        <% end %>
       </div>
     </div>
   </div>
