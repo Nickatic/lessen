@@ -1,5 +1,4 @@
 function submitChatForm() {
-  console.log("rghb")
   const form = document.getElementById('new_message');
   const btn = document.getElementById('chat-btn')
   const input = document.getElementById('message_content');
