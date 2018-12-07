@@ -27,8 +27,8 @@
 .card-body {
   height: 120px;
   position: relative;
-  background-color: #f9ebcc;
-  fill: #f9ebcc;
+  background-color: #f7edde;
+  fill: #f7edde;
 }
 
 .card-title-topic h4 {
@@ -67,7 +67,7 @@
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  background-color: #f9ebcc;
+  background-color: #f7edde;
 }
 
 .card-date {
@@ -105,4 +105,12 @@
 
 .card-stars {
   display: flex;
+}
+
+.card-review-profile {
+  background-color: white;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 5px;
 }

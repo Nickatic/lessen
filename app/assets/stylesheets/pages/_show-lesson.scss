@@ -30,12 +30,13 @@
 .price {
   margin-top: 40px;
   .price-box {
-    background-color: #ed756f;
+    background-color: white;
     width: 200px;
     padding: 20px 25px;
-    border: 1.2px solid #ed756f;
+    margin-bottom: 25px;
+    border: 5px solid white;
     border-radius: 2px;
-    color: white;
+    color: black;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
 }
@@ -81,10 +82,10 @@ border-bottom:1px solid grey;
 }
 
 .review-box {
-  height: 350px;
   overflow: scroll;
-  text-align: center;
   justify-content: center;
+  font-size: 14px;
+  color: grey;
 }
 
 .related-lesson-card {
@@ -102,12 +103,13 @@ border-bottom:1px solid grey;
   margin-bottom: 20px;
 }
 
-// .card-container-show h4 {
-//   background-color: #EA8C55;
-//   border-style: outset;
-//   color: white;
-//   padding-top: 10px;
-//   padding-bottom: 10px;
-//   padding-left: 10px;
-// }
+.card-container-show {
+padding-top: 30px;
+}
 
+.background-related-cards {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  background-color: #eaeaea;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
