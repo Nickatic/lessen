@@ -5,6 +5,7 @@ function submitChatForm() {
   input.addEventListener('keyup', (event)=> {
     event.preventDefault();
     if (event.keyCode === 13) {
+      console.log(event.keyCode)
       btn.click()
       // form.submit();
     }
