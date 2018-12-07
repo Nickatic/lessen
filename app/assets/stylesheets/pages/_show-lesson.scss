@@ -12,6 +12,7 @@
 .card-container-show {
   margin: 0 200px;
 }
+
 .second-column {
   display: flex;
   width: 40%;
@@ -21,6 +22,11 @@
   margin-left: 40px;
 }
 
+.title-sur {
+  display: flex;
+  justify-content: center;
+}
+
 //content design
 
 .box-description {
@@ -28,7 +34,8 @@
 }
 
 .price {
-  margin-top: 40px;
+  margin-bottom: 60px;
+  padding-left: 59px;
   .price-box {
     background-color: white;
     width: 200px;
