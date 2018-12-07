@@ -6,7 +6,8 @@
     "aos": "^2.3.4",
     "bootstrap": "3",
     "flatpickr": "^4.5.2",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
