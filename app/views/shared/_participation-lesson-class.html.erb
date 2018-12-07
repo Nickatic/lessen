@@ -17,10 +17,15 @@
           <% end %>
          <!-- <h4><%= lesson.topic %></h4> -->
         </div>
-       <div class="card-title-subtopic">
+        <div class ="button-destroy-participation">
+          <button><%= link_to "X", lesson_participation_path(@participation),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %></button>
+        </div>
+        <div class="card-title-subtopic">
          <h5><em><%= lesson.subtopic %></em></h5>
-       </div>
-     </div>
+        </div>
+      </div>
       <div class="card-date">
         <p><%= lesson.starts_at.split(":").join("H") %></p>
         <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>

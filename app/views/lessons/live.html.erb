@@ -27,12 +27,14 @@
       <%= f.submit "Add message", class: "btn btn-blue", id: "chat-btn" %>
       <% end %>
     </div>
-    <h4>Elèves : <%= @lesson.participations.count %></h4>
+    <div class="nombres-participants-live"
+      <h4>Elèves : <%= @lesson.participations.count %></h4>
+    </div>
   </div>
 
 </div>
 
- <div class="container-showlessons">
+ <div class="show-lesson-live">
    <div class="first-column">
      <h1><%=@lesson.name%></h1>
      <h4><strong><%=@lesson.subtopic%></strong> </h4>
