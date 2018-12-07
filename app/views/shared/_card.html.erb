@@ -1,51 +1,59 @@
- <div class="lesson-card">
-  <%= link_to "", lesson_path(lesson), class: "card-link" %>
-  <div class="card-header">
-    <div class="card-title-section">
-      <div class="card-title-topic">
-        <% if lesson.topic == "Français" %>
-          <h4 style="background-color: #EA8C55;"><%=lesson.topic %></h4>
-        <% elsif lesson.topic == "Mathématiques" %>
-          <h4 style="background-color: #c75146;"><%=lesson.topic %></h4>
-        <% elsif lesson.topic == "Physique-chimie" %>
-          <h4 style="background-color: #540804;" %><%=lesson.topic %></h4>
-        <% elsif lesson.topic == "SVT" %>
-          <h4 style="background-color: #32493E;" %><%=lesson.topic %></h4>
-        <% elsif lesson.topic == "Philosophie" %>
-          <h4 style="background-color: #3d588e;" %><%=lesson.topic %></h4>
-        <% end %>
-        <!-- <h4><%= lesson.topic %></h4> -->
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  <div class="lesson-card">
+    <%= link_to "", lesson_path(lesson), class: "card-link" %>
+    <div class="card-header">
+      <div class="card-title-section">
+        <div class="card-title-topic">
+          <% if lesson.topic == "Français" %>
+            <h4 style="background-color: #EA8C55;"><%=lesson.topic %></h4>
+          <% elsif lesson.topic == "Mathématiques" %>
+            <h4 style="background-color: #c75146;"><%=lesson.topic %></h4>
+          <% elsif lesson.topic == "Physique-chimie" %>
+            <h4 style="background-color: #540804;" %><%=lesson.topic %></h4>
+          <% elsif lesson.topic == "SVT" %>
+            <h4 style="background-color: #32493E;" %><%=lesson.topic %></h4>
+          <% elsif lesson.topic == "Philosophie" %>
+            <h4 style="background-color: #3d588e;" %><%=lesson.topic %></h4>
+          <% end %>
+         <!-- <h4><%= lesson.topic %></h4> -->
+        </div>
+       <div class="card-title-subtopic">
+         <h5><em><%= lesson.subtopic %></em></h5>
+       </div>
+     </div>
+      <div class="card-date">
+        <p><%= lesson.starts_at.split(":").join("H") %></p>
+        <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
       </div>
-      <div class="card-title-subtopic">
-        <h5><em><%= lesson.subtopic %></em></h5>
+    </div>
+    <div class="card-body">
+      <div class="card-position-triangle">
+        <svg class="card-triangle" height="80" width="300">
+          <polygon points="295 0 295 80 0 80" preserveAspectRatio="xMinYMax slice" / >
+        </svg>
+      </div>
+      <div class="card-lesson-info">
+        <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
+        <h2><%= lesson.name %></h2>
+        <p><%= lesson.summary %></p>
       </div>
     </div>
-    <div class="card-date">
-      <p><%= lesson.starts_at.split(":").join("H") %></p>
-      <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="card-position-triangle">
-      <svg class="card-triangle" height="80" width="300">
-        <polygon points="280 0 280 80 0 80" preserveAspectRatio="xMinYMax slice" / >
-      </svg>
-    </div>
-    <div class="card-lesson-info">
-      <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
-      <h2><%= lesson.name %></h2>
-      <p><%= lesson.summary %></p>
-    </div>
-  </div>
 
-  <div class="card-footer">
+
+    <div class="card-footer">
     <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
-    <div class="professor-info">
-      <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
-      <div class="card-stars">
-        <% 5.times do  %>
-          <i class="fas fa-star"></i>
-        <% end %>
+      <div class="professor-info">
+        <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
+        <div class="card-stars">
+          <% sum = 0 %>
+          <%  lesson.teacher.reviews.each do |review| %>
+            <% sum += review.rating %>
+          <% end %>
+          <%  rating = sum.fdiv(lesson.teacher.reviews.count).round%>
+          <% rating.times do  %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

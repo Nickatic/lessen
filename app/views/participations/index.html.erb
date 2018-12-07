@@ -1,23 +1,36 @@
-<div class="container-index-participations">
-  <div class="row-current-user">
-    <h2><strong>Bienvenu <%=current_user.first_name%> !</strong></h2>
-    <h3>Mes lessons à venir</h3>
-  </div>
-  <div class="row-current-lesson">
+<div class="cards-container">
+  <h2>Bienvenue <%=current_user.first_name%> !</h2>
+
+  <h3>Mes leçons à venir</h3>
+  <div class="row">
+    <% is_none = true %>
     <%current_user.participations.each do |participation|%>
       <% if Date.today < participation.lesson.date %>
         <%= render "shared/card", lesson: participation.lesson %>
+        <% is_none = false %>
       <% end %>
     <% end %>
+
   </div>
+  <% if  is_none %>
+    <h4>Pas de leçons à venir</h4>
+  <% end %>
   <div class="bordure"></div>
-  <div class="row-past-lessons">
-    <h3>Mes lessons précédentes</h3>
+  <h3>Mes lessons précédentes</h3>
+  <div class="row">
+    <% is_none = true %>
     <%current_user.participations.each do |participation|%>
       <% if Date.today > participation.lesson.date %>
         <%= render "shared/card", lesson: participation.lesson %>
+        <% is_none = false %>
       <% end %>
     <% end %>
+
   </div>
+  <% if  is_none %>
+    <h4>Allez ! Au boulot</h4>
+  <% end %>
 </div>
+
+
 

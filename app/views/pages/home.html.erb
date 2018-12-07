@@ -27,7 +27,7 @@
 
 <div class="container-how">
   <div class="row-how-first">
-    <h2>Vos profésseurs préférés, accessibles dans le monde entier</h2>
+    <h2>Vos professeurs préférés, accessibles dans le monde entier</h2>
   </div>
   <div class="row-how-second">
     <div class="image-student"><%= image_tag("student1.svg", height: 350) %></div>
@@ -56,50 +56,7 @@
   </div>
   <div class="row maths-row">
     <% @maths_lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="lesson-card">
-          <%= link_to "", lesson_path(lesson), class: "card-link" %>
-          <div class="card-header">
-            <div class="card-title">
-              <div class="card-title-topic">
-                <h4 style="background-color: #c75146;"><%= lesson.topic %></h4>
-              </div>
-              <div class="card-title-subtopic">
-                <h5><em><%= lesson.subtopic %></em></h5>
-              </div>
-            </div>
-            <div class="card-date">
-              <p><%= lesson.starts_at.split(":").join("H") %></p>
-              <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="card-position-triangle">
-              <svg class="card-triangle" height="80" width="300">
-                <polygon points="280 0 280 80 0 80" class="math-color" preserveAspectRatio="xMinYMax slice" / >
-              </svg>
-            </div>
-            <div class="card-lesson-info">
-              <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
-              <h2><%= lesson.name %></h2>
-              <p><%= lesson.summary %></p>
-            </div>
-          </div>
-
-
-          <div class="card-footer math-color">
-            <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
-            <div class="professor-info">
-              <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
-                <div class="card-stars">
-                  <% 5.times do  %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render "shared/card", lesson: lesson %>
     <% end %>
   </div>
   <div class="row-title-most-popular">
@@ -107,49 +64,7 @@
   </div>
   <div class="row french-row">
     <% @french_lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="lesson-card">
-          <%= link_to "", lesson_path(lesson), class: "card-link" %>
-          <div class="card-header">
-            <div class="card-title">
-              <div class="card-title-topic">
-                <h4 style="background-color: #EA8C55;"><%=lesson.topic %></h4>
-              </div>
-              <div class="card-title-subtopic">
-                <h5><em><%= lesson.subtopic %></em></h5>
-              </div>
-            </div>
-            <div class="card-date">
-              <p><%= lesson.starts_at.split(":").join("H") %></p>
-              <em><%= lesson.date.to_s.split("-").reverse.join("/") %></em>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <div class="card-position-triangle">
-              <svg class="card-triangle" height="80" width="300">
-                <polygon points="280 0 280 80 0 80" class="french-color" preserveAspectRatio="xMinYMax slice" / >
-              </svg>
-            </div>
-            <div class="card-lesson-info">
-              <button class="card-price-button"><%= lesson.next_price_per_user.round(1) %> €</button>
-              <h2><%= lesson.name %></h2>
-              <p><%= lesson.summary %></p>
-            </div>
-          </div>
-          <div class="card-footer french-color">
-            <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
-            <div class="professor-info">
-              <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
-              <div class="card-stars">
-                <% 5.times do  %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-              </div>
-           </div>
-         </div>
-        </div>
-      </div>
+      <%= render "shared/card", lesson: lesson %>
     <% end %>
   </div>
 </div>
