@@ -55,7 +55,7 @@
     <h2>Sur le point de commencer!</h2>
   </div>
   <div class="row maths-row">
-    <% @maths_lessons.each do |lesson| %>
+    <% @upcoming_lessons.each do |lesson| %>
       <%= render "shared/card", lesson: lesson %>
     <% end %>
   </div>
@@ -63,12 +63,11 @@
     <h2>Les plus populaires</h2>
   </div>
   <div class="row french-row">
-    <% @french_lessons.each do |lesson| %>
+    <% @ordered_popular_lessons.each do |lesson| %>
       <%= render "shared/card", lesson: lesson %>
     <% end %>
   </div>
 </div>
-
 
 <!--
  style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url('https://images.officeworks.com.au/api/2/img/https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JA0352400_B_helix_oxford_blue_9_piece_maths_set.jpg/resize?size=706&auth=MjA5OTcwODkwMg__');"
