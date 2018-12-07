@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   def index
+
     query = params[:query]
     @lessons = Lesson.all
 
@@ -40,8 +41,22 @@ class LessonsController < ApplicationController
           lesson.starts_at.split(":")[0].to_i <= query[:max_time].to_i
         end
       end
+      @lessons = @lessons.sort_by { |lesson| lesson.next_price_per_user}
 
+      if query[:sort_by] == "note"
+        @lessons = @lessons.sort_by do |lesson|
+          sum = 0
+          lesson.teacher.reviews.each do |review|
+            sum += review.rating
+          end
+          sum.fdiv(lesson.teacher.reviews.count)
+        end
+        @lessons = @lessons.reverse
+      elsif query[:sort_by] == "prix"
+        @lessons = @lessons.sort_by { |lesson| lesson.next_price_per_user}
+      end
     end
+
 
   end
 

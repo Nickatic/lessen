@@ -1,4 +1,4 @@
-<div class="container-index">
+<div class="container-index  ">
   <div class="row title">
     <h2>Selectionne ton cours</h2>
   </div>
@@ -23,8 +23,15 @@
           <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "Fin", required: false%>
         <button type="submit" id="search-button"> <i class="fas fa-search btn-lessen-search-index"></i></button>
         </div>
-      <% end %>
+
     </div>
+  </div>
+</div>
+<div class="container-sort">
+  <div class="sort-by">
+    <% sort_by =  params[:query][:sort_by] if params[:query].present? %>
+      <%= f.input  :sort_by, label: "Trier par", collection: ["prix", "note"], selected: sort_by, required: false%>
+    <% end %>
   </div>
 </div>
 <div class="cards-container">
@@ -76,7 +83,12 @@
             <div class="professor-info">
               <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
               <div class="card-stars">
-                <% 5.times do  %>
+                <% sum = 0 %>
+                <%  lesson.teacher.reviews.each do |review| %>
+                  <% sum += review.rating %>
+                <% end %>
+                <%  rating = sum.fdiv(lesson.teacher.reviews.count).round%>
+                <% rating.times do  %>
                   <i class="fas fa-star"></i>
                 <% end %>
               </div>
