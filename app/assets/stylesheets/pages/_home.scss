@@ -74,7 +74,7 @@
    line-height: 70pt;
    overflow: hidden;
 }
-.scroller .inner { animation: 3s normal infinite running scroll; }
+.scroller .inner { animation: 4s normal infinite running scroll; }
 @keyframes scroll {
    0%   {margin-top: 0px;}
    40%  {margin-top: 0px;}
@@ -211,7 +211,7 @@
 // Cards
 .cards-container {
   padding: 15px;
-  margin: 35px;
+  margin-left: 60px;
 }
 // .row-title-maths {
 //   color: white;
@@ -244,3 +244,15 @@
   margin-right: 6px;
   margin-left: -23px;
 }
+
+
+.background-upcoming-cards {
+  background-color: #eaeaea;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.background-popular-cards {
+  background-color: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+

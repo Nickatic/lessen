@@ -27,8 +27,8 @@
 .card-body {
   height: 120px;
   position: relative;
-  background-color: #f9ebcc;
-  fill: #f9ebcc;
+  background-color: #f7edde;
+  fill: #f7edde;
 }
 
 .card-title-topic h4 {
@@ -51,6 +51,7 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 15px;
   }
   p {
     margin: 0;
@@ -67,18 +68,21 @@
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  background-color: #f9ebcc;
+  background-color: #f7edde;
 }
 
 .card-date {
   p {
     margin: 0;
     font-weight: bold;
+    font-size: 14px;
+    color: grey;
   }
   em {
     font-size: 12px;
+    color: grey;
   }
-  text-align: center;
+  text-align: right;
 }
 
 .professor-info {
@@ -105,4 +109,12 @@
 
 .card-stars {
   display: flex;
+}
+
+.card-review-profile {
+  background-color: white;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 15px;
 }

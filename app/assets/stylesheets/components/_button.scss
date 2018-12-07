@@ -1,9 +1,9 @@
 .btn-lessen {
   width: 200px;
   padding: 10px 15px;
-  border: 1.3px solid #001427;
+  border: 1.3px solid #8a3331;
   border-radius: 5px;
-  color: #001427;
+  color: #8a3331;
 }
 
 .btn-lessen:hover {
@@ -11,6 +11,7 @@ opacity: 1;
 background-color: #8a3331;
 color: white;
 text-decoration: none;
+border: none;
 }
 
 #btn-lessen-search {
@@ -56,8 +57,8 @@ text-decoration: none;
   text-align: center;
 }
 .button-my-classes:hover {
-  color: white;
-  background: #c9866c;
+  color: #8a3331;
+  background: white;
   text-decoration: none;
   border-style: none;
 }
