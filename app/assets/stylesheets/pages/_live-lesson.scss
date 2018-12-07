@@ -2,6 +2,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
+    // margin-top: 35px;
 }
 .livevideo    {
     width: 70%;
@@ -99,4 +100,26 @@ textarea.form-control {
 .current-lesson-infos {
   display: flex;
   justify-content: flex-end;
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #3d588e;
+}
+
+.show-lesson-live {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 237px 0 64px;
+}
+.show-lesson-live h1 {
+  color: #8A3231;
+  text-size: bold;
+}
+
+.nombres-participants-live {
+  font-size: 24px;
+  margin-top: 37px;
+  font-family: 'Raleway', medium;
+  color: #3d588e;
+
 }
