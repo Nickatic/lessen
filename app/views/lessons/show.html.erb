@@ -30,14 +30,14 @@
   <div class="second-column">
     <div class="price text-center review-container">
       <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
-        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user.round(1)%>€</h4>
+        <h4 class="price-box"><strong>Prix: </strong><%=@lesson.price_per_user.round(1)%>€</h4>
         <div class="btn-position">
-          <%= link_to "Join Live", lesson_live_path(@lesson), class: "btn-lessen"%>
+          <%= link_to "Rejoindre le Live", lesson_live_path(@lesson), class: "btn-lessen"%>
         </div>
       <% else %>
         <h4 class="price-box"><strong>Price now: </strong><%=@lesson.next_price_per_user.round%>€</h4>
         <div class="btn-position">
-          <%= link_to "Sign up for a class", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
+          <%= link_to "Rejoindre un cours", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
 
         </div>
       <% end %>
