@@ -41,7 +41,7 @@
 
         </div>
       <% end %>
-    </div>  
+    </div>
     <div class="card-review-profile">
       <div class="card-profile">
         <h3>Le professeur</h3>
@@ -75,16 +75,19 @@
     </div>
   </div>
 </div>
-<div class="background-related-cards">
-  <div class="card-container-show">
-    <h3 class="title-sur">Sur le même sujet</h3>
-    <div class="row">
-      <% @related_lessons.each do |lesson| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= render 'shared/card', lesson: lesson %>
-        </div>
-      <% end %>
+<% if @related_lessons.count > 0 %>
+  <div class="background-related-cards">
+    <div class="card-container-show">
+      <h3 class="title-sur">Sur le même sujet</h3>
+      <div class="row">
+        <% @related_lessons.each do |lesson| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <%= render 'shared/card', lesson: lesson %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+
+<% end %>
 
