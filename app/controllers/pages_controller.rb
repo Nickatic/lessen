@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @lessons = Lesson.all.where.not(teacher: current_user)
+    @lessons = Lesson.all
     @upcoming_lessons = Lesson.where(date: Date.today).select do |lesson|
       lesson.starts_at.split(":")[0].to_i >= Time.now.hour
     end
