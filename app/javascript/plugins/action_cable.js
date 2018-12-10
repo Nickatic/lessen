@@ -23,10 +23,11 @@ const initChannel = () => {
 }
 
 const scrollLastMessageIntoView = () => {
-  const messages = document.querySelectorAll(".message-content");
+  const messages = document.querySelectorAll(".message");
   const lastMessage = messages[messages.length - 1];
   if (lastMessage !== undefined) {
-    lastMessage.scrollIntoView();
+    lastMessage.parentNode.scrollTop = lastMessage.offsetTop - lastMessage.parentNode.offsetTop;
+    // lastMessage.scrollIntoView();
   }
 }
 

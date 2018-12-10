@@ -15,14 +15,20 @@
   <div class="row">
     <% is_none = true %>
     <%current_user.participations.each do |participation|%>
-      <% if Date.today ==  participation.lesson.date %>
-        <% if participation.lesson.starts_at.split(":")[0].to_i >= Time.now.hour %>
+      <% if Date.today <= participation.lesson.date %>
+        <% if Date.today ==  participation.lesson.date %>
+          <% if participation.lesson.starts_at.split(":")[0].to_i >= Time.now.hour %>
+            <%= render "shared/card", lesson: participation.lesson %>
+            <% is_none = false %>
+          <% end %>
+        <% else %>
           <%= render "shared/card", lesson: participation.lesson %>
           <% is_none = false %>
         <% end %>
       <% else %>
         <%= render "shared/participation-lesson-class", lesson: participation.lesson, participation: participation %>
         <% is_none = false %>
+
       <% end %>
     <% end %>
     <% if  is_none %>
@@ -44,7 +50,7 @@
     <%current_user.participations.each do |participation|%>
       <% if Date.today > participation.lesson.date %>
         <div class="cards-without-carousel">
-          <%= render "shared/participation-lesson-class", lesson: participation.lesson %>
+          <%= render "shared/card", lesson: participation.lesson %>
         </div>
         <% is_none = false %>
       <% end %>

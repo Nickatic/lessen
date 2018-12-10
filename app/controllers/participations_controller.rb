@@ -1,8 +1,4 @@
 class ParticipationsController < ApplicationController
-  def index
-    @participations = Participation.all
-  end
-
   def create
     @participation = Participation.new
     @lesson = Lesson.find(params[:lesson_id])
@@ -16,13 +12,10 @@ class ParticipationsController < ApplicationController
     end
   end
 
-  def destroy
-    @participation = Participation.find(params[:id])
-    # @lesson = Lesson.find(params[:lesson_id])
-    # @participation.lesson = @lesson
-    # @participation.user = current_user
-    @participation.destroy
+  # def destroy
+  #   @participation = Participation.find(params[:id])
+  #   @participation.destroy
 
-    redirect_to participations_path
-  end
+  #   redirect_to participations_path
+  # end
 end
