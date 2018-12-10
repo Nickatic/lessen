@@ -110,9 +110,24 @@ border-bottom:1px solid grey;
   margin-bottom: 20px;
 }
 
+.teacher-title {
+  display: flex;
+  align-items: center;
+}
+// .card-container-show h4 {
+//   background-color: #EA8C55;
+//   border-style: outset;
+//   color: white;
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   padding-left: 10px;
+// }
+
+
 .card-container-show {
 padding-top: 30px;
 }
+
 
 .background-related-cards {
   margin-top: 30px;
