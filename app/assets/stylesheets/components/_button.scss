@@ -7,12 +7,25 @@
 }
 
 .btn-lessen:hover {
-opacity: 1;
-background-color: #8a3331;
-color: white;
-text-decoration: none;
+  opacity: 1;
+  background-color: #8a3331;
+  color: white;
+  text-decoration: none;
 }
 
+.btn-end {
+  border: 1.3px solid #AA140C;
+  width: 200px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #AA140C;
+  &:hover {
+    background-color: #AA140C;
+    color: white;
+
+  }
+
+}
 #btn-lessen-search {
   width: 200px;
   height: 57px;

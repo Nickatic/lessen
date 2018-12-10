@@ -2,17 +2,11 @@ class ReviewsController < ApplicationController
   def create
     @lesson = Lesson.find(params[:lesson_id])
     @review = Review.new(review_params)
-    @review.lesson = @lesson
+    @review.user = @lesson.teacher
     if @review.save
-      respond_to do |format|
-        format.html { redirect_to lesson_path(@lesson) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
+      redirect_to participations_path(@lesson)
     else
-      respond_to do |format|
-        format.html { render 'lessons/index' }
-        format.js  # <-- idem
-      end
+      render 'lessons/live'
     end
   end
 

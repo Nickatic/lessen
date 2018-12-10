@@ -15,7 +15,6 @@ import { submitChatForm } from '../components/submitChatForm';
 import { initFormRefresh } from '../components/sort_by';
 
 
-
 initUpdateNavbarOnScroll();
 initChannel();
 scrollLastMessageIntoView();
@@ -25,3 +24,4 @@ initFormRefresh()
 import { carouselIndex } from '../components/carousel-participations-index.js';
 
 carouselIndex();
+

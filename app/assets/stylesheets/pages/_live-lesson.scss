@@ -1,3 +1,29 @@
+.live-head {
+  height: 100px;
+  margin: 0 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.container-modal {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  .modal-content {
+    width: 100%;
+    .modal-title {
+      display: inline;
+    }
+  }
+}
+
+.modal-review-content {
+  border: 1px solid lightgrey !important;
+}
+
 .main-live {
     display:flex;
     justify-content:space-between;
@@ -58,7 +84,7 @@
   font-size: 15px;
   padding: 20px;
   border: 1px solid #ececec;
-  border-top: none;
+
   border-bottom-width: 0;
   height: 80%;
   overflow: scroll;
