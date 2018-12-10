@@ -40,16 +40,15 @@
 }
 
 .live-info{
-      color: black;
+      color: #803834;
       margin-top: 10px;
       margin-bottom: 20px;
-      width: 200px;
-      height: 120px;
-      padding-top: 20px;
+      margin-left: 200px;
+      width: 138px;
+      height: 86px;
        background-color: white;
        border: 5px solid white;
        border-radius: 2px;
-       color: black;
        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   h4{
   font-size:20px;
@@ -181,4 +180,8 @@
   font-family: 'Raleway', medium;
   color: #3d588e;
 
+}
+
+.live-card-profile {
+  margin-top: 40px;
 }
