@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :lessons, only: [:index, :show, :new, :create] do
     get 'live', to: 'lessons#live'
-    resources :participations, only: :create
+    resources :participations, only:[:create, :destroy]
 
     resources :reviews, only: [:new, :create]
 
