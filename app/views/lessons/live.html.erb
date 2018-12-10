@@ -1,13 +1,16 @@
 <!-- Don't delete this line ! 👇 -->
 <div id="chat_lesson" data-lesson-id="<%= @lesson.id %>" data-current-id="<%= current_user.id %>"></div>
 <!-- Don't delete this line ! ☝️ -->
+<div class="live-head">
+
+</div>
 <div class="main-live">
 
 
   <div class="livevideo">
     <iframe width="100%" height="100%" src="https://player.twitch.tv/?channel=nickatic" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="current-lesson-infos">
-      <h4>Prix par élèves : <%= @lesson.price_per_user.round(2) %> €</h4>
+      <h4>Prix par élève : <%= @lesson.price_per_user.round(2) %> €</h4>
     </div>
 
   </div>
