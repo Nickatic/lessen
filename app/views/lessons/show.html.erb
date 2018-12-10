@@ -42,9 +42,16 @@
           <%= link_to "Rejoindre le Live", lesson_live_path(@lesson), class: "btn-lessen"%>
         </div>
       <% else %>
-        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.next_price_per_user.round%>€</h4>
+        <div class="price-box">
+          <div class="live-price">
+            <h4> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i> /<i class="fas fa-xs fa-user"></i> </h4>
+          </div>
+          <div class="participants-live">
+            <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
+          </div>
+        </div>
         <div class="btn-position">
-          <%= link_to "Rejoindre un cours", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
+          <%= link_to "S'inscrire", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
 
         </div>
       <% end %>
