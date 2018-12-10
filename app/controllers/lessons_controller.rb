@@ -23,6 +23,7 @@ class LessonsController < ApplicationController
         @range_date = query[:range_date]
         @min_date = @range_date.split(" to ")[0]
         @max_date = @range_date.split(" to ")[1]
+        raise
         if @min_date.present?
           @lessons = @lessons.where("date >= ?", Date.strptime(@min_date, "%Y-%m-%d"))
         end
