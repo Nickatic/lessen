@@ -15,12 +15,15 @@
 
 .button-delete-participation {
  position: absolute;
-  top: -20px;
+  top: -18px;
   left: -9px;
   font-size: 16px;
-  background-color: red;
+  background-color: lightgrey;
   color: white !important;
-  padding: 6px;
+  padding: 3px;
+  height: 25px;
+  width: 25px;
+  text-align: center;
   border-radius: 60%;
 }
 
