@@ -16,7 +16,7 @@
     <% is_none = true %>
     <%current_user.participations.each do |participation|%>
       <% if Date.today <= participation.lesson.date %>
-        <%= render "shared/card", lesson: participation.lesson %>
+        <%= render "shared/participation-lesson-class", lesson: participation.lesson, participation: participation %>
         <% is_none = false %>
       <% end %>
     <% end %>
@@ -39,7 +39,7 @@
     <%current_user.participations.each do |participation|%>
       <% if Date.today > participation.lesson.date %>
         <div class="cards-without-carousel">
-          <%= render "shared/card", lesson: participation.lesson %>
+          <%= render "shared/participation-lesson-class", lesson: participation.lesson %>
         </div>
         <% is_none = false %>
       <% end %>
