@@ -1,7 +1,7 @@
 <div class="cards-container">
   <div class="row welcome-my-lessons">
     <h2><strong>Bienvenue <%=current_user.first_name%> !</strong></h2>
-    <em class="welcome-welldone" style="color: #8A3231;">Bravo - tu as participé à <%=current_user.participations.count %> leçons!</em>
+    <em class="welcome-welldone" style="color: #8A3231;">Bravo - tu t'es inscrit à <%=current_user.participations.count %> leçons!</em>
   </div>
   <br>
 
@@ -16,8 +16,15 @@
     <% is_none = true %>
     <%current_user.participations.each do |participation|%>
       <% if Date.today <= participation.lesson.date %>
-        <%= render "shared/card", lesson: participation.lesson %>
-        <% is_none = false %>
+        <% if Date.today ==  participation.lesson.date %>
+          <% if participation.lesson.starts_at.split(":")[0].to_i >= Time.now.hour %>
+            <%= render "shared/card", lesson: participation.lesson %>
+            <% is_none = false %>
+          <% end %>
+        <% else %>
+          <%= render "shared/card", lesson: participation.lesson %>
+          <% is_none = false %>
+        <% end %>
       <% end %>
     <% end %>
     <% if  is_none %>
@@ -48,11 +55,21 @@
     <div class="carousel-index">
       <%current_user.participations.each do |participation|%>
        <!--  <% lesson = participation.lesson %> -->
-        <% if Date.today > participation.lesson.date %>
-          <div class="cards-without-carousel">
-            <%= render "shared/card", lesson: participation.lesson %>
-          </div>
-          <% is_none = false %>
+        <% if Date.today >= participation.lesson.date %>
+          <% if Date.today ==  participation.lesson.date %>
+            <% if participation.lesson.starts_at.split(":")[0].to_i < Time.now.hour %>
+              <div class="cards-without-carousel">
+                <%= render "shared/card", lesson: participation.lesson %>
+              </div>
+              <% is_none = false %>
+            <% end %>
+          <% else %>
+            <div class="cards-without-carousel">
+              <%= render "shared/card", lesson: participation.lesson %>
+            </div>
+            <% is_none = false %>
+          <% end %>
+
         <% end %>
       <% end %>
     </div>
