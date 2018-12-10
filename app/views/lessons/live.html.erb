@@ -1,8 +1,38 @@
 <!-- Don't delete this line ! 👇 -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="container-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Donne ton avis sur le professeur</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for Review.new, url: lesson_reviews_path(@lesson) do |f| %>
+            <%= f.input :rating, label: "Note", required: false %>
+            <%= f.input :content, label: "Commentaire", required: false, input_html: { class: "modal-review-content"} %>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit  "Valider", class: "btn-lessen"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="chat_lesson" data-lesson-id="<%= @lesson.id %>" data-current-id="<%= current_user.id %>"></div>
 <!-- Don't delete this line ! ☝️ -->
 <div class="live-head">
-
+  <!-- <progress  value="0" max="60"></progress> -->
+  <button type="button" class="btn-end" data-toggle="modal" data-target="#exampleModalCenter">
+  Quitter la leçon
+</button>
 </div>
 <div class="main-live">
 
