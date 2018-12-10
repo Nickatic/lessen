@@ -9,13 +9,11 @@
     <div class="current-lesson-infos">
       <h4>Prix par élèves : <%= @lesson.price_per_user.round(2) %> €</h4>
     </div>
-
   </div>
 
 
 
   <div class="chat">
-
     <!-- <div class="chat-header"><h4><#%= @lesson.name %> chatroom</h4></div> -->
     <div class="messages">
       <% @lesson.messages.each do |message| %>
@@ -24,41 +22,42 @@
     </div>
     <div id="create-message">
       <%= simple_form_for [ @lesson, Message.new ], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Type a message..." %>
+      <%= f.input :content, label: false, placeholder: "Type here" %>
       <%= f.submit "Add message", class: "btn btn-blue", id: "chat-btn" %>
       <% end %>
-    </div>
-    <div class="nombres-participants-live"
-      <h4>Elèves : <%= @lesson.participations.count %></h4>
     </div>
   </div>
 
 </div>
 
+
+<div class="nombres-participants-live">
+  <h4>Elèves : <%= @lesson.participations.count %></h4>
+</div>
  <div class="show-lesson-live">
    <div class="first-column">
      <h1><%=@lesson.name%></h1>
      <h4><strong><%=@lesson.subtopic%></strong> </h4>
      <h4><%=@lesson.topic%></h4>
      <h6><em><%= @lesson.duration%> minutes</em></h6>
-     <div class="box-description">
-     <h4>A propos du cours</h4>
-     <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique.</p>
-     <h1 class="lign-a"></h1>
-     <div class="bordure"></div>
-     <h1 class="lign-a"></h1>
-     <h4>Compétences dans cette classe</h4>
-     <p>
-     L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
-     </p>
-     <h1 class="lign-a"></h1>
-     <div class="bordure"></div>
-     <h1 class="lign-a"></h1>
-     <h4>Objectifs</h4>
-     <p>1. Formules de multiplication des arcs</p>
-     <p>2. Identité remarquable</p>
-     <p>3. Fonctions trigonométriques</p>
-     </div>
+       <div class="box-description">
+         <h4>A propos du cours</h4>
+         <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique.</p>
+         <h1 class="lign-a"></h1>
+         <div class="bordure"></div>
+         <h1 class="lign-a"></h1>
+         <h4>Compétences dans cette classe</h4>
+         <p>
+         L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
+         </p>
+         <h1 class="lign-a"></h1>
+         <div class="bordure"></div>
+         <h1 class="lign-a"></h1>
+         <h4>Objectifs</h4>
+         <p>1. Formules de multiplication des arcs</p>
+         <p>2. Identité remarquable</p>
+         <p>3. Fonctions trigonométriques</p>
+       </div>
 
    </div>
    <div class="second-column">
@@ -82,7 +81,5 @@
          </div>
        <% end %>
      </div>
-
-
    </div>
  </div>
