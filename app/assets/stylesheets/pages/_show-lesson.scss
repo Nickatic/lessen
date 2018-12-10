@@ -2,10 +2,15 @@
 .container-showlessons {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-right: 230px;
-  margin-left: 230px;
+  margin: 50px 150px 0 150px;
+
+}
+.first-column {
+  width: 55%;
+}
+
+.card-container-show {
+  margin: 0 200px;
 }
 
 .second-column {
@@ -14,31 +19,36 @@
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  margin-left: 40px;
+}
+
+.title-sur {
+  display: flex;
+  justify-content: center;
 }
 
 //content design
-.first-column {
-  width: 40%;
-  text-align: justify;
-}
 
 .box-description {
   padding-top: 10px;
 }
 
 .price {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+  padding-left: 59px;
   .price-box {
-    background-color: #ed756f;
+    background-color: white;
     width: 200px;
     padding: 20px 25px;
-    border: 1.2px solid #ed756f;
+    margin-bottom: 25px;
+    border: 5px solid white;
     border-radius: 2px;
-    color: white;
+    color: black;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
 }
+
+
 
 .lign-a .h1 {
     letter-spacing: 3px;
@@ -56,7 +66,8 @@ border-bottom:1px solid grey;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  margin-right: 64px;
 
 }
 
@@ -66,8 +77,8 @@ border-bottom:1px solid grey;
   padding-top: 20px;
   .container-related {
     padding-bottom: 40px;
-    margin-right: 230px;
-    margin-left: 230px;
+    margin-right: 160px;
+    margin-left: 160px;
       .container-box {
       padding-top: 20px;
       display: flex;
@@ -77,3 +88,50 @@ border-bottom:1px solid grey;
   }
 }
 
+.review-box {
+  overflow: scroll;
+  justify-content: center;
+  font-size: 14px;
+  color: grey;
+}
+
+.related-lesson-card {
+  margin: 10px;
+}
+.inline {
+  display: inline
+}
+
+.margin-left-20 {
+  margin-left: 20px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.teacher-title {
+  display: flex;
+  align-items: center;
+}
+// .card-container-show h4 {
+//   background-color: #EA8C55;
+//   border-style: outset;
+//   color: white;
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   padding-left: 10px;
+// }
+
+
+.card-container-show {
+padding-top: 30px;
+}
+
+
+.background-related-cards {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  background-color: #eaeaea;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}

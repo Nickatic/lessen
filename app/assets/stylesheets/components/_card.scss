@@ -1,92 +1,120 @@
 
 
 .lesson-card {
-  height: 380px;
-  width: 270px;
-  // text-shadow: 0 1px 1px rgba(0,0,0,0.6);
-
-  background-color: #FFE8D1;
-  background-position: center;
-  color: #001427;
-  position: relative;
+  height: 390px;
+  width: 280px;
+  color: rgb(30, 30, 30);
   margin-bottom: 30px;
   margin-top: 30px;
+  box-shadow: 3px 3px 5px lightgrey;
+  h4, h5 {
+    margin: 5px;
+  }
+  position: relative;
+  margin-right: 4px;
+  margin-left: 4px;
 }
-.card-professor {
-  position: absolute;
-  right: 10px;
-  height: 50px;
-  top: 10px;
-  width: 50px;
-  border-radius: 50%;
+
+.card-header {
+  height: 190px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
 }
-.card-subject {
-  position: absolute;
-  top: 15px;
-  left: 18px;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #001427;
+
+
+.card-body {
+  height: 120px;
+  position: relative;
+  background-color: #f7edde;
+  fill: #f7edde;
 }
+
+.card-title-topic h4 {
+  display: inline-block;
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+
+
 .card-lesson-info {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  padding: 15px 15px;
   text-align: right;
-  margin-right: 15px;
+  top: -18px;
+  h2 {
+    text-align: right;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  p {
+    margin: 0;
+    font-size: 13px;
+  }
 }
-.card-lesson-info h2 {
-  font-size: 20px;
-  color: #001427;
-  font-weight: bold;
+.card-position-triangle {
+  position: absolute;
+  top: -80px
 }
-.card-lesson-info p {
-  font-size: 12px;
-  opacity: 0.9;
-  font-weight: lighter;
-  color: #001427;
+
+.card-footer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #f7edde;
 }
+
+.card-date {
+  p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: grey;
+  }
+  em {
+    font-size: 12px;
+    color: grey;
+  }
+  text-align: right;
+}
+
+.professor-info {
+  height: 50px;
+  margin-left: 15px;
+  p {
+    margin: 0;
+  }
+}
+
 .card-link {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 1000;
   background: black;
   opacity: 0;
 }
 .card-link:hover {
-  opacity: 0.1;
+  opacity: 0.02;
 }
 
-
-.card-top-half {
-  height: 220px;
-  width: 270px;
-  overflow: hidden;
-  background-position: center;
-  background-size: cover !important;
-}
-
-
-.card-triangle {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-.card-position-triangle {
+.card-stars {
   display: flex;
-  position: relative;
-  height: 100%;
 }
 
-.card-profile {
+.card-review-profile {
   background-color: white;
-  margin-top: 100px;
-  padding: 30px;
   padding-top: 10px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 15px;
 }

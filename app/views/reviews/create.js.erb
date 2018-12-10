@@ -1,0 +1,17 @@
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const reviews = document.getElementById('reviews_list');
+  reviews.innerHTML = reviewHTML;
+}
+
+<% if @review.errors.any? %>
+  refreshForm('<%= j render "reviews/form", lesson: @lesson, review: @review %>');
+<% else %>
+  addReview('<%= j render "reviews/index", reviews: @lesson.reviews.order(created_at: :desc) %>');
+  refreshForm('<%= j render "reviews/form", lesson: @lesson, review: Review.new %>');
+<% end %>
+

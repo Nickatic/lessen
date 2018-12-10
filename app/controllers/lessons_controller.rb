@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   def index
+
     query = params[:query]
     @lessons = Lesson.all
 
@@ -41,17 +42,27 @@ class LessonsController < ApplicationController
           lesson.starts_at.split(":")[0].to_i <= query[:max_time].to_i
         end
       end
-      # if query[:min_time].present?
-      #   @lessons = @lessons.where("starts_at >= ? ", Date.strptime(query[:min_time], "%H:%M"))
-      # end
-      # if query[:max_time].present?
-      #   @lessons = @lessons.where("starts_at <= ? ", Date.strptime(query[:max_time], "%H:%M"))
-      # end
+      @lessons = @lessons.sort_by { |lesson| lesson.next_price_per_user}
+
+      if query[:sort_by] == "note"
+        @lessons = @lessons.sort_by do |lesson|
+          sum = 0
+          lesson.teacher.reviews.each do |review|
+            sum += review.rating
+          end
+          sum.fdiv(lesson.teacher.reviews.count)
+        end
+        @lessons = @lessons.reverse
+      elsif query[:sort_by] == "prix"
+        @lessons = @lessons.sort_by { |lesson| lesson.next_price_per_user}
+      end
     end
+
   end
 
   def show
     @lesson = Lesson.find(params[:id])
+    @related_lessons = Lesson.where(subtopic: @lesson.subtopic).where.not(id: @lesson.id)
   end
 
   def new

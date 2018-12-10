@@ -1,62 +1,90 @@
 <div class="container-showlessons">
   <div class="first-column">
     <h1><%=@lesson.name%></h1>
-    <h4><%=@lesson.subtopic%></h4>
+    <h4><strong><%=@lesson.subtopic%></strong> </h4>
     <h4><%=@lesson.topic%></h4>
     <h6><em><%= @lesson.duration%> minutes</em></h6>
     <div class="box-description">
-    <h4>About this class</h4>
+    <h4>A propos du cours</h4>
     <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique.</p>
     <h1 class="lign-a"></h1>
     <div class="bordure"></div>
     <h1 class="lign-a"></h1>
-    <h4>Skills in this class</h4>
+    <h4>Compétences dans cette classe</h4>
     <p>
     L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
     </p>
     <h1 class="lign-a"></h1>
     <div class="bordure"></div>
     <h1 class="lign-a"></h1>
-    <h4>Objectives</h4>
+    <h4>Objectifs</h4>
     <p>1. Formules de multiplication des arcs</p>
     <p>2. Identité remarquable</p>
     <p>3. Fonctions trigonométriques</p>
+    <p>4. Formules de multiplication des arcs</p>
+    <p>5. Identité remarquable</p>
+    <p>6. Fonctions trigonométriques</p>
     </div>
+
   </div>
   <div class="second-column">
-      <div class="price text-center">
-        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.price_per_user%>€</h4>
+    <div class="price text-center review-container">
+      <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
+        <h4 class="price-box"><strong>Prix: </strong><%=@lesson.price_per_user.round(1)%>€</h4>
         <div class="btn-position">
-          <%= link_to "Sign up for a class", lesson_live_path(@lesson), class: "btn-lessen" %>
+          <%= link_to "Rejoindre le Live", lesson_live_path(@lesson), class: "btn-lessen"%>
         </div>
-      </div>
+      <% else %>
+        <h4 class="price-box"><strong>Price now: </strong><%=@lesson.next_price_per_user.round%>€</h4>
+        <div class="btn-position">
+          <%= link_to "Rejoindre un cours", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
+
+        </div>
+      <% end %>
+    </div>  
+    <div class="card-review-profile">
       <div class="card-profile">
-    <h3>The teacher</h3>
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-    <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
-    <h6><em><%=%> number of classes given</em></h6>
-    <p>I’m a math teacher and absolutely love sharing my knowledge. My specialties are in trigonometry, probabilities and functions. I hope you enjoy these 45 minutes with me :) </p>
-    <h1 class="lign-a"></h1>
-    <h1 class="lign-a"></h1>
-    <%= link_to "See the profile", "#",  class:"text-space-profile" %>
+        <h3>Le professeur</h3>
+        <div class="teacher-title">
+          <% if @lesson.teacher.photo_user.present? %>
+            <%= cl_image_tag(@lesson.teacher.photo_user, class: "avatar-large") %>
+          <% else %>
+            <%= cl_image_tag(image_path("user-default.jpg"), class: "avatar-large") %>
+          <% end %>
+          <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
+        </div>
+        <p>I’m a teacher and absolutely love sharing my knowledge. I hope you enjoy these 45 minutes with me :) </p>
+        <h1 class="lign-a"></h1>
+        <h1 class="lign-a"></h1>
+        <%= link_to "Voir le profil", user_path(@lesson.teacher),  class:"text-space-profile" %>
+          <h1 class="lign-a"></h1>
+          <div class="bordure"></div>
+          <h1 class="lign-a"></h1>
+        <h4>Avis sur ce professeur:</h4>
+      </div>
+      <div class="review-box" id="reviews_list">
+        <% if @lesson.teacher.reviews.blank? %>
+          <strong>Pas d'avis d'élèves pour ce professeur</strong>
+        <% else %>
+          <div id="reviews_list">
+            <%= render 'reviews/index', reviews: @lesson.teacher.reviews.order(created_at: :desc) %>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="background-related-cards">
+  <div class="card-container-show">
+    <h3 class="title-sur">Sur le même sujet</h3>
+    <div class="row">
+      <% @related_lessons.each do |lesson| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= render 'shared/card', lesson: lesson %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-<div class="background-related">
-  <div class="container-related">
-    <h4>Related classes</h4>
-    <div class="container-box">
-
-      <div class="card-related">
-        ohlala
-      </div>
-      <div class="card-related">
-        ohmagad
-      </div>
-      <div class="card-related">
-        salut
-      </div>
-    </div>
-  </div>
-</div>

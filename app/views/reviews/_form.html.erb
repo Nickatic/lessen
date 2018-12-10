@@ -1,0 +1,7 @@
+<div class="reviews-form">
+  <%= simple_form_for([ lesson, review ], remote: true) do |form| %>
+    <%= form.input :content, as: :text, placeholder: 'What did you think of your class?' %>
+    <%= form.input :rating, as: :integer, placeholder: 'Enter a number out of 5' %>
+    <%= form.button :submit, html:{ class: "form-btn" } %>
+  <% end %>
+</div>
