@@ -25,6 +25,10 @@
           <%= render "shared/card", lesson: participation.lesson %>
           <% is_none = false %>
         <% end %>
+      <% else %>
+        <%= render "shared/participation-lesson-class", lesson: participation.lesson, participation: participation %>
+        <% is_none = false %>
+
       <% end %>
     <% end %>
     <% if  is_none %>
