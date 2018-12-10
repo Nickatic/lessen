@@ -1,14 +1,11 @@
-<!-- Don't delete this line ! 👇 -->
-<div id="chat_lesson" data-lesson-id="<%= @lesson.id %>" data-current-id="<%= current_user.id %>"></div>
-<!-- Don't delete this line ! ☝️ -->
+
+
 <div class="main-live">
+
 
 
   <div class="livevideo">
     <iframe width="100%" height="100%" src="https://player.twitch.tv/?channel=nickatic" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <div class="current-lesson-infos">
-      <h4>Prix par élèves : <%= @lesson.price_per_user.round(2) %> €</h4>
-    </div>
   </div>
 
 
@@ -31,9 +28,6 @@
 </div>
 
 
-<div class="nombres-participants-live">
-  <h4>Elèves : <%= @lesson.participations.count %></h4>
-</div>
  <div class="show-lesson-live">
    <div class="first-column">
      <h1><%=@lesson.name%></h1>
@@ -61,7 +55,19 @@
 
    </div>
    <div class="second-column">
+    <div class="live-info">
+        <div class="live-price">
+          <h4> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i> / <i class="fas fa-xs fa-user"></i> </h4>
+        </div>
+        <div class="participants-live">
+          <h4><%= @lesson.participations.count %><i class="fas fa-users"></i> </h4>
+        </div>
+      </div>
+
      <div class="card-profile">
+
+
+
        <h3>Le professeur</h3>
        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
        <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>

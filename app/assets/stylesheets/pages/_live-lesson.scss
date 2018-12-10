@@ -6,16 +6,43 @@
 }
 .livevideo    {
     width: 70%;
-    height: 70vh;
+    height: 75vh;
     float: left;
     margin: 50px 30px;
 
 
 }
 
+.live-info{
+      color: black;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 200px;
+      height: 120px;
+      padding-top: 20px;
+       background-color: white;
+       border: 5px solid white;
+       border-radius: 2px;
+       color: black;
+       box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  h4{
+  font-size:20px;
+}
+ .participants-live{
+    text-align:center;
+  }
+  .live-price{
+    text-align:center;
+  }
+
+
+
+
+}
+
 .chat  {
     width: 30%;
-    height: 70vh;
+    height: 75vh;
     margin-right: 30px;
     border:1px solid lightgrey;
     border-radius:2px;
