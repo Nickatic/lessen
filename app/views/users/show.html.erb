@@ -1,23 +1,124 @@
-<div class="container-profile">
-  <div class="row">
-    <div class="avatar-photo text-center">
+<div class="background-top-teacher">
+  <div class="container-teacher">
+    <div class="avatar-photo text-center teacher-avatar">
       <% if @user.photo_user.present? %>
         <% avatar =  @user.photo_user%>
-        <% else %>
+      <% else %>
         <% avatar = image_path("user-default.jpg") %>
       <% end %>
       <%= cl_image_tag(avatar, class:"avatar-profile") %>
     </div>
-    <div class="text-center">
-    <h5>
-      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-    </h5>
-    <p><%= @user.email %></p>
-      <div class="button-profile-position">
-        <% if @user == current_user %>
-          <%= link_to "Edit profile", edit_user_path(@user), class:"btn-lessen" %>
+
+    <div class="text-center-teacher">
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <p class="email-teacher"><%= @user.email %></p>
+      <p>
+        <% sum = 0 %>
+        <%  @user.lessons.each do |lesson| %>
+          <% sum += lesson.participations.count %>
+        <% end %>
+        <%= sum %> cours effectués
+      </p>
+      <div class="avis-teacher">
+        <div class="card-stars">
+          <% sum = 0 %>
+          <%  @user.reviews.each do |review| %>
+            <% sum += review.rating %>
+          <% end %>
+          <%  rating = sum.fdiv(@user.reviews.count).round %>
+          <% rating.times do  %>
+            <i class="fas fa-star yellow"></i>
+          <% end %>
+        </div>
+        <div> (<% sum = 0 %>
+          <% @user.reviews.each do |review| %>
+            <% sum += review.rating %>
+          <% end %>
+          <%=sum%> avis )
+        </div>
+      </div>
+    </div>
+    <div class="right-part-top">
+      <div class="next-class">
+          <% is_none = true %>
+          <p style="color:#f37f7f"><strong>Prochain cours</strong>
+            </p>
+            <% upcoming_lessons = [] %>
+            <% @user.lessons.each do |lesson|%>
+              <% if Date.today <= lesson.date %>
+                <% upcoming_lessons << lesson %>
+                <% is_none = false %>
+              <% end %>
+            <% end %>
+              <% unless is_none %>
+                <% upcoming_lessons.sort_by {|lesson| lesson.date} %>
+                <%= date = upcoming_lessons.first.date.strftime("%A, %b %d") %> à <%= upcoming_lessons.first.starts_at %></p>
+                <div class="button-rejoindre-teacher">
+                  <div><%= link_to "Rejoindre ce cours", "#", method: :post, class: "btn-lessen" %></div>
+                </div>
+            <% end %>
+            </div>
+          <% if  is_none %>
+            <p>Pas de leçons à venir</p>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="info-teacher">
+  <div class="first-column-teacher">
+    <div class="background-matiere">
+      <h5><strong>Matières enseignées</strong></h5>
+      <div class="disposition-tag">
+        <% @user.lessons.pluck(:subtopic).uniq.each do |subtopic| %>
+          <div class="tag-word">
+            <p><%= subtopic %></p>
+          </div>
+        <% end %>
+      </div>
+      <h5><strong>Niveaux</strong></h5>
+      <div class="disposition-tag">
+        <% @user.lessons.pluck(:grade).uniq.each do |grade| %>
+          <div class="tag-word">
+            <p><%= grade %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="background-review">
+      <h5><strong>Parcours</strong></h5>
+      <p>Je donne des cours d'informatique depuis plus de trois ans.
+      J'ai déjà formé plusieurs dizaines d'élèves.
+      Ils ont soit réussi leurs examens soit satisfait leur curiosité lorsqu'il s'agissait de loisir. Mais dans tous les cas ils ont gagnés en autonomie informatique et c'est ce point qui est essentiel.</p>
+    </div>
+  </div>
+  <div class="second-column-teacher">
+    <div class="methodologie-card">
+      <h5><strong>Méthodologie</strong></h5>
+      <p>Vous souhaitez comprendre comment fonctionnent "cette matière" ? Vous êtes au bon endroit !</p>
+    </div>
+    <div class="parcours-card">
+      <h5><strong>A propos</strong></h5>
+      <p>Je suis une prof de fou, juste inscris-toi.</p>
+    </div>
+    <div class="review-teacher-card">
+      <h5><strong>Avis d'élèves</strong></h5>
+      <div class="review-box" id="reviews_list">
+        <% if @user.reviews.blank? %>
+          <strong>Pas d'avis d'élèves pour ce professeur</strong>
+        <% else %>
+          <div id="reviews_list">
+            <%= render 'reviews/index', reviews: @user.reviews.order(created_at: :desc) %>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+<div class="button-profile-position">
+  <% if @user == current_user %>
+    <%= link_to "Edit profile", edit_user_path(@user), class:"btn-lessen" %>
+  <% end %>
+</div>
+
