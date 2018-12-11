@@ -1,3 +1,31 @@
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="container-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalCenterTitle">Félicitations!</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body modal2body">
+          <h4>Tu t'es inscrite au cours</h4>
+          <h4>'<strong><%= @lesson.name %></strong>'</h4>
+          <p> Prix actuel: <%= @lesson.price_per_user.round(2) %></p>
+          <p> N'oublie pas de te reconnecter sur Lessen</p>
+          <p>le <strong><%= @lesson.date.to_s.split("-").reverse.join("/") %></strong> à <strong><%= @lesson.starts_at.split(":").join("H") %></strong>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="container-showlessons">
   <div class="first-column">
     <h1><%=@lesson.name%></h1>
@@ -51,8 +79,7 @@
           </div>
         </div>
         <div class="btn-position">
-          <%= link_to "S'inscrire", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
-
+          <button class="btn-lessen" data-toggle="modal", data-dismiss="modal" data-target="#exampleModalCenter2">S'inscrire</button>
         </div>
       <% end %>
     </div>
