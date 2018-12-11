@@ -1,12 +1,40 @@
+// Banner
+.lesson-banner {
+  text-align: center;
+  height: 30vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5
+) 50%), url(asset-path("1.jpg"));
+}
+
+.lesson-banner p {
+  padding-top: 10px;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color:white;
+  font-size: 30px;
+}
+
+
 //page layout
 .container-showlessons {
+  padding-top: 50px;
   display: flex;
   justify-content: space-between;
-  margin: 50px 150px 0 150px;
-
+  width: 70vw;
+  margin: 0 auto;
 }
+
 .first-column {
   width: 55%;
+  background-color: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  border-radius: 4px;
+  padding: 25px;
+  margin-bottom: 30px;
 }
 
 .card-container-show {
@@ -18,7 +46,6 @@
   width: 40%;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
   margin-left: 40px;
 }
 
@@ -36,21 +63,29 @@
   color: #8A3231;
 }
 .price {
-  margin-bottom: 60px;
-  padding-left: 59px;
+  margin-bottom: 50px;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
   .price-box {
-    background-color: white;
-    width: 200px;
     padding: 20px 25px;
-    margin-bottom: 25px;
     border: 5px solid white;
     border-radius: 2px;
     color: black;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
   }
 }
 
+.live-price-size h4 {
+  padding-top: 10px;
+  font-size: 45px;
+  color: #f37f7f;
+}
 
+.participants-live {
+  padding-top: 2px;
+  color: lightgrey;
+}
 
 .lign-a .h1 {
     letter-spacing: 3px;
@@ -69,7 +104,7 @@ border-bottom:1px solid grey;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  margin-right: 64px;
+  background-color: white;
 
 }
 

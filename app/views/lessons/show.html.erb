@@ -1,3 +1,4 @@
+
 <% content_for :meta_title, "#{@lesson.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @lesson.description %>
 <%# content_for :meta_image, cl_image_path(@lesson.photo.path) %>
@@ -28,6 +29,11 @@
         </div>
       </div>
     </div>
+    
+<div class="lesson-banner">
+  <div class="lesson-banner-content">
+    <%= image_tag("logo-lessen.png", height: 80) %>
+    <p>Découvres les cours de nos professeurs</p>
   </div>
 </div>
 
@@ -51,24 +57,28 @@
     <h6><em><%= @lesson.duration%> minutes</em></h6>
     <div class="box-description">
     <h4>A propos du cours</h4>
-    <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique.</p>
+    <p><%= @lesson.description %></p>
     <h1 class="lign-a"></h1>
     <div class="bordure"></div>
     <h1 class="lign-a"></h1>
     <h4>Compétences dans cette classe</h4>
-    <p>
-    L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
-    </p>
+    <div class="disposition-tag">
+      <% @lesson.skills.each do |skill| %>
+        <div class="tag-word">
+          <p><%= skill.name %></p>
+        </div>
+      <% end %>
+    </div>
     <h1 class="lign-a"></h1>
     <div class="bordure"></div>
     <h1 class="lign-a"></h1>
     <h4>Objectifs</h4>
-    <p>1. Formules de multiplication des arcs</p>
-    <p>2. Identité remarquable</p>
-    <p>3. Fonctions trigonométriques</p>
-    <p>4. Formules de multiplication des arcs</p>
-    <p>5. Identité remarquable</p>
-    <p>6. Fonctions trigonométriques</p>
+    <div class="disposition-tag">
+      <% @lesson.objectives.each do |objectif| %>
+        <div class="tag-word">
+          <p><%= objectif.name %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 
@@ -76,8 +86,8 @@
     <div class="price text-center review-container">
       <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
         <div class="price-box">
-                <div class="live-price">
-                  <h4> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i> /<i class="fas fa-xs fa-user"></i> </h4>
+                <div class="live-price-size">
+                  <h4 class="live-price-size"> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></i </h4>
                 </div>
                 <div class="participants-live">
                   <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
@@ -88,8 +98,8 @@
         </div>
       <% else %>
         <div class="price-box">
-          <div class="live-price">
-            <h4> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i> /<i class="fas fa-xs fa-user"></i> </h4>
+          <div class="live-price-size">
+            <h4 class="live-price-size"> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></h4>
           </div>
           <div class="participants-live">
             <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>

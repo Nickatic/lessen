@@ -22,7 +22,7 @@
 .search-date-time-index {
   display: flex;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 50px;
   height: 60px;
 }
 .search-input-index {
@@ -30,6 +30,8 @@
   border-radius: 5px;
   color: grey;
   background-color: white !important;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 
 .query_grade, .query_topic {
@@ -38,7 +40,9 @@
 }
 #query_min_time, #query_max_time {
   width: 40px;
-  margin: 10px;
+  margin: 10px 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 
 .query_keyword {
@@ -105,10 +109,8 @@ input.form-control {
 }
 
 .form-group {
-  margin-bottom: 0;
+  margin: 10px 0px;
 }
-
-
 
 .container-sort {
   margin-top: 20px;
@@ -122,4 +124,3 @@ input.form-control {
     right: 80px;
   }
 }
-

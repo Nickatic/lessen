@@ -1,12 +1,24 @@
-<div class="container-index  ">
-  <div class="row title">
-    <h2>Selectionne ton cours</h2>
+<div class="index-banner">
+  <div class="index-banner-content">
+    <%= image_tag("logo-lessen.png", height: 80) %>
+    <p>Selectionne ton cours</p>
   </div>
+</div>
+
+<div class="container-index  ">
   <div class="row entire-search-bar">
     <div class="col-xs-12 col-md-6">
       <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
         <div class="search-grade-topic-subtopic">
+<!--           <div>
+            <div>
+
+            </div>
+            <h3>CLASSE</h3>
+            <i class="fas fa-sort-down"></i>
+          </div> -->
         <%= f.input :grade, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "Choisi ta classe", required: false %>
+
         <%= f.input :topic, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "Choisi ta matière", required: false %>
         <%#= f.label :keyword, "Search by keyword" %>
         <% keyword = params[:query][:keyword] if params[:query].present? %>
