@@ -15,16 +15,25 @@
 
 .button-delete-participation {
  position: absolute;
-  top: -18px;
-  left: -9px;
-  font-size: 16px;
+  top: -12.5px;
+  right: -12.5px;
+  font-size: 20px;
   background-color: lightgrey;
   color: white !important;
   padding: 3px;
   height: 25px;
   width: 25px;
   text-align: center;
-  border-radius: 60%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: grey;
+    opacity: 0.5;
+    text-decoration: none;
+
+  }
 }
 
 .participation-card-triangle {

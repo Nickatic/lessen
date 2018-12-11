@@ -3,7 +3,7 @@
   margin: 0 30px;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .container-modal {
@@ -34,7 +34,7 @@
     width: 70%;
     height: 75vh;
     float: left;
-    margin: 50px 30px;
+    margin: 5px 30px;
 
 
 }
@@ -43,7 +43,7 @@
       color: #803834;
       margin-top: 10px;
       margin-bottom: 20px;
-      margin-left: 200px;
+      margin-left: -185px;
       width: 138px;
       height: 86px;
        background-color: white;
@@ -166,15 +166,8 @@
   color: #3d588e;
 }
 
-.show-lesson-live {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 237px 0 64px;
-}
-.show-lesson-live h1 {
-  color: #8A3231;
-  text-size: bold;
-}
+
+
 
 .nombres-participants-live {
   font-size: 24px;
@@ -186,4 +179,12 @@
 
 .live-card-profile {
   margin-top: 40px;
+}
+
+.modal2body {
+  text-align: center;
+}
+
+.modal-header {
+  text-align: center;
 }
