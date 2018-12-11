@@ -1,3 +1,10 @@
+<div class="lesson-banner">
+  <div class="lesson-banner-content">
+    <%= image_tag("logo-lessen.png", height: 80) %>
+    <p>Découvres les cours de nos professeurs</p>
+  </div>
+</div>
+
 <div class="container-showlessons">
   <div class="first-column">
     <h1><%=@lesson.name%></h1>
@@ -36,8 +43,8 @@
     <div class="price text-center review-container">
       <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
         <div class="price-box">
-                <div class="live-price">
-                  <h4> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i> /<i class="fas fa-xs fa-user"></i> </h4>
+                <div class="live-price-size">
+                  <h4 class="live-price-size"> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></i </h4>
                 </div>
                 <div class="participants-live">
                   <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
@@ -48,8 +55,8 @@
         </div>
       <% else %>
         <div class="price-box">
-          <div class="live-price">
-            <h4> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i> /<i class="fas fa-xs fa-user"></i> </h4>
+          <div class="live-price-size">
+            <h4 class="live-price-size"> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></h4>
           </div>
           <div class="participants-live">
             <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
