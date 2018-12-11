@@ -22,7 +22,6 @@
 .search-date-time-index {
   display: flex;
   align-items: center;
-  margin-left: 50px;
   height: 60px;
 }
 .search-input-index {
@@ -74,6 +73,9 @@
   width: 35%;
 }
 
+.form-group {
+  margin: 10px 0;
+}
 
 .search-group {
   padding-top: 8vh;
@@ -90,6 +92,11 @@
   }
 }
 
+.space-form {
+  margin: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
 
 input.form-control {
   background: white;
@@ -108,9 +115,6 @@ input.form-control {
     margin-left: -4px !important;
 }
 
-.form-group {
-  margin: 10px 0px;
-}
 
 .container-sort {
   margin-top: 20px;
@@ -121,6 +125,10 @@ input.form-control {
   .sort-by {
     width: 15%;
     position: absolute;
-    right: 80px;
+    right: 152px;
   }
+}
+
+.margin-10-0 {
+  margin: 10px 0 !important;
 }
