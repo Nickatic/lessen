@@ -59,7 +59,6 @@ class LessonsController < ApplicationController
         @lessons = @lessons.sort_by { |lesson| lesson.next_price_per_user}
       end
     end
-
   end
 
   def show
