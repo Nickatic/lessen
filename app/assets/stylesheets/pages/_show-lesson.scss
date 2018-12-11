@@ -1,12 +1,19 @@
 //page layout
 .container-showlessons {
+  padding-top: 50px;
   display: flex;
   justify-content: space-between;
-  margin: 50px 150px 0 150px;
-
+  width: 70vw;
+  margin: 0 auto;
 }
+
 .first-column {
   width: 55%;
+  background-color: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  border-radius: 4px;
+  padding: 25px;
+  margin-bottom: 30px;
 }
 
 .card-container-show {
@@ -44,7 +51,8 @@
     border: 5px solid white;
     border-radius: 2px;
     color: black;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+    border-radius: 4px;
   }
 }
 
