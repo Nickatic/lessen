@@ -14,7 +14,7 @@
         </div>
         <div class="modal-body">
           <%= simple_form_for Review.new, url: lesson_reviews_path(@lesson) do |f| %>
-            <%= f.input :rating, label: "Note", required: false %>
+            <%= f.input :rating, label: "Note", required: false, input_html: {id: 'star-id'} %>
             <%= f.input :content, label: "Commentaire", required: false, input_html: { class: "modal-review-content"} %>
 
         </div>
