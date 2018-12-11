@@ -7,7 +7,7 @@
     <div class="container-modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Donne ton avis sur le professeur</h5>
+          <h4 class="modal-title" id="exampleModalCenterTitle">Donne ton avis sur le professeur</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -19,18 +19,48 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= f.submit  "Valider", class: "btn-lessen"%>
+            <button type="button" class="btn btn-lessen" data-dismiss="modal" data-target="#exampleModalCenter2" data-toggle="modal">Valider</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="container-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalCenterTitle">Félicitations!</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body modal2body">
+         <h4>Tu as terminé ton cours</h4>
+         <h4>'<strong><%= @lesson.name %></strong>'</h4>
+         <p> Prix total: <%= @lesson.price %></p>
+          <p> Nombre d'élèves:<% @lesson.participations.each do |participation| %>
+            <%= participation.user_id %>
+            <% end %>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit  "Valider", class: "btn-lessen" %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 <div id="chat_lesson" data-lesson-id="<%= @lesson.id %>" data-current-id="<%= current_user.id %>"></div>
 <!-- Don't delete this line ! ☝️ -->
 <div class="live-head">
   <!-- <progress  value="0" max="60"></progress> -->
+
   <div class="live-info">
     <div class="live-price">
       <h4> <%= @lesson.price_per_user.round(2)  %> <i class="fas fa-euro-sign fa-xs"></i> / <i class="fas fa-xs fa-user"></i> </h4>
@@ -42,6 +72,9 @@
   <button type="button" class="btn-end" data-toggle="modal" data-target="#exampleModalCenter">
   Quitter la leçon
 </button>
+
+  <button type="button" class="btn-end" data-toggle="modal" data-target="#exampleModalCenter">Quitter la leçon</button>
+
 </div>
 
 <div class="main-live">
@@ -68,7 +101,6 @@
       <% end %>
     </div>
   </div>
-
 </div>
 
 
@@ -144,8 +176,7 @@
             <%= render 'reviews/index', reviews: @lesson.teacher.reviews.order(created_at: :desc) %>
           </div>
         <% end %>
-      </div>
-
-    </div>
+      <\div>
+    <\div>
   </div>
 </div>
