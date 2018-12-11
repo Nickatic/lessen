@@ -3,7 +3,7 @@
   margin: 0 30px;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .container-modal {
@@ -34,7 +34,7 @@
     width: 70%;
     height: 75vh;
     float: left;
-    margin: 50px 30px;
+    margin: 5px 30px;
 
 
 }
@@ -164,15 +164,8 @@
   color: #3d588e;
 }
 
-.show-lesson-live {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 237px 0 64px;
-}
-.show-lesson-live h1 {
-  color: #8A3231;
-  text-size: bold;
-}
+
+
 
 .nombres-participants-live {
   font-size: 24px;
