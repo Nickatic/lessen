@@ -35,7 +35,19 @@
   <div class="first-column">
     <h1><%=@lesson.name%></h1>
     <h4><strong><%=@lesson.subtopic%></strong> </h4>
-    <h4><%=@lesson.topic%></h4>
+    <div class="card-title-topic">
+      <% if @lesson.topic == "Français" %>
+        <h4 style="background-color: #EA8C55;"><%=@lesson.topic %></h4>
+      <% elsif @lesson.topic == "Mathématiques" %>
+        <h4 style="background-color: #c75146;"><%=@lesson.topic %></h4>
+      <% elsif @lesson.topic == "Physique-chimie" %>
+        <h4 style="background-color: #540804;" %><%=@lesson.topic %></h4>
+      <% elsif @lesson.topic == "SVT" %>
+        <h4 style="background-color: #32493E;" %><%=@lesson.topic %></h4>
+      <% elsif @lesson.topic == "Philosophie" %>
+        <h4 style="background-color: #3d588e;" %><%=@lesson.topic %></h4>
+      <% end %>
+    </div>
     <h6><em><%= @lesson.duration%> minutes</em></h6>
     <div class="box-description">
     <h4>A propos du cours</h4>
