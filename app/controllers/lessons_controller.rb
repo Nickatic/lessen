@@ -63,7 +63,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
-    @related_lessons = Lesson.where.not(teacher: current_user).where(subtopic: @lesson.subtopic).where.not(id: @lesson.id)
+    @related_lessons = Lesson.where.not(teacher: current_user).where(subtopic: @lesson.subtopic).where.not(id: @lesson.id).first(3)
   end
 
   def new
