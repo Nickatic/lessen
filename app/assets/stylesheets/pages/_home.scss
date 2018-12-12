@@ -146,108 +146,32 @@
   position: relative;
 }
 
-.text-icon p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 0px;
-  text-align: center;
-  font-size: 15px;
-  color: grey;
-  font-weight: bold;
-}
-
-.text-icon-one p {
-  padding-top: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 15px;
-  color: grey;
-  font-weight: bold;
-  // margin-left: -17px;
-  // margin-right: 70px;
-  height: 130px;
-  width: 150px;
-}
-
-.text-icon-two p {
-  padding-top: 11px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  font-size: 15px;
-  color: grey;
-  font-weight: bold;
-  // margin-left: 0px;
-  // margin-right: 50px;
-  height: 160px;
-  width: 160px;
-}
-
-.text-icon-three p {
-  padding-top: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 15px;
-  color: grey;
-  font-weight: bold;
-  // margin-left: 3px;
-  height: 140px;
-  width: 145px;
-}
-
-.text-icon-one {
-  margin-right: 31px;
-  text-align: center;
-}
-.text-icon-two {
-  text-align:center;
-  height: 230px;
-  width: 170px;
-  margin-right: 35px;
-  margin-left: 25px;
-}
-
-.text-icon-three  {
-  text-align: center;
-  margin-left: 30px;
-  margin-right: 35px;
-}
 
 // Cards
 .cards-container {
   padding: 15px;
   margin-left: 60px;
 }
-// .row-title-maths {
-//   color: white;
-//   text-size: bold;
-//   background-color: #c75146;
-//   border-style: outset;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   padding-top: 2px;
-//   padding-bottom: 2px;
-// }
 
-// .row-title-french {
-//   background-color: #EA8C55;
-//   border-style: outset;
-//   color: white;
-//   text-size: bold;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   padding-top: 2px;
-//   padding-bottom: 2px;
-// }
+.container-how-diagram {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
+  width: 616px;
+  margin-right: 40px;
+}
 
-.how-column {
-  height: 250px;
-  width: 430px;
+.bordure-how {
+  width: 470px;
+}
+
+.container-icon-text {
+  font-size: 16px;
+  height: 293px;
+  width: 627px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .lign-how-icon-text {
@@ -275,6 +199,69 @@
   background-color: white;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
+
+.image-student {
+  margin-right: 50px;
+}
+
+.icon-text {
+  width: 150px;
+
+  &:last-child .circle-how:after {
+    display: none;
+  }
+
+  &.active {
+    .circle-how {
+      opacity: 1;
+      &:after {
+        width: 186px;
+      }
+    }
+    .how-content {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+}
+
+.circle-how {
+  position: relative;
+  opacity: 0;
+  transition: opacity .5s ease;
+
+  &:after {
+    content: '';
+    position: absolute;
+    background: #8b312f;
+    width: 0px;
+    transition: all .5s ease;
+    height: 3px;
+    left: 61px;
+  }
+
+  &:last-child:after {
+    position: relative;
+  }
+
+}
+
+.how-content {
+  opacity: 0;
+  transition: all 1s ease;
+  margin-top: -20px;
+}
+
+
+// .text-icon-one {
+//     opacity: 0;
+//     transition: all ease .5s;
+// }
+
+// .text-icon-one.active {
+//     margin-top: 16px;
+//     opacity: 1;
+// }
 
 // .iamCol {
 //   text-align: right;

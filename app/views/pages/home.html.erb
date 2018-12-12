@@ -1,4 +1,5 @@
 <% content_for :navbar_id, "navbar_home" %>
+<div id="home-page"></div>
 <div class="lessen-banner">
   <div class="lessen-banner-content">
     <div class="titles-banner">
@@ -14,8 +15,8 @@
     </div>
     <div class="search-group">
     <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-home" }  do |f| %>
-      <%= f.input :grade, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "Choisi ta classe", required: false, wrapper_html: { class: "query_grade_home" } %>
-      <%= f.input :topic, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "Choisi ta matière", required: false, wrapper_html: { class: "query_topic_home" } %>
+      <%= f.input :grade, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "CLASSE", required: false, wrapper_html: { class: "query_grade_home" } %>
+      <%= f.input :topic, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "MATIÈRE", required: false, wrapper_html: { class: "query_topic_home" } %>
       <button type="submit" id="btn-lessen-search"> <i class=" fas fa-search"></i></button>
     <% end %>
     </div>
@@ -29,38 +30,34 @@
   <div class="row-how-first">
     <h2>Vos professeurs préférés, accessibles dans le monde entier</h2>
   </div>
-  <div class="row-how-second">
-    <div class="image-student"><%= image_tag("student1.svg", height: 350) %></div>
-    <div class="how-column">
 
-      <div class="lign-how-icon">
-        <div class="bordure-how"></div>
-        <div class="icon-first">
+  <div class="row-how-second">
+    <div class="image-student"><%= image_tag("student1.svg", height: 330) %></div>
+      <div class="container-how-diagram">
+        <div class="container-icon-text">
+        <div class="icon-text">
           <div class="circle-how"><%= image_tag("education.png", height: 80) %></div>
+            <div class="how-content">
+              <h5><strong>Recherche</strong></h5>
+              <p>ton cours préféré parmis nos centaines de leçons tous donné par des professeurs verifiés et diplomés</p>
+            </div>
         </div>
-        <div class="icon-second">
+        <div class="icon-text">
           <div class="circle-how"><%= image_tag("sign.png", height: 70) %></div>
+            <div class="how-content">
+              <h5><strong>Réserve</strong></h5>
+              <p>ta place à l'avance puis préviens tes amis pour qu'il puisse s'inscrire aussi. Le plus de participants, le moins tu paies!</p>
+            </div>
         </div>
-        <div class="icon-third">
+        <div class="icon-text">
           <div class="circle-how"><%= image_tag("record.png", height: 60) %></div>
+            <div class="how-content">
+              <h5><strong>Rejoins le live</strong></h5>
+              <p>A l'heure du cours, connecte toi sur Lessen pour voir ton cours en live. Replay disponible dès la fin du cours </p>
+            </div>
+          </div>
         </div>
       </div>
-       <div class="lign-how-icon-text">
-          <div class="text-icon-one">
-            <h5><strong>Recherche</strong></h5>
-            <p>ton cours préféré parmis nos centaines de leçons tous donné par tes professeurs verifiés et diplomés</p>
-          </div>
-          <div class="text-icon-two">
-            <h5><strong>Réserve</strong></h5>
-            <p>ta place à l'avance puis préviens tes amis pour qu'il puisse s'inscrire aussi. Le plus de participants, le moins tu paies!
-          </div>
-          <div class="text-icon-three">
-            <h5><strong>Rejoins le live</strong></h5>
-            <p>A l'heure du cours, connecte toi sur Lessen pour voir ton cours en live. Replay disponible dès la fin du cours </p>
-          </div>
-       </div>
-    </div>
-    <div class="image-teacher"><%= image_tag("", height: 100) %></div>
   </div>
 </div>
 <% if  @upcoming_lessons.count > 0 %>
