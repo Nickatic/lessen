@@ -56,6 +56,7 @@
 .query_grade, .query_topic {
   width: 26%;
   margin: 5px;
+  box-shadow: 4px 0px 14px -2px grey;
 }
 #query_min_time, #query_max_time {
   width: 40px;
@@ -63,10 +64,12 @@
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
   font-size: 15px;
+  box-shadow: 4px 0px 14px -2px grey;
 }
 
 .query_keyword {
   margin: 5px;
+  box-shadow: 4px 0px 14px -2px grey;
 }
 
 #search-button {

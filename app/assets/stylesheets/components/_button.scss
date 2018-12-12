@@ -6,6 +6,9 @@
   color: #8a3331;
 }
 
+input.form-control.string.optional.search-input-index.flatpickr-input.form-control.input {
+    box-shadow: 4px 0px 14px -2px grey;
+}
 .btn-lessen:hover {
   opacity: 1;
   background-color: #8a3331;
@@ -52,6 +55,7 @@
   background-color: white;
   color: grey;
   font-size: 20px;
+  box-shadow: 4px 0px 14px -2px grey;
   padding-top: 6px;
   &:focus {
     outline: none;
