@@ -82,7 +82,7 @@ lesson_germain.skill_list.add("skill1", "skill2", "skill3")
 lesson_germain.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 lesson_germain.save!
 
-lesson_damien = Lesson.create!(teacher: helo, name: "Le judaïsme pour les nuls", topic: "Français", subtopic: "La religion", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Première", summary: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates.", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 60, starts_at: "10:00", date: "2018-12-16)
+lesson_damien = Lesson.create!(teacher: helo, name: "Le judaïsme pour les nuls", topic: "Français", subtopic: "La religion", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Première", summary: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates.", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 60, starts_at: "10:00", date: "2018-12-16")
 lesson_damien.skill_list.add("skill1", "skill2", "skill3")
 lesson_damien.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 lesson_damien.save!
@@ -119,7 +119,7 @@ lesson_conscience.objective_list.add("Premier Objectif", "Deuxième Objectif", "
 lesson_conscience.save!
 
 
-lesson_buddhisme = Lesson.create!(teacher: helo, name: "Le buddhisme pour les nuls", topic: "Philosophie", subtopic: "La religion", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Première", summary: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates.", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 60, starts_at: "10:00", date: "2018-12-16)
+lesson_buddhisme = Lesson.create!(teacher: helo, name: "Le buddhisme pour les nuls", topic: "Philosophie", subtopic: "La religion", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Première", summary: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates.", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 60, starts_at: "10:00", date: "2018-12-16")
 lesson_buddhisme.skill_list.add("skill1", "skill2", "skill3")
 lesson_buddhisme.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 lesson_buddhisme.save!
