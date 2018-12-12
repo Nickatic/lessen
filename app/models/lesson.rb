@@ -6,7 +6,7 @@ class Lesson < ApplicationRecord
   belongs_to :teacher, class_name: "User", foreign_key: :user_id
   GRADES = ["Terminale", "Première"]
   # GRADESSELECT = GRADES.each_with_index.map { |grade, index| [grade, index] }
-  TOPICS = ["Mathématiques", "Physique-chimie", "Philosophie", "SVT", "Français"]
+  TOPICS = ["Mathématiques", "Physique-chimie", "Philosophie", "SVT", "Français", "Histoire"]
 
   include PgSearch
 
