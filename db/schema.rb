@@ -111,5 +111,5 @@ ActiveRecord::Schema.define(version: 2018_12_12_115808) do
   add_foreign_key "messages", "users"
   add_foreign_key "participations", "lessons"
   add_foreign_key "participations", "users"
-
+  add_foreign_key "reviews", "users"
 end
