@@ -159,6 +159,7 @@
   justify-content: center;
   height: 200px;
   width: 616px;
+  margin-right: 40px;
 }
 
 .bordure-how {
@@ -170,6 +171,7 @@
   height: 293px;
   width: 627px;
   display: flex;
+  justify-content: space-between;
 }
 
 .lign-how-icon-text {
@@ -202,17 +204,55 @@
   margin-right: 50px;
 }
 
-.first-icon-text {
-  margin-right: 40px;
+.icon-text {
+  width: 150px;
+
+  &:last-child .circle-how:after {
+    display: none;
+  }
+
+  &.active {
+    .circle-how {
+      opacity: 1;
+      &:after {
+        width: 186px;
+      }
+    }
+    .how-content {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
 }
 
-.second-icon-text {
-  margin-right: 40px;
+.circle-how {
+  position: relative;
+  opacity: 0;
+  transition: opacity .5s ease;
+
+  &:after {
+    content: '';
+    position: absolute;
+    background: #8b312f;
+    width: 0px;
+    transition: all .5s ease;
+    height: 3px;
+    left: 61px;
+  }
+
+  &:last-child:after {
+    position: relative;
+  }
+
 }
 
-.third-icon-text {
-  margin-right: 40px;
+.how-content {
+  opacity: 0;
+  transition: all 1s ease;
+  margin-top: -20px;
 }
+
+
 // .text-icon-one {
 //     opacity: 0;
 //     transition: all ease .5s;
