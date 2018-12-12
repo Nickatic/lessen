@@ -1,7 +1,11 @@
+<div class="participations-banner">
+  <div class="participations-banner-content">
+    <h1>Bienvenue <%=current_user.first_name%> !</h1>
+  </div>
+</div>
 <div class="cards-container">
   <div class="row welcome-my-lessons">
-    <h2><strong>Bienvenue <%=current_user.first_name%> !</strong></h2>
-    <em class="welcome-welldone" style="color: #8A3231;">Bravo - tu t'es inscrit à <%=current_user.participations.count %> leçons!</em>
+    <h3><em class="welcome-welldone" style="color: #8A3231;"><strong>Bravo - tu t'es inscrit à <%=current_user.participations.count %> leçons!</strong></em></h3>
   </div>
   <br>
   <div class="bordure"></div>
@@ -111,5 +115,4 @@
   <% end %>
   </div>
 </div>
-
 
