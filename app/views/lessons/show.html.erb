@@ -157,9 +157,7 @@
       <h3 class="title-sur">Sur le même sujet</h3>
       <div class="row">
         <% @related_lessons.each do |lesson| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
             <%= render 'shared/card', lesson: lesson %>
-          </div>
         <% end %>
       </div>
     </div>
