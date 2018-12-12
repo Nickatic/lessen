@@ -2,12 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @lessons = Lesson.all.where.not(teacher: current_user)
-    @upcoming_lessons = Lesson.where.not(teacher: current_user).where("date >= ?", DateTime.now).first(4)
-
-    # .select do |lesson|
-    #   lesson.starts_at.split(":")[0].to_i >= Time.now.hour
-    # end
+    @lessons = Lesson.where.not(teacher: current_user).where("date >= ?", Date.today)
+    @upcoming_lessons = @lessons.first(3)
     @popular_lessons = @lessons.sort_by do |lesson|
       sum = 0
       lesson.teacher.reviews.each do |review|
@@ -15,6 +11,6 @@ class PagesController < ApplicationController
       end
       sum.fdiv(lesson.teacher.reviews.count)
     end
-    @ordered_popular_lessons = @popular_lessons.reverse.first(4)
+    @ordered_popular_lessons = @popular_lessons.reverse.first(3)
   end
 end

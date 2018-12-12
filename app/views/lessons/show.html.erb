@@ -100,6 +100,10 @@
         <div class="btn-position">
           <%= link_to "Rejoindre le Live", lesson_live_path(@lesson), class: "btn-lessen"%>
         </div>
+        <div class="live-countdown-text">
+          <p>dans</p>
+        </div>
+        <div id="live-countdown" data-starts-at="<%= "#{@lesson.date.to_s.gsub('-', '/')} #{@lesson.starts_at}:00" %>" style= "font-family: 'PT Sans Caption', sans-serif;"></div>
       <% else %>
         <div class="price-box">
           <div class="live-price-size">
