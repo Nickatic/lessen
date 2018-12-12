@@ -6,7 +6,8 @@
 </div>
 
 <div class="container-index  ">
-  <div class="row entire-search-bar">
+  <div class="entire-search-bar">
+    <div class="box-search-shaddow"></div>
     <div class="col-xs-12 col-md-6">
       <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
         <div class="search-grade-topic-subtopic">
@@ -28,14 +29,14 @@
           <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "FIN", required: false, wrapper_html: { class: "margin-10-0" } %>
         <button type="submit" id="btn-lessen-search-index"> <i class="fas fa-search "></i></button>
         </div>
+      </div>
 
-    </div>
   </div>
 </div>
 <div class="container-sort">
-  <div class="sort-by">
+  <div class="sort-by" style="text-align: center">
     <% sort_by =  params[:query][:sort_by] if params[:query].present? %>
-      <%= f.input  :sort_by, label: "Trier par", collection: ["PRIX", "NOTE"], selected: sort_by, required: false%>
+      <%= f.input  :sort_by, label: "Trier par" , collection: ["PRIX", "NOTE"], selected: sort_by, required: false%>
     <% end %>
   </div>
 </div>

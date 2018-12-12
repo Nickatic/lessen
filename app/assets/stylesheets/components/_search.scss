@@ -9,9 +9,20 @@
   margin-top: -5px;
 }
 
+.box-search-shaddow {
+    background-color: black;
+    width: 997px;
+    height: 4px;
+    margin-left: 18px;
+    position: absolute;
+    top: 51px;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, .1);
+}
 .search-bar-show {
   display: flex;
   align-items : flex-end;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
   // justify-content: space-around;
 }
 .search-grade-topic-subtopic {
@@ -74,6 +85,7 @@
 
 .query_grade_home, .query_topic_home {
   width: 35%;
+  box-shadow: 8px 8px 8px -3px #00000047;
 }
 
 .form-group {
@@ -87,11 +99,13 @@
 .search-bar-home {
   display: flex;
   align-items : center;
-  justify-content: space-around;
+  justify-content: center;
 
   select.form-control {
     height: 57px;
     color: grey;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
   }
 }
 
@@ -118,18 +132,19 @@ input.form-control {
     margin-left: -4px !important;
 }
 
-
 .container-sort {
-  margin-top: 20px;
+  margin-top: 35px;
   margin-bottom: 30px;
   position: relative;
   height: 50px;
   width: 100%;
   .sort-by {
-    width: 15%;
+    width: 10%;
     position: absolute;
-    right: 152px;
+    right: 193px;
     margin-right: 26px;
+    font-size: 18px;
+    color: grey;
   }
 }
 

@@ -27,18 +27,21 @@
 
 }
 #btn-lessen-search {
-  width: 200px;
+  width: 97px;
   height: 57px;
-  border-radius: 5px;
+  border-radius: 0px;
   font-weight: lighter;
   background-color: #8a3331;
   color: white;
-  font-size: 32px;
+  font-size: 24px;
+  padding-top: 6px;
   border: none;
+  box-shadow: 3px 8px 8px -3px #00000047;
   &:focus {
     outline: none;
   }
 }
+
 
 #btn-lessen-search-index {
   background-color: #66DDFF;
