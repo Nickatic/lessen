@@ -54,7 +54,7 @@
                 <% upcoming_lessons.sort_by {|lesson| lesson.date} %>
                 <%= date = upcoming_lessons.first.date.strftime("%A, %b %d") %> à <%= upcoming_lessons.first.starts_at %></p>
                 <div class="button-rejoindre-teacher">
-                  <div><%= link_to "Rejoindre ce cours", "#", method: :post, class: "btn-lessen" %></div>
+                  <div><%= link_to "Rejoindre ce cours", lesson_live_path(upcoming_lessons.first), class: "btn-lessen" %></div>
                 </div>
             <% end %>
             </div>
