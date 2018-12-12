@@ -176,8 +176,8 @@ review1_lesson_nico = Review.create!(content: "Prof complètement perché, j'ai 
 
 review2_lesson_nico = Review.create!(content: "du jamais vu ...", rating: 2, user: nico)
 
-review1_lesson_anna = Review.create!(content: "Super prof même si elle était pas en forme cette fois", rating: 4, user: anna )
-review2_lesson_anna = Review.create!(content: "Même en gueule de bois elle assure !!", rating: 4, user: anna)
+review1_lesson_anna = Review.create!(content: "Anna est toujours là pour me motiver, pour répondre à mes questions ou me donner des conseils. Je comprends mieux et je travaille plus efficacement. ", rating: 4, user: anna )
+review2_lesson_anna = Review.create!(content: " Parfait ! Je ne saurais jamais assez remercier Sébastien. Sans lui je n’aurais jamais réussi à rattraper plusieurs années de retard en mathématiques en seulement quelques mois en vue d’obtenir mon baccalauréat. Sébastien est sérieux et super pédagogue. Je le conseille à 1000%. ", rating: 4, user: anna)
 
 review1_lesson_lily = Review.create!(content: "Le français comme jamais je l'avais envisagé !", rating: 5, user: lily )
 review2_lesson_lily = Review.create!(content: "On redécouvre notre propre langue, un régal !", rating: 4, user: lily )
