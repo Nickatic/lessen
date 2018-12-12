@@ -4,7 +4,7 @@
     <p>Selectionne ton cours</p>
   </div>
 </div>
-<div class="container">
+<div class="container pull-up">
   <div class="lessons-searchbar">
     <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
       <div class="entire-search-bar">
@@ -23,7 +23,7 @@
         <button type="submit" id="btn-lessen-search-index"><i class="fas fa-search "></i></button>
       </div>
       <div class="sort-by">
-        <% sort_by =  params[:query][:sort_by] if params[:query].present? %>
+        <% sort_by = params[:query][:sort_by] if params[:query].present? %>
         <p class="sort-by-btn <%= 'active' if sort_by == 'prix' %>" data-value="prix"><i class="fas fa-sort-amount-up"></i> Prix</p>
         <p class="sort-by-btn <%= 'active' if sort_by == 'note' %>" data-value="note"><i class="fas fa-sort-amount-down"></i> Note</p>
         <%= f.input :sort_by, as: :hidden %>
