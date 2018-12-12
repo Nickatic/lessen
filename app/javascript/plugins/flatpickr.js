@@ -4,6 +4,7 @@ const initFlatpickr = () => {
     dateFormat: "Y-m-d",
     altInput: true,
     altFormat: "j F, Y",
+    minDate: 'today'
 
   });
 
