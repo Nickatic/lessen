@@ -6,29 +6,22 @@ import "slick-carousel/slick/slick-theme.css";
 import flatpickr from "flatpickr";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initChannel, scrollLastMessageIntoView } from "../plugins/action_cable";
-
-
-initFlatpickr();
-
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { submitChatForm } from '../components/submitChatForm';
 import { initFormRefresh } from '../components/sort_by';
+import { carouselIndex } from '../components/carousel-participations-index.js';
+import { initStars } from '../components/rating-stars';
+import { initHowBox } from '../components/how-diagram-home';
+import { initCountdown } from '../components/lesson-countdown';
 
 
+initFlatpickr();
 initUpdateNavbarOnScroll();
 initChannel();
 scrollLastMessageIntoView();
 submitChatForm();
 initFormRefresh()
-
-import { carouselIndex } from '../components/carousel-participations-index.js';
-
 carouselIndex();
-
-import { initStars } from '../components/rating-stars';
-
 initStars();
-
-import { initHowBox } from '../components/how-diagram-home';
-
 initHowBox();
+initCountdown();
