@@ -1,58 +1,3 @@
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="container-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalCenterTitle">Donne ton avis sur le professeur</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for Review.new, url: lesson_reviews_path(@lesson) do |f| %>
-            <%= f.input :rating, label: "Note", required: false, input_html: {id: 'star-id'} %>
-            <%= f.input :content, label: "Commentaire", required: false, input_html: { class: "modal-review-content"} %>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-lessen" data-dismiss="modal" data-target="#exampleModalCenter2" data-toggle="modal">Valider</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="container-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalCenterTitle">Félicitations!</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body modal2body">
-         <h4>Tu as terminé ton cours</h4>
-         <h4>'<strong><%= @lesson.name %></strong>'</h4>
-         <p> Prix total: <%= @lesson.price %></p>
-          <p> Nombre d'élèves:<% @lesson.participations.each do |participation| %>
-            <%= participation.user_id %>
-            <% end %>
-          </p>
-        </div>
-        <div class="modal-footer">
-          <%= f.submit  "Valider", class: "btn-lessen" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
 
@@ -61,19 +6,19 @@
 <!-- Don't delete this line ! ☝️ -->
 <div class="live-head">
   <!-- <progress  value="0" max="60"></progress> -->
-  <div class="live-title">
+  <!-- <div class="live-title">
     <h1>Live</h1>
   </div>
 
- <!--  <div class="live-info">
+  <div class="live-info">
     <div class="live-price">
       <h4> <%= @lesson.price_per_user.round(2)  %> <i class="fas fa-euro-sign fa-xs"></i> / <i class="fas fa-xs fa-user"></i> </h4>
     </div>
     <div class="participants-live">
       <h4><%= @lesson.participations.count  %> <i class="fas fa-users"></i> </h4>
     </div>
-  </div> -->
-  <button type="button" class="btn-end" data-toggle="modal" data-target="#exampleModalCenter">Quitter la leçon</button>
+  </div>
+  <button type="button" class="btn-end" data-toggle="modal" data-target="#exampleModalCenter">Quitter la leçon</button> -->
 
 </div>
 
