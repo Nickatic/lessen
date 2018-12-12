@@ -179,6 +179,15 @@ past_lesson14_lily.skill_list.add("skill1", "skill2", "skill3")
 past_lesson14_lily.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 past_lesson14_lily.save!
 
+lesson_helo = Lesson.create!(teacher: anna, name: "Systèmes - combinaison", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Cours sur la résolution de système à deux inconnues et deux équations.", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 13, starts_at: "13:00", date: "2018-12-09")
+lesson_helo.skill_list.add("skill1", "skill2", "skill3")
+lesson_helo.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
+lesson_helo.save!
+lesson_lily_2 = Lesson.create!(teacher: anna, name: "Variables aléatoires", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 100, current_price: 100, price_per_user: 100, grade: "Première", summary: "Déterminer une loi de probabilité d'une variable aléatoire", description: "Cours sur les variables aléatoires avec l'étude d'un scénario précis. Nous allons voir ensembles à résumer les informations dans un tableau et quelles valeurs assigner à la variable X dépendant du scénario.", duration: 60, starts_at: "16:00", date: "2018-12-12",channel_id: "1ux79Xb9YLI")
+lesson_lily_2.skill_list.add("logique", "raisonnement")
+lesson_lily_2.objective_list.add("lister l’ensemble des valeurs xi prises par X", "Construire le tableau de probabilité", "Troisième Objectif")
+lesson_lily_2.save!
+
 
 
 Participation.create!(user: anna, lesson: lesson_damien)
