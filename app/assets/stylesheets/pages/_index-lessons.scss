@@ -23,12 +23,14 @@
 
 
 // container
+.pull-up {
+  margin-top: -40px;
+}
 
 .lessons-searchbar {
   display: flex;
   justify-content: center;
   position: relative;
-  top: -40px;
   form {
     height:100%
   }
