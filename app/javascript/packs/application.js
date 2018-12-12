@@ -29,3 +29,6 @@ import { initStars } from '../components/rating-stars';
 
 initStars();
 
+import { initHowBox } from '../components/how-diagram-home';
+
+initHowBox();
