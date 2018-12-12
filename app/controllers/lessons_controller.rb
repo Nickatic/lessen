@@ -73,4 +73,8 @@ class LessonsController < ApplicationController
   def live
     @lesson = Lesson.find(params[:lesson_id])
   end
+
+  def replay
+    @lesson = Lesson.find(params[:lesson_id])
+  end
 end
