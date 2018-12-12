@@ -5,8 +5,19 @@ const initFormRefresh = () => {
   const grade = document.getElementById("query_grade");
   const topic = document.getElementById("query_topic");
   if (searchForm) {
-      sort.addEventListener('change', (event) => {
-        searchForm.submit()
+
+    const options = document.querySelectorAll(".sort-by-btn");
+    options.forEach((option) => {
+      option.addEventListener('click', (e) => {
+        options.forEach((option) => {
+          option.classList.remove('active');
+        });
+        e.currentTarget.classList.add('active');
+        const dataValue = e.currentTarget.dataset.value;
+        console.log(dataValue);
+        sort.value = dataValue;
+        searchForm.submit();
+      })
     });
       grade.addEventListener('change', (event) => {
         searchForm.submit()
