@@ -114,7 +114,10 @@
           </div>
         </div>
         <div class="btn-position">
-        <button class="btn-lessen" data-toggle="modal", data-dismiss="modal" data-target="#exampleModalCenter2">S'inscrire</button>
+          <button class="btn-lessen" data-toggle="modal", data-dismiss="modal" data-target="#exampleModalCenter2">S'inscrire</button>
+        </div>
+        <div class="lesson-date-time" style= "font-family: 'PT Sans Caption', sans-serif";>
+          <p> Horaires: <%= @lesson.date %> à <%= @lesson.starts_at %></p>
         </div>
       <% end %>
     </div>
