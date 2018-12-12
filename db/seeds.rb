@@ -195,8 +195,10 @@ review1_lesson_nico = Review.create!(content: "Prof complètement perché, j'ai 
 
 review2_lesson_nico = Review.create!(content: "du jamais vu ...", rating: 2, user: nico)
 
+
 review1_lesson_anna = Review.create!(content: "Très organisée, très bonne prof", rating: 5, user: anna )
 review2_lesson_anna = Review.create!(content: "Parfois un peu trop rapide, mais excellente pédagogie", rating: 5, user: anna)
+
 
 review1_lesson_lily = Review.create!(content: "Le français comme jamais je l'avais envisagé !", rating: 5, user: lily )
 review2_lesson_lily = Review.create!(content: "On redécouvre notre propre langue, un régal !", rating: 4, user: lily )
