@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
   def index
 
     query = params[:query]
-    @lessons = Lesson.all.where.not(teacher: current_user)
+    @lessons = Lesson.all.where.not(teacher: current_user).where("date >= ?", Date.today)
 
     if query.present?
       @grade = query[:grade]
