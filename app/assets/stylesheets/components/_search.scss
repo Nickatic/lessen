@@ -23,6 +23,7 @@
   display: flex;
   align-items: center;
   height: 60px;
+  margin-left: -32px;
 }
 .search-input-index {
   height: 50px;
@@ -31,6 +32,7 @@
   background-color: white !important;
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
+  font-size: 15px;
 }
 
 .query_grade, .query_topic {
@@ -42,6 +44,7 @@
   margin: 10px 0;
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
+  font-size: 15px;
 }
 
 .query_keyword {
@@ -126,9 +129,14 @@ input.form-control {
     width: 15%;
     position: absolute;
     right: 152px;
+    margin-right: 26px;
   }
 }
 
 .margin-10-0 {
-  margin: 10px 0 !important;
+  margin: 10px -1px !important;
+}
+
+.query_sort_by {
+  margin-left: 10px;
 }
