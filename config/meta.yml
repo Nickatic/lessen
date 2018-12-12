@@ -1,5 +1,5 @@
 meta_product_name: "Lessen"
 meta_title: "Lessen - vos cours deviennent instantanément moins chers"
 meta_description: "le plus d'élèves s'inscrivent, le moins cher le cours devient"
-meta_image: "cover.png"                       # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"
+meta_image: "school_1.jpg"                       # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"

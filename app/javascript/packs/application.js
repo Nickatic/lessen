@@ -25,3 +25,7 @@ import { carouselIndex } from '../components/carousel-participations-index.js';
 
 carouselIndex();
 
+import { initStars } from '../components/rating-stars';
+
+initStars();
+

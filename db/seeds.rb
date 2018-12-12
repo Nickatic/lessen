@@ -31,6 +31,11 @@ lesson_nico.skill_list.add("skill1", "skill2", "skill3")
 lesson_nico.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 lesson_nico.save!
 
+lesson_anna_histoire = Lesson.create!(teacher: anna, name: "La révolution française", topic: "Histoire", subtopic: "Le 18ème siècle", min_num_of_participants: 4, max_num_of_participants: 6, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "L'année 1789: raisons et conséquences", description: "En 1789, un fort élan politique parcourt la France. Les idées des lumières remettent en cause l'autorité de Louis XVI, qui règne alors sur la France. La guerre et les grandes dépenses ont endetté le pays et le roi convoque les états géneraux qui regroupent les représentants des trois ordres. Des cahier de doleances circulent dans les provinces. Une des revendication du Tiers Etat est que les impots sont imposés à tous:le peuple se révolte et promet de ne pas laisser faire", duration: 60, starts_at: "17:00", date: "2018-12-09")
+lesson_anna_histoire.skill_list.add("skill1", "skill2", "skill3")
+lesson_anna_histoire.objective_list.add("Comprendre les causes de la révolution", "La prise de la Bastille en détails", "Pourquoi la constitution")
+lesson_anna_histoire.save!
+
 lesson_helo = Lesson.create!(teacher: helo, name: "la conscience de soi", topic: "Philosophie", subtopic: "La conscience", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates.", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 60, starts_at: "13:00", date: "2018-12-11")
 lesson_helo.skill_list.add("skill1", "skill2", "skill3")
 lesson_helo.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")

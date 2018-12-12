@@ -15,12 +15,10 @@
           <% elsif lesson.topic == "Philosophie" %>
             <h4 style="background-color: #3d588e;" %><%=lesson.topic %></h4>
           <% end %>
-          <div class="button-delete-participation">
-            <%= link_to "X", lesson_participation_path(lesson, participation),
-            method: :delete,
-            style: 'color: white',
-            data: { confirm: "Es-tu sûr de vouloir supprimer cette leçon?" } %>
-          </div>
+          <%= link_to "×", lesson_participation_path(lesson, participation),
+          method: :delete,
+          style: 'color: white',
+          data: { confirm: "Es-tu sûr de vouloir supprimer cette leçon?" }, class: "button-delete-participation" %>
          <!-- <h4><%= lesson.topic %></h4> -->
         </div>
         <div class="participation-title-subtopic">

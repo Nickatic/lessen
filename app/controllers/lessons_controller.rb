@@ -59,12 +59,11 @@ class LessonsController < ApplicationController
         @lessons = @lessons.sort_by { |lesson| lesson.next_price_per_user}
       end
     end
-
   end
 
   def show
     @lesson = Lesson.find(params[:id])
-    @related_lessons = Lesson.where(subtopic: @lesson.subtopic).where.not(id: @lesson.id)
+    @related_lessons = Lesson.where.not(teacher: current_user).where(subtopic: @lesson.subtopic).where.not(id: @lesson.id)
   end
 
   def new

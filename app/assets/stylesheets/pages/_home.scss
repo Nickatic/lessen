@@ -53,20 +53,6 @@
   font-size:30pt;
 }
 
-.iamCol {
-  text-align: right;
-  float: left;
-  font-weight: 300;
-  font-size:30pt;
-}
-.iamCol p:nth-child(2) { margin-top: -20pt !important; }
-.slideCol {
-  text-align: left;
-    overflow: hidden;
-  font-weight: 900;
-  display: block;
-  white-space: nowrap;
-}
 .slideCol p { margin: 0px !important; }
 
 .scroller {
@@ -74,7 +60,7 @@
    line-height: 70pt;
    overflow: hidden;
 }
-.scroller .inner { animation: 4s normal infinite running scroll; }
+.scroller .inner { animation: 8s normal infinite running scroll; }
 @keyframes scroll {
    0%   {margin-top: 0px;}
    40%  {margin-top: 0px;}
@@ -134,7 +120,7 @@
 }
 
 .icon-first {
-  padding-right: 130px;
+  padding-right: 154px;
   z-index: 1;
 }
 
@@ -144,7 +130,7 @@
 }
 
 .icon-third {
-  padding-left: 50px;
+  padding-left: 68px;
   z-index: 1;
 }
 
@@ -164,7 +150,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 15px;
+  padding-top: 0px;
   text-align: center;
   font-size: 15px;
   color: grey;
@@ -172,40 +158,64 @@
 }
 
 .text-icon-one p {
+  padding-top: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 25px;
   text-align: center;
   font-size: 15px;
   color: grey;
   font-weight: bold;
-  margin-left: -17px;
+  // margin-left: -17px;
+  // margin-right: 70px;
+  height: 130px;
+  width: 150px;
 }
 
 .text-icon-two p {
+  padding-top: 11px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 25px;
   text-align: center;
+  justify-content: center;
   font-size: 15px;
   color: grey;
   font-weight: bold;
-  margin-left: 88px;
-  margin-right: 61px;
+  // margin-left: 0px;
+  // margin-right: 50px;
+  height: 160px;
+  width: 160px;
 }
 
 .text-icon-three p {
+  padding-top: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 25px;
   text-align: center;
   font-size: 15px;
   color: grey;
   font-weight: bold;
-  margin-left: 33px;
+  // margin-left: 3px;
+  height: 140px;
+  width: 145px;
+}
+
+.text-icon-one {
+  margin-right: 31px;
+  text-align: center;
+}
+.text-icon-two {
+  text-align:center;
+  height: 230px;
+  width: 170px;
+  margin-right: 35px;
+  margin-left: 25px;
+}
+
+.text-icon-three  {
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 35px;
 }
 
 // Cards
@@ -235,6 +245,16 @@
 //   padding-bottom: 2px;
 // }
 
+.how-column {
+  height: 250px;
+  width: 430px;
+}
+
+.lign-how-icon-text {
+  height: 250px;
+  width: 475px;
+}
+
 .maths-row {
   margin-right: 6px;
   margin-left: -23px;
@@ -256,3 +276,17 @@
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
+// .iamCol {
+//   text-align: right;
+//   float: left;
+//   font-weight: 300;
+//   font-size:30pt;
+// }
+// .iamCol p:nth-child(2) { margin-top: -20pt !important; }
+// .slideCol {
+//   text-align: left;
+//     overflow: hidden;
+//   font-weight: 900;
+//   display: block;
+//   white-space: nowrap;
+// }
