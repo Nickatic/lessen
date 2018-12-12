@@ -22,8 +22,8 @@
 .search-date-time-index {
   display: flex;
   align-items: center;
-  margin-left: 50px;
   height: 60px;
+  margin-left: -32px;
 }
 .search-input-index {
   height: 50px;
@@ -32,6 +32,7 @@
   background-color: white !important;
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
+  font-size: 15px;
 }
 
 .query_grade, .query_topic {
@@ -43,6 +44,7 @@
   margin: 10px 0;
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
+  font-size: 15px;
 }
 
 .query_keyword {
@@ -74,6 +76,9 @@
   width: 35%;
 }
 
+.form-group {
+  margin: 10px 0;
+}
 
 .search-group {
   padding-top: 8vh;
@@ -90,6 +95,11 @@
   }
 }
 
+.space-form {
+  margin: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
 
 input.form-control {
   background: white;
@@ -108,9 +118,6 @@ input.form-control {
     margin-left: -4px !important;
 }
 
-.form-group {
-  margin: 10px 0px;
-}
 
 .container-sort {
   margin-top: 20px;
@@ -121,6 +128,15 @@ input.form-control {
   .sort-by {
     width: 15%;
     position: absolute;
-    right: 80px;
+    right: 152px;
+    margin-right: 26px;
   }
+}
+
+.margin-10-0 {
+  margin: 10px -1px !important;
+}
+
+.query_sort_by {
+  margin-left: 10px;
 }
