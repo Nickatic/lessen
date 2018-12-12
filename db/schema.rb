@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_095648) do
+ActiveRecord::Schema.define(version: 2018_12_12_115808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id"
+    t.string "content"
+    t.boolean "right"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.string "starts_at"
@@ -56,6 +65,22 @@ ActiveRecord::Schema.define(version: 2018_12_11_095648) do
     t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.bigint "quizz_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quizz_id"], name: "index_questions_on_quizz_id"
+  end
+
+  create_table "quizzs", force: :cascade do |t|
+    t.bigint "lesson_id"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_quizzs_on_lesson_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
@@ -90,6 +115,15 @@ ActiveRecord::Schema.define(version: 2018_12_11_095648) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "user_answers", force: :cascade do |t|
+    t.bigint "answer_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_user_answers_on_answer_id"
+    t.index ["user_id"], name: "index_user_answers_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -105,10 +139,15 @@ ActiveRecord::Schema.define(version: 2018_12_11_095648) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
   add_foreign_key "lessons", "users"
   add_foreign_key "messages", "lessons"
   add_foreign_key "messages", "users"
   add_foreign_key "participations", "lessons"
   add_foreign_key "participations", "users"
+  add_foreign_key "questions", "quizzs"
+  add_foreign_key "quizzs", "lessons"
   add_foreign_key "reviews", "users"
+  add_foreign_key "user_answers", "answers"
+  add_foreign_key "user_answers", "users"
 end

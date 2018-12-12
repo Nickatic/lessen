@@ -91,7 +91,7 @@
       <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
         <div class="price-box">
                 <div class="live-price-size">
-                  <h4 class="live-price-size"> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></i </h4>
+                  <h4 > <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></i </h4>
                 </div>
                 <div class="participants-live">
                   <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
@@ -103,13 +103,15 @@
       <% else %>
         <div class="price-box">
           <div class="live-price-size">
-            <h4 class="live-price-size"> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></h4>
+            <h4> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></h4>
           </div>
           <div class="participants-live">
             <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
           </div>
         </div>
+        <div class="btn-position">
         <button class="btn-lessen" data-toggle="modal", data-dismiss="modal" data-target="#exampleModalCenter2">S'inscrire</button>
+        </div>
       <% end %>
     </div>
     <div class="card-review-profile">
