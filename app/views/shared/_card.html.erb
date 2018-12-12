@@ -22,7 +22,7 @@
      <div>
       <div class="card-price-button"> <h4><%= lesson.next_price_per_user.round(1) %>  €</h4></div>
       <div class="card-date">
-        <em><%= lesson.date.to_s.split("-").reverse.join("/") %> à</em>
+        <em><%= lesson.date.to_s.split("-").reverse.join("/") %> _ </em>
         <p><%= lesson.starts_at.split(":").join("H") %></p>
       </div>
      </div>
@@ -54,18 +54,17 @@
         </div>
       </div>
     </div>
-    <div class="bottom-color">
-      <% if lesson.topic == "Français" %>
-        <div style="background-color: #EA8C55;"></div>
-      <% elsif lesson.topic == "Mathématiques" %>
-        <div style="background-color: #c75146;"></div>
-      <% elsif lesson.topic == "Physique-chimie" %>
-        <div style="background-color: #540804;"></div>
-      <% elsif lesson.topic == "SVT" %>
-        <div style="background-color: #32493E;"></div>
-      <% elsif lesson.topic == "Philosophie" %>
-        <div style="background-color: #3d588e;"></div>
-      <% end %>
-    </div>
+          <% if lesson.topic == "Français" %>
+            <div class="bottom-color" style="background-color: #EA8C55;"></div>
+          <% elsif lesson.topic == "Mathématiques" %>
+            <div class="bottom-color" style="background-color: #c75146;"></div>
+          <% elsif lesson.topic == "Physique-chimie" %>
+            <div class="bottom-color" style="background-color: #540804;"></div>
+          <% elsif lesson.topic == "SVT" %>
+            <div class="bottom-color" style="background-color: #32493E;"></div>
+          <% elsif lesson.topic == "Philosophie" %>
+            <div class="bottom-color" style="background-color: #3d588e;"></div>
+          <% end %>
+
   </div>
 </div>

@@ -4,6 +4,7 @@
   margin-bottom: 30px;
   margin-top: 30px;
   box-shadow: 0px 0px 16px -2px lightgrey;
+  border-radius: 20px 20px 20px 20px;
   h4, h5 {
     margin: 5px;
   }
@@ -13,11 +14,12 @@
 }
 
 .card-header {
-  height: 85px;
+  height: 60px;
   background-color: white;
   display: flex;
   justify-content: space-between;
   padding: 10px 10px;
+  border-radius: 20px 20px 0px 0px;
 }
 
 
@@ -36,7 +38,7 @@
 }
 
 .card-title-subtopic h5 {
-  font-size: 15px;
+  font-size: 14px;
   color: lightgrey;
   text-transform: uppercase;
   text-align: left;
@@ -134,5 +136,6 @@
 }
 
 .bottom-color {
-
+  height: 20px;
+  border-radius: 0 0 20px 20px;
 }
