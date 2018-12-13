@@ -188,27 +188,27 @@ lesson_helo.save!
 
 
 Participation.create!(user: anna, lesson: lesson_damien)
-lesson_damien.update_price_per_user
+lesson_damien.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_helo)
-lesson_helo.update_price_per_user
+lesson_helo.update_price_per_user_up
 Participation.create!(user: anna, lesson: lesson_helo)
-lesson_helo.update_price_per_user
+lesson_helo.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_lily)
-lesson_lily.update_price_per_user
+lesson_lily.update_price_per_user_up
 Participation.create!(user: helo, lesson: lesson_anna)
-lesson_anna.update_price_per_user
+lesson_anna.update_price_per_user_up
 Participation.create!(user: helo, lesson: lesson_germain)
-lesson_germain.update_price_per_user
+lesson_germain.update_price_per_user_up
 Participation.create!(user: anna, lesson: lesson_germain)
-lesson_germain.update_price_per_user
+lesson_germain.update_price_per_user_up
 Participation.create!(user: lily, lesson: lesson_pierre)
-lesson_pierre.update_price_per_user
+lesson_pierre.update_price_per_user_up
 
 Participation.create!(user: lily, lesson: lesson_anna_replay)
-lesson_anna_replay.update_price_per_user
+lesson_anna_replay.update_price_per_user_up
 
 Participation.create!(user: anna, lesson: past_lesson5_lily)
-past_lesson5_lily.update_price_per_user
+past_lesson5_lily.update_price_per_user_up
 
 
 
