@@ -31,7 +31,7 @@
         <% @user.reviews.each do |review| %>
           <% sum += 1 %>
         <% end %>
-        <p><%= link_to "(#{sum} avis)", user_path(@user, anchor: "reviews-list")%></p>
+        <p><%= link_to "(#{sum} avis)", "#reviews-list", id: "show-review" %></p>
 
 
 
