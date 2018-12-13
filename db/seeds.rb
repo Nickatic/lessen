@@ -189,6 +189,7 @@ lesson_helo.skill_list.add("skill1", "skill2", "skill3")
 lesson_helo.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 lesson_helo.save!
 
+
 # COURS HELO
 Participation.create!(user: anna, lesson: lesson_helo_1)
 lesson_helo_1.update_price_per_user_up
@@ -442,5 +443,6 @@ Review.create!(content: "Bon Prof", rating: 4, user: charles)
 
 
 puts "8 users, a lot of lessons, a lot of participations and a lot of reviews created"
+
 
 
