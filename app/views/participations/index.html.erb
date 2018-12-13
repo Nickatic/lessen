@@ -1,12 +1,18 @@
-<div class="cards-container">
-  <div class="row welcome-my-lessons">
-    <h2><strong>Bienvenue <%=current_user.first_name%> !</strong></h2>
-    <em class="welcome-welldone" style="color: #8A3231;">Bravo - tu t'es inscrit à <%=current_user.participations.count %> leçons!</em>
+<div class="participations-banner">
+  <div class="participations-banner-content typewriter">
+    <h1>Bienvenue <%=current_user.first_name%> !</h1>
   </div>
-  <br>
-  <div class="bordure"></div>
+</div>
+<div class="container-participations">
+  <div class="row welcome-my-lessons">
+    <div class="welcome-welldone">
+      <div><h2><strong>Ton Parcours Lessen</strong></h2></div>
+    </div>
+      <h4><em style="font-size: 18px; color: black">Tu t'es inscrite à <%=current_user.participations.count %> leçons</em></h4>
+    </div>
+  </div>
   <div class="row">
-    <div class="upcoming-classes-title" style="color: #EA8C55">
+    <div class="upcoming-classes-title" style="color: #f37f7f">
       <h3><strong>Mes leçons à venir</strong></h3>
     </div>
   </div>
@@ -53,14 +59,12 @@
       </div>
     <% end %>
     <% if  is_none %>
-      <h4 class="no-lesson-upcoming">Tu n'as pas de leçons à venir</h4>
+      <h4 class="no-lesson-upcoming"><em>Tu n'as pas de leçons à venir</em></h4>
     <% end %>
   </div>
 
-
-
    <div class="row past-classes-header">
-    <div class="past-classes-title" style="color: #EA8C55">
+    <div class="past-classes-title" style="color: #f37f7f">
       <h3><strong>Mes leçons précédentes</strong></h3>
     </div>
   </div>
@@ -107,9 +111,8 @@
     </div>
   <% end %>
   <% if  is_none %>
-    <h4>Tu n'as pas encore pris de leçons</h4>
+    <h4><em style="padding-left: 50px">Tu n'as pas encore pris de leçon</em></h4>
   <% end %>
   </div>
 </div>
-
 

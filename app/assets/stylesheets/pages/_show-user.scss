@@ -30,6 +30,9 @@
 .avis-teacher{
   display: flex;
   align-items: center;
+  p {
+    margin: 0 5px;
+  }
 }
 
 .teacher-avatar {
@@ -127,7 +130,7 @@
 }
 
 .tag-word p {
-  background-color: #f47f7f;
+  background-color: #f37f7f;
   border-radius: 4px;
   padding: 5px;
   padding-right: 7px;

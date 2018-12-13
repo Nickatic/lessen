@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
   def index
 
     query = params[:query]
-    @lessons = Lesson.all.where.not(teacher: current_user)
+    @lessons = Lesson.all.where.not(teacher: current_user).where("date >= ?", Date.today)
 
     if query.present?
       @grade = query[:grade]
@@ -44,7 +44,7 @@ class LessonsController < ApplicationController
           lesson.starts_at.split(":")[0].to_i <= query[:max_time].to_i
         end
       end
-      @lessons = @lessons.sort_by { |lesson| lesson.next_price_per_user}
+      @lessons = @lessons.sort_by { |lesson| lesson.date}
 
       if query[:sort_by] == "note"
         @lessons = @lessons.sort_by do |lesson|
@@ -63,7 +63,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
-    @related_lessons = Lesson.where.not(teacher: current_user).where(subtopic: @lesson.subtopic).where.not(id: @lesson.id)
+    @related_lessons = Lesson.where.not(teacher: current_user).where(subtopic: @lesson.subtopic).where.not(id: @lesson.id).first(3)
   end
 
   def new

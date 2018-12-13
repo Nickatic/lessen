@@ -51,11 +51,13 @@ div#navbar_home {
 .navbar-lessen-item {
   cursor: pointer;
   padding: 0 20px;
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
-a.navbar-lessen-item.navbar-lessen-link {
-  color:black;
-}
 
 /* Dropdown menu */
 .navbar-lessen-dropdown-menu {

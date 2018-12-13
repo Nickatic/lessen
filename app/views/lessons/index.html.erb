@@ -4,47 +4,38 @@
     <p>Selectionne ton cours</p>
   </div>
 </div>
-
-<div class="container-index  ">
-  <div class="entire-search-bar">
-    <div class="box-search-shaddow"></div>
-    <div class="col-xs-12 col-md-6">
-      <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
-        <div class="search-grade-topic-subtopic">
+<div class="container pull-up">
+  <div class="lessons-searchbar">
+    <%= simple_form_for :query, method: :get, url: lessons_path, html: { class: "search-bar-index" }, defaults: { input_html: { class: 'search-input-index' } } do |f| %>
+      <div class="entire-search-bar">
         <%= f.input :grade, label: false, collection: Lesson::GRADES, selected: @grade, include_blank: "CLASSE", required: false, wrapper_html: { class: "margin-10-0" } %>
 
         <%= f.input :topic, label: false, collection: Lesson::TOPICS, selected: @topic, include_blank: "MATIÈRE", required: false, wrapper_html: { class: "margin-10-0" } %>
         <%#= f.label :keyword, "Search by keyword" %>
         <% keyword = params[:query][:keyword] if params[:query].present? %>
         <%= f.input :keyword, label: false, input_html: { value: keyword }, required: false, placeholder: "TRIGO, SUITE, ...", wrapper_html: { class: "margin-10-0" }  %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <div class="search-date-time-index">
         <% range_date =  params[:query][:range_date] if params[:query].present? %>
         <%= f.input :range_date , label: false, input_html: { value: range_date }, required: false, placeholder: "QUAND ?", wrapper_html: { class: "margin-10-0" } %>
           <% min_time = params[:query][:min_time] if params[:query].present? %>
-          <%= f.input :min_time , label: false, input_html: { value: min_time, class: "time-filter"  }, placeholder: "DÉBUT", required: false, wrapper_html: { class: "margin-10-0" } %>
+          <%= f.input :min_time , label: false, input_html: { value: min_time, class: "time-filter"  }, placeholder: "A PARTIR DE", required: false, wrapper_html: { class: "margin-10-0" } %>
           <% max_time = params[:query][:max_time] if params[:query].present? %>
-          <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "FIN", required: false, wrapper_html: { class: "margin-10-0" } %>
-        <button type="submit" id="btn-lessen-search-index"> <i class="fas fa-search "></i></button>
-        </div>
+          <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "JUSQU'A", required: false, wrapper_html: { class: "margin-10-0" } %>
+        <button type="submit" id="btn-lessen-search-index"><i class="fas fa-search "></i></button>
       </div>
-
-  </div>
-</div>
-<div class="container-sort">
-  <div class="sort-by" style="text-align: center">
-    <% sort_by =  params[:query][:sort_by] if params[:query].present? %>
-      <%= f.input  :sort_by, label: "Trier par" , collection: ["PRIX", "NOTE"], selected: sort_by, required: false%>
+      <div class="sort-by">
+        <% sort_by = params[:query][:sort_by] if params[:query].present? %>
+        <p class="sort-by-btn <%= 'active' if sort_by == 'prix' %>" data-value="prix"><i class="fas fa-sort-amount-up"></i> Prix</p>
+        <p class="sort-by-btn <%= 'active' if sort_by == 'note' %>" data-value="note"><i class="fas fa-sort-amount-down"></i> Note</p>
+        <%= f.input :sort_by, as: :hidden %>
+      </div>
     <% end %>
   </div>
-</div>
-<div class="cards-container">
-  <div class="row">
-    <% @lessons.each do |lesson| %>
-      <%= render "shared/card", lesson: lesson %>
-    <% end %>
+  <div class="cards-container">
+    <div class="row">
+      <% @lessons.each do |lesson| %>
+        <%= render "shared/card", lesson: lesson %>
+      <% end %>
+    </div>
   </div>
 </div>
 

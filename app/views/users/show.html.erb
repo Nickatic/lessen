@@ -12,13 +12,7 @@
     <div class="text-center-teacher">
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <p class="email-teacher"><%= @user.email %></p>
-      <p>
-        <% sum = 0 %>
-        <%  @user.lessons.each do |lesson| %>
-          <% sum += lesson.participations.count %>
-        <% end %>
-        <%= sum %> cours effectués
-      </p>
+      <p><%=  @user.lessons.count %> cours effectués</p>
       <div class="avis-teacher">
         <div class="card-stars">
           <% sum = 0 %>
@@ -29,19 +23,24 @@
           <% rating.times do  %>
             <i class="fas fa-star yellow"></i>
           <% end %>
-        </div>
-        <div> (<% sum = 0 %>
-          <% @user.reviews.each do |review| %>
-            <% sum += review.rating %>
+          <% (5 - rating).times do %>
+            <i class="far fa-star yellow"></i>
           <% end %>
-          <%=sum%> avis )
         </div>
+        <% sum = 0 %>
+        <% @user.reviews.each do |review| %>
+          <% sum += 1 %>
+        <% end %>
+        <p><%= link_to "(#{sum} avis)", "#reviews-list", id: "show-review" %></p>
+
+
+
       </div>
     </div>
     <div class="right-part-top">
       <div class="next-class">
           <% is_none = true %>
-          <p style="color:#f37f7f"><strong>Prochain cours</strong>
+          <p style="color:black"><strong>Prochain cours</strong>
             </p>
             <% upcoming_lessons = [] %>
             <% @user.lessons.each do |lesson|%>
@@ -54,7 +53,7 @@
                 <% upcoming_lessons.sort_by {|lesson| lesson.date} %>
                 <%= date = upcoming_lessons.first.date.strftime("%A, %b %d") %> à <%= upcoming_lessons.first.starts_at %></p>
                 <div class="button-rejoindre-teacher">
-                  <div><%= link_to "Rejoindre ce cours", "#", method: :post, class: "btn-lessen" %></div>
+                  <div><%= link_to "Rejoindre ce cours", lesson_live_path(upcoming_lessons.first), class: "btn-lessen" %></div>
                 </div>
             <% end %>
             </div>

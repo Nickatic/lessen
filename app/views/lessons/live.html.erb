@@ -1,58 +1,3 @@
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="container-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalCenterTitle">Donne ton avis sur le professeur</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for Review.new, url: lesson_reviews_path(@lesson) do |f| %>
-            <%= f.input :rating, label: "Note", required: false, input_html: {id: 'star-id'} %>
-            <%= f.input :content, label: "Commentaire", required: false, input_html: { class: "modal-review-content"} %>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-lessen" data-dismiss="modal" data-target="#exampleModalCenter2" data-toggle="modal">Valider</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="container-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalCenterTitle">Félicitations!</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body modal2body">
-         <h4>Tu as terminé ton cours</h4>
-         <h4>'<strong><%= @lesson.name %></strong>'</h4>
-         <p> Prix total: <%= @lesson.price %></p>
-          <p> Nombre d'élèves:<% @lesson.participations.each do |participation| %>
-            <%= participation.user_id %>
-            <% end %>
-          </p>
-        </div>
-        <div class="modal-footer">
-          <%= f.submit  "Valider", class: "btn-lessen" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
 
@@ -61,19 +6,19 @@
 <!-- Don't delete this line ! ☝️ -->
 <div class="live-head">
   <!-- <progress  value="0" max="60"></progress> -->
-  <div class="live-title">
+  <!-- <div class="live-title">
     <h1>Live</h1>
   </div>
 
- <!--  <div class="live-info">
+  <div class="live-info">
     <div class="live-price">
       <h4> <%= @lesson.price_per_user.round(2)  %> <i class="fas fa-euro-sign fa-xs"></i> / <i class="fas fa-xs fa-user"></i> </h4>
     </div>
     <div class="participants-live">
       <h4><%= @lesson.participations.count  %> <i class="fas fa-users"></i> </h4>
     </div>
-  </div> -->
-  <button type="button" class="btn-end" data-toggle="modal" data-target="#exampleModalCenter">Quitter la leçon</button>
+  </div>
+  <button type="button" class="btn-end" data-toggle="modal" data-target="#exampleModalCenter">Quitter la leçon</button> -->
 
 </div>
 
@@ -105,7 +50,7 @@
 
 
  <div class="container-showlessons">
-  <div class="first-column">
+    <div class="first-column">
     <h1><%=@lesson.name%></h1>
 
     <h4><strong><%=@lesson.subtopic%></strong> </h4>
@@ -125,58 +70,63 @@
 
     <h6><em><%= @lesson.duration%> minutes</em></h6>
     <div class="box-description">
-    <h4>A propos du cours</h4>
-    <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique.</p>
-    <h1 class="lign-a"></h1>
-    <div class="bordure"></div>
-    <h1 class="lign-a"></h1>
-    <h4>Compétences dans cette classe</h4>
-    <p>
-    L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
-    </p>
-    <h1 class="lign-a"></h1>
-    <div class="bordure"></div>
-    <h1 class="lign-a"></h1>
-    <h4>Objectifs</h4>
-    <p>1. Formules de multiplication des arcs</p>
-    <p>2. Identité remarquable</p>
-    <p>3. Fonctions trigonométriques</p>
-    <p>4. Formules de multiplication des arcs</p>
-    <p>5. Identité remarquable</p>
-    <p>6. Fonctions trigonométriques</p>
+      <h4>A propos du cours</h4>
+      <p><%=  @lesson.description%></p>
+      <h1 class="lign-a"></h1>
+      <div class="bordure"></div>
+      <h1 class="lign-a"></h1>
+      <h4>Compétences dans cette classe</h4>
+          <div class="disposition-tag">
+            <% @lesson.skills.each do |skill| %>
+              <div class="tag-word">
+                <p><%= skill.name %></p>
+              </div>
+            <% end %>
+          </div>
+      <h1 class="lign-a"></h1>
+      <div class="bordure"></div>
+      <h1 class="lign-a"></h1>
+      <h4>Objectifs</h4>
+      <div class="disposition-tag">
+        <ul>
+          <% @lesson.objectives.each do |objectif| %>
+            <li><%= objectif.name %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
     </div>
 
-  </div>
-  <div class="second-column">
-    <div class="card-review-profile">
-      <div class="card-profile">
-        <h3>Le professeur</h3>
-        <div class="teacher-title">
-          <% if @lesson.teacher.photo_user.present? %>
-            <%= cl_image_tag(@lesson.teacher.photo_user, class: "avatar-large") %>
-          <% else %>
-            <%= cl_image_tag(image_path("user-default.jpg"), class: "avatar-large") %>
-          <% end %>
-          <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
-        </div>
-        <p>I’m a teacher and absolutely love sharing my knowledge. I hope you enjoy these 45 minutes with me :) </p>
-        <h1 class="lign-a"></h1>
-        <h1 class="lign-a"></h1>
-        <%= link_to "Voir le profil", user_path(@lesson.teacher),  class:"text-space-profile" %>
-          <h1 class="lign-a"></h1>
-          <div class="bordure"></div>
-          <h1 class="lign-a"></h1>
-        <h4>Avis sur ce professeur:</h4>
-      </div>
-      <div class="review-box" id="reviews_list">
-        <% if @lesson.teacher.reviews.blank? %>
-          <strong>Pas d'avis d'élèves pour ce professeur</strong>
-        <% else %>
-          <div id="reviews_list">
-            <%= render 'reviews/index', reviews: @lesson.teacher.reviews.order(created_at: :desc) %>
+    <div class="second-column">
+      <div class="card-review-profile">
+        <div class="card-profile">
+          <h3>Le professeur</h3>
+          <div class="teacher-title">
+            <% if @lesson.teacher.photo_user.present? %>
+              <%= cl_image_tag(@lesson.teacher.photo_user, class: "avatar-large") %>
+            <% else %>
+              <%= cl_image_tag(image_path("user-default.jpg"), class: "avatar-large") %>
+            <% end %>
+            <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
           </div>
-        <% end %>
+          <p>J'ai vécu à Paris jusque mes 18 ans au lycée Jeannine Manuel. Je suis partie étudier les mathématiques quantiques et la neuroscience à Northwestern University aux Etats Unis. J'ai découvert là-bas mon interêt pour transmettre l'apprentissage à autrui et en revenant à Paris, j'ai décidé de commencer une carrière en tant que professeur de mathématiques. </p>
+          <h1 class="lign-a"></h1>
+          <h1 class="lign-a"></h1>
+          <%= link_to "Voir le profil", user_path(@lesson.teacher),  class:"text-space-profile" %>
+            <h1 class="lign-a"></h1>
+            <div class="bordure"></div>
+            <h1 class="lign-a"></h1>
+          <h4>Avis sur ce professeur:</h4>
+        </div>
+        <div class="review-box" id="reviews_list">
+          <% if @lesson.teacher.reviews.blank? %>
+            <strong>Pas d'avis d'élèves pour ce professeur</strong>
+          <% else %>
+            <div id="reviews_list">
+              <%= render 'reviews/index', reviews: @lesson.teacher.reviews.order(created_at: :desc) %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 </div>

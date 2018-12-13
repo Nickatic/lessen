@@ -1,18 +1,12 @@
 .live-head {
-  height: 100px;
+  height: 40px;
   margin: 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
-}
-.live-title {
-  text-align: center;
-  width: 70%;
-  h1 {
-    color: #8a3331;
-  }
-}
+
 .container-modal {
   height: 100vh;
   display: flex;
@@ -49,7 +43,7 @@
 .live-info{
       color: #803834;
       margin-top: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       margin-left: -185px;
       width: 138px;
       height: 86px;
@@ -57,6 +51,7 @@
        border: 5px solid white;
        border-radius: 2px;
        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      margin-right: 20px;
   h4{
   font-size:20px;
 }
@@ -195,3 +190,5 @@
 .modal-header {
   text-align: center;
 }
+
+

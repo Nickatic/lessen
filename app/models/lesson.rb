@@ -44,15 +44,32 @@ class Lesson < ApplicationRecord
   validates :description, presence: true
   validates :summary, presence: true
 
+  def update_price_per_user_down
+    if self.participations.count.zero?
+      self.current_price = price
+      self.price_per_user = price
+      self.save
+    else
+      self.current_price -= self.price.fdiv(2**(self.participations.count))
+      self.price_per_user = self.current_price.fdiv(self.participations.count)
+      self.save
+    end
+  end
+  def update_price_per_user_up
+    if self.participations.count > 1
 
-  def update_price_per_user
-    self.current_price += self.price.fdiv(2**(self.participations.count - 1))
-    self.price_per_user = self.current_price.fdiv(self.participations.count)
-    self.save
+      self.current_price += self.price.fdiv(2**(self.participations.count - 1))
+      self.price_per_user = self.current_price.fdiv(self.participations.count)
+      self.save
+    end
   end
 
   def next_price_per_user
-    next_current_price = self.current_price + self.price.fdiv((2 ** (self.participations.count)))
-    return next_current_price.fdiv((self.participations.count + 1))
+    if self.participations.count.zero?
+      return price
+    else
+      next_current_price = self.current_price + self.price.fdiv((2 ** (self.participations.count)))
+      return next_current_price.fdiv((self.participations.count + 1))
+    end
   end
 end

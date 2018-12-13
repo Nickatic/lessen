@@ -3,7 +3,7 @@
 <div class="lessen-banner">
   <div class="lessen-banner-content">
     <div class="titles-banner">
-      <h1>Cours collectifs en live, où tu veux,<br> quand tu veux</h1>
+      <h1>Cours collectifs en live, où tu veux, quand tu veux</h1>
       <div id="textSlider">
         <div class="scroller">
           <div class="inner">
@@ -25,10 +25,9 @@
 
 
 
-
 <div class="container-how">
   <div class="row-how-first">
-    <h2>Vos professeurs préférés, accessibles dans le monde entier</h2>
+    <h1>Vos professeurs préférés, accessibles dans le monde entier</h1>
   </div>
 
   <div class="row-how-second">
@@ -60,33 +59,25 @@
       </div>
   </div>
 </div>
-<% if  @upcoming_lessons.count > 0 %>
-  <div class="background-upcoming-cards">
-  <div class="cards-container">
-    <div class="row-title-upcoming">
-      <h2>Sur le point de commencer</h2>
+<div class="background-upcoming-cards">
+  <% if  @upcoming_lessons.count > 0 %>
+    <div class="row margin-upcoming">
+      <div class="row-title-upcoming">
+        <h2>Sur le point de commencer</h2>
+      </div>
+        <% @upcoming_lessons.each do |lesson| %>
+          <%= render "shared/card", lesson: lesson %>
+        <% end %>
     </div>
-    <div class="row maths-row">
-      <% @upcoming_lessons.each do |lesson| %>
-        <%= render "shared/card", lesson: lesson %>
-      <% end %>
-    </div>
-  </div>
-  </div>
-<% end %>
-<div class="background-popular-cards" >
-  <div class="cards-container">
+  <% end %>
+</div>
+<div class="background-popular-cards">
+  <div class="row margin-popular">
     <div class="row-title-most-popular">
       <h2>Les plus populaires</h2>
     </div>
-    <div class="row french-row">
-      <% @ordered_popular_lessons.each do |lesson| %>
-        <%= render "shared/card", lesson: lesson %>
-      <% end %>
-    </div>
+    <% @ordered_popular_lessons.each do |lesson| %>
+      <%= render "shared/card", lesson: lesson %>
+    <% end %>
   </div>
 </div>
-
-<!--
- style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url('https://images.officeworks.com.au/api/2/img/https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JA0352400_B_helix_oxford_blue_9_piece_maths_set.jpg/resize?size=706&auth=MjA5OTcwODkwMg__');"
- -->

@@ -9,8 +9,8 @@ class ParticipationsController < ApplicationController
     @participation.lesson = @lesson
     @participation.user = current_user
     if @participation.save
-      @lesson.update_price_per_user
-      redirect_to lesson_live_path(@lesson)
+      @lesson.update_price_per_user_up
+      redirect_to lesson_path(@lesson)
     else
       render "lessons/show"
     end
@@ -18,7 +18,10 @@ class ParticipationsController < ApplicationController
 
   def destroy
     @participation = Participation.find(params[:id])
+    @lesson = Lesson.find(@participation.lesson_id)
     @participation.destroy
+    @lesson.update_price_per_user_down
+
 
     redirect_to participations_path
   end

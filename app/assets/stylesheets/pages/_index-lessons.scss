@@ -21,22 +21,22 @@
 
 // search
 
-.entire-search-bar {
-  position: absolute;
-  width: 100%;
-  z-index: 9995;
-  padding-left: 159px;
-}
 
 // container
+.pull-up {
+  margin-top: -40px;
+}
 
-.container-index {
+.lessons-searchbar {
   display: flex;
-  z-index: 1;
-  align-items: center;
-  margin-right: 65px;
-  margin-left: 45px;
+  justify-content: center;
   position: relative;
+  form {
+    height:100%
+  }
+
+
+
 }
 
 .title {
@@ -45,8 +45,7 @@
 }
 
 
-// .search-bar-index {
-//   // margin-left: 20px;
-//   // margin-right: 0px;
-// }
-
+.form-control:focus{
+  border-color:#EE5F5B!important;
+  box-shadow:none;
+}

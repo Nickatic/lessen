@@ -63,13 +63,15 @@
   color: #8A3231;
 }
 .price {
+  padding: 25px;
   margin-bottom: 50px;
   background-color: white;
   width: 100%;
   box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  padding-bottom: 30px;
+  border-radius: 4px;
   .price-box {
     padding: 20px 25px;
-    border: 5px solid white;
     border-radius: 2px;
     color: black;
     border-radius: 4px;
@@ -79,12 +81,11 @@
 .live-price-size h4 {
   padding-top: 10px;
   font-size: 45px;
-  color: #f37f7f;
+  color: black
 }
 
 .participants-live {
-  padding-top: 2px;
-  color: lightgrey;
+  color: black;
 }
 
 .lign-a .h1 {
@@ -103,9 +104,8 @@ border-bottom:1px solid grey;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
-  background-color: white;
-
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .background-related{
@@ -161,6 +161,7 @@ border-bottom:1px solid grey;
 // }
 
 
+
 .card-container-show {
 padding-top: 30px;
 }
@@ -171,4 +172,48 @@ padding-top: 30px;
   padding-bottom: 10px;
   background-color: #eaeaea;
   box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.lesson-date-time {
+  padding-top: 8px;
+}
+
+.modal-footer {
+    padding: 5px;
+    text-align: right;
+    border-top: none!important;
+}
+.modal-header {
+  background-color: #8a3331;
+  color: white;
+  .modal-title {
+    font-size: 22px;
+  }
+}
+
+
+.btn-inscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+    background-color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.close {
+    float: right;
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.2;
+    display: none!important;
+    }
+
+.boldeddate{
+  font-weight:bold;
 }
