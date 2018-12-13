@@ -17,6 +17,8 @@
   color:white;
   text-shadow: 0px 0px 16px -2px grey;
 }
+
+//content
 .container-index-participations {
   display: flex;
   flex-direction: column;
@@ -33,3 +35,15 @@
     margin: 17px;
   }
 }
+
+.participation-card {
+  margin-bottom: 50px;
+}
+
+.welcome-welldone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

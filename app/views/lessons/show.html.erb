@@ -114,7 +114,10 @@
           </div>
         </div>
         <div class="btn-position">
-        <button class="btn-lessen" data-toggle="modal", data-dismiss="modal" data-target="#exampleModalCenter2">S'inscrire</button>
+          <button class="btn-lessen" data-toggle="modal", data-dismiss="modal" data-target="#exampleModalCenter2">S'inscrire</button>
+        </div>
+        <div class="lesson-date-time" style= "font-family: 'PT Sans Caption', sans-serif";>
+          <p> Horaires: <%= @lesson.date.to_s.split("-").reverse.join("/") %> à <%= @lesson.starts_at %></p>
         </div>
       <% end %>
     </div>
@@ -157,9 +160,7 @@
       <h3 class="title-sur">Sur le même sujet</h3>
       <div class="row">
         <% @related_lessons.each do |lesson| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
             <%= render 'shared/card', lesson: lesson %>
-          </div>
         <% end %>
       </div>
     </div>

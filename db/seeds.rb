@@ -36,7 +36,7 @@ past_lesson4_lily.skill_list.add("skill1", "skill2", "skill3")
 past_lesson4_lily.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 past_lesson4_lily.save!
 
-past_lesson5_lily = Lesson.create!(teacher: nico, name: "Sens de variation d'une fonction", topic: "Mathématiques", subtopic: "Généralités sur les fonctions", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Terminale", summary: "Apprendre à étudier le sens de variation d'une fonction sur un intervalle et étude du m ajorant et maximum d'une fonction sur IR", description: "Cours sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus.", duration: 60, starts_at: "19:20", date: "2018-12-16")
+past_lesson5_lily = Lesson.create!(teacher: nico, name: "Sens de variation d'une fonction", topic: "Mathématiques", subtopic: "Généralités sur les fonctions", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Terminale", summary: "Apprendre à étudier le sens de variation d'une fonction sur un intervalle et étude du m ajorant et maximum d'une fonction sur IR", description: "Cours sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus.", duration: 60, starts_at: "19:20", date: "2018-12-11")
 past_lesson5_lily.skill_list.add("skill1", "skill2", "skill3")
 past_lesson5_lily.objective_list.add("Etudier le sens de variation d'une fonction sur un intervalle", "Majorant et maximum d'une fonction sur IR")
 past_lesson5_lily.save!
@@ -198,6 +198,7 @@ Participation.create!(user: helo, lesson: lesson_anna)
 Participation.create!(user: helo, lesson: lesson_germain)
 Participation.create!(user: anna, lesson: lesson_germain)
 Participation.create!(user: lily, lesson: lesson_pierre)
+Participation.create!(user: anna, lesson: past_lesson5_lily)
 
 
 review1_lesson_nico = Review.create!(content: "Prof complètement perché, j'ai pas compris", rating: 1, user: nico)

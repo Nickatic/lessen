@@ -15,11 +15,13 @@
 }
 
 .lessen-banner h1 {
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  color:white;
-  padding-bottom: 10px;
+    font-size: 40px;
+    width: 1000px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding-bottom: 10px;
+    margin-left: -132px;
 }
 
 .lessen-banner-content {
@@ -55,6 +57,8 @@
 #textSlider div {
   color: #fff;
   font-size:30pt;
+  margin-top: 0px;
+  margin-bottom: -26px;
 }
 
 .slideCol p { margin: 0px !important; }
