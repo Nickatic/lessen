@@ -158,20 +158,20 @@ lesson_damien_4.skill_list.add("Pollution", "Air", "Daft")
 lesson_damien_4.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_damien_4.save!
 
-lesson_damien_5 = Lesson.create!(teacher: damien, name: "Océans", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-16")
-lesson_damien_5.skill_list.add("Pollution", "Air", "Daft")
-lesson_damien_5.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
-lesson_damien_5.save!
+lesson_helo_1 = Lesson.create!(teacher: helo, name: "Océans", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-16")
+lesson_helo_1.skill_list.add("Pollution", "Air", "Daft")
+lesson_helo_1.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
+lesson_helo_1.save!
 
-lesson_damien_6 = Lesson.create!(teacher: damien, name: "Enjeux Planétaires 1", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Cours sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus.", duration: 60, starts_at: "13:30", date: "2018-12-22")
-lesson_damien_6.skill_list.add("Pollution", "Air", "Daft")
-lesson_damien_6.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
-lesson_damien_6.save!
+lesson_helo_2 = Lesson.create!(teacher: helo, name: "Enjeux Planétaires 1", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Cours sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus.", duration: 60, starts_at: "13:30", date: "2018-12-22")
+lesson_helo_2.skill_list.add("Pollution", "Air", "Daft")
+lesson_helo_2.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
+lesson_helo_2.save!
 
-lesson_damien_7 = Lesson.create!(teacher: damien, name: "Enjeux Planétaires 2", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-26")
-lesson_damien_7.skill_list.add("Pollution", "Air", "Daft")
-lesson_damien_7.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
-lesson_damien_7.save!
+lesson_helo_3 = Lesson.create!(teacher: helo, name: "Enjeux Planétaires 2", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-26")
+lesson_helo_3.skill_list.add("Pollution", "Air", "Daft")
+lesson_helo_3.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
+lesson_helo_3.save!
 
 #Philo
 
@@ -186,10 +186,20 @@ lesson_charles_1.skill_list.add("Méditer", "Prier", "Dormir")
 lesson_charles_1.objective_list.add("Comprendre", "Apprendre", "Travailler")
 lesson_charles_1.save!
 
-lesson_charles_2 = Lesson.create!(teacher: charles, name: "Systèmes - combinaison", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Cours sur la résolution du système.", description: "Inconnues connues", duration: 13, starts_at: "13:00", date: "2018-12-21")
+lesson_charles_2 = Lesson.create!(teacher: charles, name: "Systèmes", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Cours sur la résolution du système.", description: "Inconnues connues", duration: 13, starts_at: "13:00", date: "2018-12-21")
 lesson_charles_2.skill_list.add("Méditer", "Prier", "Dormir")
 lesson_charles_2.objective_list.add("Comprendre", "Apprendre", "Travailler")
 lesson_charles_2.save!
+
+lesson_charles_3 = Lesson.create!(teacher: charles, name: "Combinaison", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 10, current_price: 10, price_per_user: 10, grade: "Première", summary: "Cours sur la résolution du système.", description: "Inconnues connues", duration: 13, starts_at: "09:00", date: "2018-12-21")
+lesson_charles_3.skill_list.add("Méditer", "Prier", "Dormir")
+lesson_charles_3.objective_list.add("Comprendre", "Apprendre", "Travailler")
+lesson_charles_3.save!
+
+lesson_charles_4 = Lesson.create!(teacher: charles, name: "Notions", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 5, current_price: 5, price_per_user: 5, grade: "Première", summary: "Cours sur la résolution du système.", description: "Inconnues connues", duration: 13, starts_at: "18:00", date: "2018-12-21")
+lesson_charles_4.skill_list.add("Méditer", "Prier", "Dormir")
+lesson_charles_4.objective_list.add("Comprendre", "Apprendre", "Travailler")
+lesson_charles_4.save!
 
 
 # COURS HELO
@@ -225,11 +235,6 @@ Participation.create!(user: damien, lesson: lesson_helo_3)
 lesson_helo_3.update_price_per_user_up
 Participation.create!(user: edward, lesson: lesson_helo_3)
 lesson_helo_3.update_price_per_user_up
-
-Participation.create!(user: damien, lesson: lesson_helo_4)
-lesson_helo_4.update_price_per_user_up
-Participation.create!(user: edward, lesson: lesson_helo_4)
-lesson_helo_4.update_price_per_user_up
 
 #COURS ANNA
 Participation.create!(user: edward, lesson: lesson_anna_replay)
@@ -359,7 +364,7 @@ Participation.create!(user: germain, lesson: lesson_edward_3)
 lesson_edward_3.update_price_per_user_up
 
 Participation.create!(user: damien, lesson: lesson_edward_4)
-lesson_edward_4.update_price_per_edward
+lesson_edward_4.update_price_per_user_up
 Participation.create!(user: germain, lesson: lesson_edward_4)
 lesson_edward_4.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_edward_4)
@@ -398,7 +403,7 @@ lesson_charles_3.update_price_per_user_up
 
 Participation.create!(user: damien, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
-Participation.create!(user: edward, lesson: lesson_charles
+Participation.create!(user: edward, lesson: lesson_charles)
 lesson_charles_4.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
