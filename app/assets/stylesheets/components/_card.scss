@@ -77,6 +77,7 @@
   align-items: center;
   padding: 52px 15px 40px 15px;
   background-color: white;
+  position: relative;
 }
 
 .disposition-price-card {
@@ -143,4 +144,17 @@
 .bottom-color {
   height: 20px;
   border-radius: 0 0 20px 20px;
+}
+
+.participants-card {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 22px;
+  top: 52px;
+  text-align: right;
+  color: grey;
+  p {
+    font-size: 18px;
+  }
 }

@@ -20,7 +20,8 @@
           </div>
        </div>
        <div>
-        <div class="card-price-button"> <h4><%= lesson.next_price_per_user.round(1) %>  €</h4></div>
+        <div class="card-price-button"> <h4><%= lesson.next_price_per_user.round(1) %>  €</h4>
+        </div>
         <div class="card-date">
           <p><em><%= lesson.date.to_s.split("-").reverse.join("/") %></em> à <%= lesson.starts_at.split(":").join("H") %> </p>
         </div>
@@ -55,6 +56,9 @@
               <i class="far fa-star"></i>
             <% end %>
           </div>
+        </div>
+        <div class="participants-card">
+          <p><%= lesson.participations.count %> <i class="fas fa-users"></i></p>
         </div>
       </div>
         <% if lesson.topic == "Français" %>
