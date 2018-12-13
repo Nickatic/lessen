@@ -32,6 +32,7 @@ charles = User.create!(email: "charles@gmail.com", password: "123456", first_nam
 #anna
 
 lesson_anna_inscription = Lesson.create!(teacher: anna, name: "Le cercle trigonométrique", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Compréhension détaillée du cercle trigonométrique avec théorie sur les radians et l'angle orienté de deux vecteurs", description: "Le but de ce cours est de revenir sur la définition du cercle trigonométrique, qui correspond à: sur un cercle, on appelle sens direct, sens positif ou sens trigonométrique le sens contraire des aiguilles d’une montre. Nous travaillerons sur la définition d'un radian ainsi que sur la correspondance entre les radians et les degrés", duration: 60, starts_at: "17:00", date: "2018-12-16")
+<<<<<<< HEAD
 lesson_anna_inscription.skill_list.add("raisonnement", "construire une démonstration,")
 lesson_anna_inscription.objective_list.add("Découverte des relations trigonométriques  dans le premier cadran du cercle", "Valeurs caractéristiques du  cercle trigonométrique", "Désignations des axes de coordonnées")
 lesson_anna_inscription.save!
@@ -43,6 +44,19 @@ lesson_anna_replay.save!
 
 lesson_anna_live = Lesson.create!(teacher: anna, name: "Variables aléatoires", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Déterminer une loi de probabilité d'une variable aléatoire", description: "Cours sur les variables aléatoires avec l'étude d'un scénario précis. Nous allons voir ensembles comment résumer les informations dans un tableau et quelles valeurs assigner à la variable X dépendant du scénario.", duration: 60, starts_at: "19:00", date: "2018-12-14",channel_id: "1ux79Xb9YLI")
 lesson_anna_live.skill_list.add("logique", "raisonnement", "extraction d'information")
+=======
+lesson_anna_inscription.skill_list.add("Raisonnement", "Construire", "Représentation")
+lesson_anna_inscription.objective_list.add("Découverte des relations trigonométriques  dans le premier cadran du cercle", "Valeurs caractéristiques du  cercle trigonométrique", "Désignations des axes de coordonnées")
+lesson_anna_inscription.save!
+
+lesson_anna_replay= Lesson.create!(teacher: anna, name: "Système à deux inconnues", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Résolution d'un système de deux équations à deux inconnues: méthodes de substituion et de combinaison",description: "Il y a deux méthodes principales pour résoudre des systèmes de deux équations a deux inconnues. Dans de cours, nous reviendrons sur ces deux méthodes et comprendrons les étapes pour chaque.", duration: 13, starts_at: "13:00", date: "2018-12-11")
+lesson_anna_replay.skill_list.add("Logique", "Raisonnement", "Organiser")
+lesson_anna_replay.objective_list.add("Méthode de substituion", "Méthode de combinaison", "Factorisation et développement")
+lesson_anna_replay.save!
+
+lesson_anna_live = Lesson.create!(teacher: anna, name: "Variables aléatoires", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 100, current_price: 100, price_per_user: 100, grade: "Première", summary: "Déterminer une loi de probabilité d'une variable aléatoire", description: "Cours sur les variables aléatoires avec l'étude d'un scénario précis. Nous allons voir ensembles comment résumer les informations dans un tableau et quelles valeurs assigner à la variable X dépendant du scénario.", duration: 60, starts_at: "16:00", date: "2018-12-16",channel_id: "1ux79Xb9YLI")
+lesson_anna_live.skill_list.add("Logique", "Raisonnement", "Extraction d'information", "Organiser","différencier le statut des énoncés mis en jeu")
+>>>>>>> master
 lesson_anna_live.objective_list.add(" Lister l’ensemble des valeurs xi prises par  X", "Construire le tableau de probabilité")
 lesson_anna_live.save!
 
