@@ -17,9 +17,9 @@
         <% range_date =  params[:query][:range_date] if params[:query].present? %>
         <%= f.input :range_date , label: false, input_html: { value: range_date }, required: false, placeholder: "QUAND ?", wrapper_html: { class: "margin-10-0" } %>
           <% min_time = params[:query][:min_time] if params[:query].present? %>
-          <%= f.input :min_time , label: false, input_html: { value: min_time, class: "time-filter"  }, placeholder: "DÉBUT", required: false, wrapper_html: { class: "margin-10-0" } %>
+          <%= f.input :min_time , label: false, input_html: { value: min_time, class: "time-filter"  }, placeholder: "A PARTIR DE", required: false, wrapper_html: { class: "margin-10-0" } %>
           <% max_time = params[:query][:max_time] if params[:query].present? %>
-          <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "FIN", required: false, wrapper_html: { class: "margin-10-0" } %>
+          <%= f.input :max_time , label: false, input_html: { value: max_time, class: "end-time-end time-filter" }, placeholder: "JUSQU'A", required: false, wrapper_html: { class: "margin-10-0" } %>
         <button type="submit" id="btn-lessen-search-index"><i class="fas fa-search "></i></button>
       </div>
       <div class="sort-by">

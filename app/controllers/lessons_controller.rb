@@ -44,7 +44,7 @@ class LessonsController < ApplicationController
           lesson.starts_at.split(":")[0].to_i <= query[:max_time].to_i
         end
       end
-      @lessons = @lessons.sort_by { |lesson| lesson.next_price_per_user}
+      @lessons = @lessons.sort_by { |lesson| lesson.date}
 
       if query[:sort_by] == "note"
         @lessons = @lessons.sort_by do |lesson|

@@ -12,13 +12,7 @@
     <div class="text-center-teacher">
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <p class="email-teacher"><%= @user.email %></p>
-      <p>
-        <% sum = 0 %>
-        <%  @user.lessons.each do |lesson| %>
-          <% sum += lesson.participations.count %>
-        <% end %>
-        <%= sum %> cours effectués
-      </p>
+      <p><%=  @user.lessons.count %> cours effectués</p>
       <div class="avis-teacher">
         <div class="card-stars">
           <% sum = 0 %>
@@ -29,13 +23,18 @@
           <% rating.times do  %>
             <i class="fas fa-star yellow"></i>
           <% end %>
-        </div>
-        <div> (<% sum = 0 %>
-          <% @user.reviews.each do |review| %>
-            <% sum += review.rating %>
+          <% (5 - rating).times do %>
+            <i class="far fa-star yellow"></i>
           <% end %>
-          <%=sum%> avis )
         </div>
+        <% sum = 0 %>
+        <% @user.reviews.each do |review| %>
+          <% sum += 1 %>
+        <% end %>
+        <p><%= link_to "(#{sum} avis)", user_path(@user, anchor: "reviews-list")%></p>
+
+
+
       </div>
     </div>
     <div class="right-part-top">
