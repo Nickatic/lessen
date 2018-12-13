@@ -18,7 +18,7 @@
           <% if @lesson.participations.any? %>
             <p>Prix d'origine : <strong><%= @lesson.price.round %>€</strong></p>
             <p>Inscrits : <strong><%= @lesson.participations.count + 1 %></strong></p>
-            <p>Prix actuel : <strong><%= @lesson.price.fdiv(@lesson.participations.count + 1).round(2) %>€</strong></p>
+            <p>Prix actuel : <strong><%= @lesson.next_price_per_user.round(1) %>0€</strong></p>
           <% else %>
             <p>Prix actuel : <strong><%= @lesson.price.round %>€</strong></p>
             <p>Propose à tes camarades de rejoindre ce cours pour faire baisser le prix!</p>
@@ -28,7 +28,7 @@
         </div>
          <div class="modal-footer">
           <div class="btn-inscription">
-            <%= link_to "Confirmer mon inscpition", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
+            <%= link_to "Confirmer mon inscription", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
           </div>
         </div>
       </div>
@@ -95,7 +95,9 @@
       <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
         <div class="price-box">
                 <div class="live-price-size">
-                  <h4 > <%= @lesson.price_per_user.round(2) %> €</h4>
+
+                  <h4 > <%= @lesson.price_per_user.round(1) %>0<i class="fas fa-euro-sign fa-xs"></i></i </h4>
+
                 </div>
                 <div class="participants-live">
                   <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
@@ -114,7 +116,9 @@
       <% else %>
         <div class="price-box">
           <div class="live-price-size">
-            <h4> <%= @lesson.price_per_user.round(2) %> €</h4>
+
+            <h4> <%= @lesson.next_price_per_user.round(1) %>0<i class="fas fa-euro-sign fa-xs"></i></h4>
+
           </div>
           <div class="participants-live">
             <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>

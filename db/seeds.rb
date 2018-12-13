@@ -180,7 +180,7 @@ past_lesson14_lily.skill_list.add("skill1", "skill2", "skill3")
 past_lesson14_lily.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 past_lesson14_lily.save!
 
-lesson_helo = Lesson.create!(teacher: anna, name: "Systèmes - combinaison", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Cours sur la résolution de système à deux inconnues et deux équations.", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 13, starts_at: "13:00", date: "2018-12-09")
+lesson_helo = Lesson.create!(teacher: anna, name: "Systèmes - combinaison", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Cours sur la résolution de système à deux inconnues et deux équations.", description: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 13, starts_at: "13:00", date: "2018-12-16")
 lesson_helo.skill_list.add("skill1", "skill2", "skill3")
 lesson_helo.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 lesson_helo.save!
@@ -188,14 +188,28 @@ lesson_helo.save!
 
 
 Participation.create!(user: anna, lesson: lesson_damien)
+lesson_damien.update_price_per_user
 Participation.create!(user: nico, lesson: lesson_helo)
+lesson_helo.update_price_per_user
+Participation.create!(user: anna, lesson: lesson_helo)
+lesson_helo.update_price_per_user
 Participation.create!(user: nico, lesson: lesson_lily)
+lesson_lily.update_price_per_user
 Participation.create!(user: helo, lesson: lesson_anna)
+lesson_anna.update_price_per_user
 Participation.create!(user: helo, lesson: lesson_germain)
+lesson_germain.update_price_per_user
 Participation.create!(user: anna, lesson: lesson_germain)
+lesson_germain.update_price_per_user
 Participation.create!(user: lily, lesson: lesson_pierre)
+lesson_pierre.update_price_per_user
+
 Participation.create!(user: lily, lesson: lesson_anna_replay)
+lesson_anna_replay.update_price_per_user
+
 Participation.create!(user: anna, lesson: past_lesson5_lily)
+past_lesson5_lily.update_price_per_user
+
 
 
 review1_lesson_nico = Review.create!(content: "Prof complètement perché, j'ai pas compris", rating: 1, user: nico)
