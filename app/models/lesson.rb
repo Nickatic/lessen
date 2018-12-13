@@ -46,13 +46,20 @@ class Lesson < ApplicationRecord
 
 
   def update_price_per_user
-    self.current_price += self.price.fdiv(2**(self.participations.count - 1))
-    self.price_per_user = self.current_price.fdiv(self.participations.count)
-    self.save
+    if self.participations.count > 1
+
+      self.current_price += self.price.fdiv(2**(self.participations.count - 1))
+      self.price_per_user = self.current_price.fdiv(self.participations.count)
+      self.save
+    end
   end
 
   def next_price_per_user
-    next_current_price = self.current_price + self.price.fdiv((2 ** (self.participations.count)))
-    return next_current_price.fdiv((self.participations.count + 1))
+    if self.participations.count.zero?
+      return price
+    else
+      next_current_price = self.current_price + self.price.fdiv((2 ** (self.participations.count)))
+      return next_current_price.fdiv((self.participations.count + 1))
+    end
   end
 end
