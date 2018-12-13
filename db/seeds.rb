@@ -24,6 +24,10 @@ lily = User.create!(email: "lily@gmail.com", password: "123456", first_name: "Li
 anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Hercot")
 nico = User.create!(email: "nico@gmail.com", password: "123456", first_name: "Nicolas", last_name: "Descreux")
 helo = User.create!(email: "helo@gmail.com", password: "123456", first_name: "Héloise", last_name: "Guillemot")
+germain = User.create!(email: "germain@gmail.com", password: "123456", first_name: "Germain", last_name: "Loret")
+damien = User.create!(email: "damien@gmail.com", password: "123456", first_name: "Damien", last_name: "Milon")
+edward = User.create!(email: "edward@gmail.com", password: "123456", first_name: "Edward", last_name: "Schults")
+charles = User.create!(email: "charles@gmail.com", password: "123456", first_name: "Charles", last_name: "Pernet")
 
 
 lesson_nico = Lesson.create!(teacher: nico, name: "Trigonométrie transcendentale", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, ipsa repellendus, maxime, voluptates.", description: "Cours sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem. Maxime autem labore ullam temporibus animi necessitatibus et dolores incidunt totam.", duration: 60, starts_at: "17:00", date: "2018-12-16")
@@ -162,29 +166,270 @@ past_lesson5_lily.skill_list.add("skill1", "skill2", "skill3")
 past_lesson5_lily.objective_list.add("Premier Objectif", "Deuxième Objectif", "Troisième Objectif")
 past_lesson5_lily.save!
 
-Participation.create!(user: anna, lesson: lesson_damien)
-Participation.create!(user: anna, lesson: lesson_nico)
-Participation.create!(user: nico, lesson: lesson_helo)
-Participation.create!(user: nico, lesson: lesson_lily)
-Participation.create!(user: helo, lesson: lesson_anna)
-Participation.create!(user: helo, lesson: lesson_germain)
-Participation.create!(user: anna, lesson: lesson_germain)
-Participation.create!(user: lily, lesson: lesson_pierre)
+# COURS HELO
+Participation.create!(user: anna, lesson: lesson_helo_1)
+lesson_helo_1.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_helo_1)
+lesson_helo_1.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_helo_1)
+lesson_helo_1.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_helo_1)
+lesson_helo_1.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_helo_1)
+lesson_helo_1.update_price_per_user_up
+
+Participation.create!(user: anna, lesson: lesson_helo_2)
+lesson_helo_2.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_helo_2)
+lesson_helo_2.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_helo_2)
+lesson_helo_2.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_helo_2)
+lesson_helo_2.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_helo_2)
+lesson_helo_2.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_helo_2)
+lesson_helo_2.update_price_per_user_up
+
+Participation.create!(user: anna, lesson: lesson_helo_3)
+lesson_helo_3.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_helo_3)
+lesson_helo_3.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_helo_3)
+lesson_helo_3.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_helo_3)
+lesson_helo_3.update_price_per_user_up
+
+Participation.create!(user: damien, lesson: lesson_helo_4)
+lesson_helo_4.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_helo_4)
+lesson_helo_4.update_price_per_user_up
+
+#COURS ANNA
+Participation.create!(user: edward, lesson: lesson_anna_replay)
+lesson_anna_replay.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_anna_replay)
+lesson_anna_replay.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_replay)
+lesson_anna_replay.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_replay)
+lesson_anna_replay.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_replay)
+lesson_anna_replay.update_price_per_user_up
+
+Participation.create!(user: nico, lesson: lesson_anna_inscription)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_inscription)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_inscription)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_inscription)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_inscription)
+lesson_anna_inscription.update_price_per_user_up
+
+Participation.create!(user: lily, lesson: lesson_anna_live)
+lesson_anna_live.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_live)
+lesson_anna_live.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_live)
+lesson_anna_live.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_live)
+lesson_anna_live.update_price_per_user_up
+
+Participation.create!(user: nico, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
 
 
-review1_lesson_nico = Review.create!(content: "Prof complètement perché, j'ai pas compris", rating: 1, user: nico)
 
-review2_lesson_nico = Review.create!(content: "du jamais vu ...", rating: 2, user: nico)
 
-review1_lesson_anna = Review.create!(content: "Anna est toujours là pour me motiver, pour répondre à mes questions ou me donner des conseils. Je comprends mieux et je travaille plus efficacement. ", rating: 4, user: anna )
-review2_lesson_anna = Review.create!(content: " Parfait ! Je ne saurais jamais assez remercier Sébastien. Sans lui je n’aurais jamais réussi à rattraper plusieurs années de retard en mathématiques en seulement quelques mois en vue d’obtenir mon baccalauréat. Sébastien est sérieux et super pédagogue. Je le conseille à 1000%. ", rating: 4, user: anna)
+#COURS GERMAIN
+Participation.create!(user: anna, lesson: lesson_germain_1)
+lesson_germain_1.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_germain_1)
+lesson_germain_1.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_germain_1)
+lesson_germain_1.update_price_per_user_up
 
-review1_lesson_lily = Review.create!(content: "Le français comme jamais je l'avais envisagé !", rating: 5, user: lily )
-review2_lesson_lily = Review.create!(content: "On redécouvre notre propre langue, un régal !", rating: 4, user: lily )
 
-review1_lesson_helo = Review.create!(content: "Clair et concis", rating: 3, user: helo)
-review2_lesson_helo = Review.create!(content: "Concis et clair", rating: 3, user: helo )
+Participation.create!(user: anna, lesson: lesson_germain_2)
+lesson_germain_2.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_germain_2)
+lesson_germain_2.update_price_per_user_up
+Participation.create!(user: helo, lesson: lesson_germain_2)
+lesson_germain_2.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_germain_2)
+lesson_germain_2.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_germain_2)
+lesson_germain_2.update_price_per_user_up
 
-puts "4 users, 14 lessons, 8 participations and 8 reviews created"
 
+Participation.create!(user: anna, lesson: lesson_germain_3)
+lesson_germain_3.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_germain_3)
+lesson_germain_3.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_germain_3)
+lesson_germain_3.update_price_per_user_up
+
+Participation.create!(user: damien, lesson: lesson_germain_4)
+lesson_germain_4.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_germain_4)
+lesson_germain_4.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_germain_4)
+lesson_germain_4.update_price_per_user_up
+Participation.create!(user: helo, lesson: lesson_germain_4)
+lesson_germain_4.update_price_per_user_up
+
+#COURS DAMIEN
+Participation.create!(user: anna, lesson: lesson_damien_1)
+lesson_damien_1.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_damien_1)
+lesson_damien_1.update_price_per_user_up
+
+
+
+Participation.create!(user: anna, lesson: lesson_damien_2)
+lesson_damien_2.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_damien_2)
+lesson_damien_2.update_price_per_user_up
+Participation.create!(user: helo, lesson: lesson_damien_2)
+lesson_damien_2.update_price_per_user_up
+
+
+
+Participation.create!(user: anna, lesson: lesson_damien_3)
+lesson_damien_3.update_price_per_user_up
+Participation.create!(user: helo, lesson: lesson_damien_3)
+lesson_damien_3.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_damien_3)
+lesson_damien_3.update_price_per_user_up
+
+Participation.create!(user: germain, lesson: lesson_damien_4)
+lesson_damien_4.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_damien_4)
+lesson_damien_4.update_price_per_user_up
+
+#COURS EDWARD
+Participation.create!(user: anna, lesson: lesson_edward_1)
+lesson_edward_1.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_edward_1)
+lesson_edward_1.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_edward_1)
+lesson_edward_1.update_price_per_user_up
+
+
+Participation.create!(user: anna, lesson: lesson_edward_2)
+lesson_edward_2.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_edward_2)
+lesson_edward_2.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_edward_2)
+lesson_edward_2.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_edward_2)
+lesson_edward_2.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_edward_2)
+lesson_edward_2.update_price_per_user_up
+
+
+Participation.create!(user: anna, lesson: lesson_edward_3)
+lesson_edward_3.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_edward_3)
+lesson_edward_3.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_edward_3)
+lesson_edward_3.update_price_per_user_up
+
+Participation.create!(user: damien, lesson: lesson_edward_4)
+lesson_edward_4.update_price_per_edward
+Participation.create!(user: germain, lesson: lesson_edward_4)
+lesson_edward_4.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_edward_4)
+lesson_edward_4.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_edward_4)
+lesson_edward_4.update_price_per_user_up
+
+#COURS CHARLES
+Participation.create!(user: anna, lesson: lesson_charles_1)
+lesson_charles_1.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_charles_1)
+lesson_charles_1.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_charles_1)
+lesson_charles_1.update_price_per_user_up
+
+
+
+Participation.create!(user: anna, lesson: lesson_charles_2)
+lesson_charles_2.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_charles_2)
+lesson_charles_2.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_charles_2)
+lesson_charles_2.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_charles_2)
+lesson_charles_2.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_charles_2)
+lesson_charles_2.update_price_per_user_up
+
+
+Participation.create!(user: anna, lesson: lesson_charles_3)
+lesson_charles_3.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_charles_3)
+lesson_charles_3.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_charles_3)
+lesson_charles_3.update_price_per_user_up
+
+Participation.create!(user: damien, lesson: lesson_charles_4)
+lesson_charles_4.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_charles
+lesson_charles_4.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_charles_4)
+lesson_charles_4.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_charles_4)
+lesson_charles_4.update_price_per_user_up
+Participation.create!(user: anna, lesson: lesson_charles_4)
+lesson_charles_4.update_price_per_user_up
+Participation.create!(user: helo, lesson: lesson_charles_4)
+lesson_charles_4.update_price_per_user_up
+
+#REVIEWS
+#POUR ANNA
+
+Review.create!(content: "Professeur de talent. Elle a réussi à me redonner confiance et à surmonter mes difficultés en quelques cours, puis à me faire progresser les cours suivants. ", rating: 5, user: anna)
+Review.create!(content: "Cours très efficaces ; résultat au bac à l'appui !", rating: 5, user: anna)
+Review.create!(content: "Ouverte, bienveillante, enthousiaste, efficace et extrêmement professionnelle !", rating: 4, user: anna)
+Review.create!(content: "Très organisée, très bonne prof", rating: 5, user: anna )
+Review.create!(content: "Parfois un peu trop rapide, mais excellente pédagogie", rating: 5, user: anna)
+Review.create!(content: "Très chaleureuse, motivée , énergique, rigoureuse et méthodique redonnant l'envie d'apprendre !", rating: 5, user: anna)
+Review.create!(content: "Je vous recommande ce professeur très efficace et à l'écoute de l'élève .", rating: 5, user: anna)
+Review.create!(content: "Bonne énergie, positive et motivée.", rating: 5, user: anna)
+Review.create!(content: "Très bon professeur, très diplomate et efficace. Sympathique, assidue et sérieuse.", rating: 5, user: anna)
+Review.create!(content: "Très sérieuse et très méthodique.", rating: 4, user: anna)
+Review.create!(content: "Pédagogique, didactique et structurée", rating: 4, user: anna)
+
+
+#POUR HELO
+Review.create!(content: "Clair et concis", rating: 4, user: helo)
+
+
+
+#POUR GERMAIN
+Review.create!(content: "Super Prof", rating: 4.5, user: germain)
+
+#POUR EDWARD
+Review.create!(content: "Super Prof", rating: 5, user: edward)
+
+#POUR DAMIEN
+Review.create!(content: "Super Prof", rating: 4, user: damien)
+
+#POUR CHARLES
+Review.create!(content: "Bon Prof", rating: 4, user: charles)
+
+
+
+puts "8 users, a lot of lessons, a lot of participations and a lot of reviews created"
 
