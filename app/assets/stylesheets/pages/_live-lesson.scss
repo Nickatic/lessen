@@ -4,15 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
-}
-.live-title {
-  text-align: center;
-  width: 70%;
-  h1 {
-    color: #8a3331;
-  }
-}
+
 .container-modal {
   height: 100vh;
   display: flex;
@@ -196,3 +190,5 @@
 .modal-header {
   text-align: center;
 }
+
+

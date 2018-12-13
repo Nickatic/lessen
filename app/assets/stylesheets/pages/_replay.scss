@@ -1,0 +1,97 @@
+.review-head {
+  height: 90px;
+  margin: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-title {
+  text-align: center;
+  width: 70%;
+  h1 {
+    color: #8a3331;
+  }
+}
+
+.replay-first-column {
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.replay-ressources-title {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+}
+
+.merci-replay-box {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+}
+.ressources-replay-box {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+}
+
+.recap-replay-box {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+}
+
+.container-replaylessons {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.replay-second-column {
+  display: flex;
+  width: 35%;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.prof-anna-description {
+  margin-top: 7px;
+}
+
+.review-btn-position {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.btn-review {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+
+}
