@@ -112,7 +112,7 @@ lesson_edward.skill_list.add("Caractéristiques", "Transition", "Drame romantiqu
 lesson_edward.objective_list.add("La première tragédie", "L’origine du théâtre", "Les tragédies antiques")
 lesson_edward.save!
 
-lesson_edward_1 = Lesson.create!(teacher: edward, name: "Le personnage de roman du XVIIe siècle à nos jours", topic: "Français", subtopic: "Théâtre", min_num_of_participants: 3, max_num_of_participants: 10, price: 100, current_price: 100, price_per_user: 100, grade: "Première", summary: "Selon Lily, le théâtre occidental est apparu au VIe siècle avant J.-C.", description: "Les premières représentations théâtrales puis, des lieux spécifiques émergent, les places étaient attribuées en fonction de la classe sociale : les premiers rangs étaient réservés aux citoyens importants", duration: 60, starts_at: "16:00", date: "2018-12-16")
+lesson_edward_1 = Lesson.create!(teacher: edward, name: "Le personnage de roman du XVIIe siècle à nos jours", topic: "Français", subtopic: "Théâtre", min_num_of_participants: 3, max_num_of_participants: 10, price: 100, current_price: 100, price_per_user: 100, grade: "Première", summary: "Selon Lily, le théâtre occidental est apparu au VIe siècle avant J.-C.", description: "Les premières représentations théâtrales puis, des lieux spécifiques émergent, les places étaient attribuées en fonction de la classe sociale : les premiers rangs étaient réservés aux citoyens importants", duration: 60, starts_at: "16:00", date: "2018-12-11")
 lesson_edward_1.skill_list.add("Caractéristiques", "Transition", "Drame romantique")
 lesson_edward_1.objective_list.add("Un acte civique", "L’origine du théâtre", "Les tragédies antiques")
 lesson_edward_1.save!
