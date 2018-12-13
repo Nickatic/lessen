@@ -32,28 +32,29 @@ charles = User.create!(email: "charles@gmail.com", password: "123456", first_nam
 #anna
 
 lesson_anna_inscription = Lesson.create!(teacher: anna, name: "Le cercle trigonométrique", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Compréhension détaillée du cercle trigonométrique avec théorie sur les radians et l'angle orienté de deux vecteurs", description: "Le but de ce cours est de revenir sur la définition du cercle trigonométrique, qui correspond à: sur un cercle, on appelle sens direct, sens positif ou sens trigonométrique le sens contraire des aiguilles d’une montre. Nous travaillerons sur la définition d'un radian ainsi que sur la correspondance entre les radians et les degrés", duration: 60, starts_at: "17:00", date: "2018-12-16")
-lesson_anna_inscription.skill_list.add("Raisonnement", "Construire", "Représentation")
+
+lesson_anna_inscription.skill_list.add("raisonnement", "construire une démonstration,")
 lesson_anna_inscription.objective_list.add("Découverte des relations trigonométriques  dans le premier cadran du cercle", "Valeurs caractéristiques du  cercle trigonométrique", "Désignations des axes de coordonnées")
 lesson_anna_inscription.save!
 
-lesson_anna_replay= Lesson.create!(teacher: anna, name: "Système à deux inconnues", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Résolution d'un système de deux équations à deux inconnues: méthodes de substituion et de combinaison",description: "Il y a deux méthodes principales pour résoudre des systèmes de deux équations a deux inconnues. Dans de cours, nous reviendrons sur ces deux méthodes et comprendrons les étapes pour chaque.", duration: 13, starts_at: "13:00", date: "2018-12-11")
-lesson_anna_replay.skill_list.add("Logique", "Raisonnement", "Organiser")
-lesson_anna_replay.objective_list.add("Méthode de substituion", "Méthode de combinaison", "Factorisation et développement")
+lesson_anna_replay= Lesson.create!(teacher: anna, name: "Limites de suites", topic: "Mathématiques", subtopic: "Suites", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Calculs de limites de suites lorsque n tend vers l'infini",description: "Dans ce cours, nous déterminerons ensemble la limite d'une suite lorsque n tend vers l'infini, puis je vous proposerai un exercice d'approfondissement.", duration: 13, starts_at: "13:00", date: "2018-12-11")
+lesson_anna_replay.skill_list.add("logique", "raisonnement", "calcul")
+lesson_anna_replay.objective_list.add("Résolution graphique", "Limites usuelles")
 lesson_anna_replay.save!
 
-lesson_anna_live = Lesson.create!(teacher: anna, name: "Variables aléatoires", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 100, current_price: 100, price_per_user: 100, grade: "Première", summary: "Déterminer une loi de probabilité d'une variable aléatoire", description: "Cours sur les variables aléatoires avec l'étude d'un scénario précis. Nous allons voir ensembles comment résumer les informations dans un tableau et quelles valeurs assigner à la variable X dépendant du scénario.", duration: 60, starts_at: "16:00", date: "2018-12-16",channel_id: "1ux79Xb9YLI")
-lesson_anna_live.skill_list.add("Logique", "Raisonnement", "Extraction d'information", "Organiser","différencier le statut des énoncés mis en jeu")
+lesson_anna_live = Lesson.create!(teacher: anna, name: "Variables aléatoires", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Déterminer une loi de probabilité d'une variable aléatoire", description: "Cours sur les variables aléatoires avec l'étude d'un scénario précis. Nous allons voir ensembles comment résumer les informations dans un tableau et quelles valeurs assigner à la variable X dépendant du scénario.", duration: 60, starts_at: "19:00", date: "2018-12-14",channel_id: "1ux79Xb9YLI")
+lesson_anna_live.skill_list.add("logique", "raisonnement", "extraction d'information")
 lesson_anna_live.objective_list.add(" Lister l’ensemble des valeurs xi prises par  X", "Construire le tableau de probabilité")
 lesson_anna_live.save!
 
 #Trigonométrie
 
-lesson_anna_1 = Lesson.create!(teacher: anna, name: "Triangle rectangle", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 50, current_price: 50, price_per_user: 50, grade: "Terminale", summary: "Dans un triangle rectangle, on définit trois côtés : l'hypoténuse, le côté adjacent, le côté opposé à l’angle étudié.", description: "Attention, seule l'hypoténuse est toujours la même quel que soit l’angle étudié. Le côté opposé à l’angle {ABC} ABC est [AC][AC], mais le côté opposé à l’angle {ACB} ACB est [AB][AB].", duration: 60, starts_at: "12:00", date: "2018-12-17")
+lesson_anna_1 = Lesson.create!(teacher: anna, name: "Triangle rectangle", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 50, current_price: 50, price_per_user: 50, grade: "Terminale", summary: "Dans un triangle rectangle, on définit trois côtés : l'hypoténuse, le côté adjacent, le côté opposé à l’angle étudié.", description: "Attention, seule l'hypoténuse est toujours la même quel que soit l’angle étudié. Le côté opposé à l’angle {ABC} ABC est [AC][AC], mais le côté opposé à l’angle {ACB} ACB est [AB][AB].", duration: 60, starts_at: "12:00", date: "2018-12-11")
 lesson_anna_1.skill_list.add("Modéliser", "Représenter", "Raisonner")
 lesson_anna_1.objective_list.add("Traduire en langage mathématique une situation réelle", "Simplifier ou particulariser une situation", "Reformuler un problème")
 lesson_anna_1.save!
 
-lesson_anna_2 = Lesson.create!(teacher: anna, name: "Calcul de longueurs et d'angles", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 20, current_price: 20, price_per_user: 20, grade: "Terminale", summary: "Dans un triangle rectangle, on définit trois côtés : l'hypoténuse, le côté adjacent, le côté opposé à l’angle étudié.", description: "Attention, seule l'hypoténuse est toujours la même quel que soit l’angle étudié. Le côté opposé à l’angle {ABC} ABC est [AC][AC], mais le côté opposé à l’angle {ACB} ACB est [AB][AB].", duration: 60, starts_at: "19:00", date: "2018-12-17")
+lesson_anna_2 = Lesson.create!(teacher: anna, name: "Calcul de longueurs et d'angles", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Dans un triangle rectangle, on définit trois côtés : l'hypoténuse, le côté adjacent, le côté opposé à l’angle étudié.", description: "Attention, seule l'hypoténuse est toujours la même quel que soit l’angle étudié. Le côté opposé à l’angle {ABC} ABC est [AC][AC], mais le côté opposé à l’angle {ACB} ACB est [AB][AB].", duration: 60, starts_at: "19:00", date: "2018-12-17")
 lesson_anna_2.skill_list.add("Analyser un problème", "Conduire une démonstration", "Analyse et synthèse")
 lesson_anna_2.objective_list.add("Critiquer une démarche", "Représenter un objet mathématique", "Opérer la conversion")
 lesson_anna_2.save!
@@ -65,7 +66,7 @@ lesson_germain_1.save!
 
 #Equations et inéquations
 
-lesson_germain_2 = Lesson.create!(teacher: germain, name: "Système à une inconnue", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Étudier le signe de A times BA×B pour tout xx réel, revient à étudier le signe de AA et de BB puis de A times BA×B sur mathbb{R}R. Ces résultats sont synthétisés dans un tableau de signes.",description: "Dans un tableau de signes relatif à un quotient, on précise les racines du dénominateur par une double barre.", duration: 13, starts_at: "13:00", date: "2018-12-18")
+lesson_germain_2 = Lesson.create!(teacher: germain, name: "Système à une inconnue", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Étudier le signe de A times BA×B pour tout xx réel, revient à étudier le signe de AA et de BB puis de A times BA×B sur mathbb{R}R. Ces résultats sont synthétisés dans un tableau de signes.",description: "Dans un tableau de signes relatif à un quotient, on précise les racines du dénominateur par une double barre.", duration: 13, starts_at: "13:00", date: "2018-12-11")
 lesson_germain_2.skill_list.add("Critiquer une démarche", "Méthode de combinaison", "Représenter un objet mathématique")
 lesson_germain_2.objective_list.add("Méthode", "Opérer la conversion", "Factorisation et développement")
 lesson_germain_2.save!
@@ -85,6 +86,7 @@ lesson_germain_4.save!
 lesson_germain = Lesson.create!(teacher: germain, name: "Univers et probabilités", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 100, current_price: 100, price_per_user: 100, grade: "Première", summary: "Soit OmegaΩ l’ensemble des éventualités (résultats) possibles d’une expérience aléatoire. On appelle OmegaΩ l’univers de l’expérience.", description: "On appelle évènement toute sous partie de OmegaΩ.", duration: 60, starts_at: "07:00", date: "2018-12-12")
 lesson_germain.skill_list.add("Critiquer une démarche", "Méthode de combinaison", "Représenter un objet mathématique")
 lesson_germain.objective_list.add("Méthode", "Opérer la conversion", "Factorisation et développement")
+
 lesson_germain.save!
 
 lesson_germain_5 = Lesson.create!(teacher: germain, name: "Loi Binomiale", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 60, current_price: 60, price_per_user: 60, grade: "Première", summary: "Une éventualité est un résultat possible de l’expérience.", description: "Ω est une partie de OmegaΩ, c’est l’évènement certain.", duration: 60, starts_at: "14:00", date: "2018-12-17")
@@ -106,7 +108,7 @@ lesson_anna_4.save!
 
 #francais
 
-lesson_edward = Lesson.create!(teacher: edward, name: "Le texte théâtral et sa représentation du XVIIe à nos jours", topic: "Français", subtopic: "Théâtre", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Première", summary: "Selon Aristote, le théâtre occidental est apparu au VIe siècle avant J.-C.", description: "La forme d’origine s’appelle « les dithyrambes », sorte d’éloges dansés et chantés par un chœur à la gloire de Dionysos (dieu des arts, de la fête et du vin)", duration: 60, starts_at: "16:00", date: "2018-12-21")
+lesson_edward = Lesson.create!(teacher: edward, name: "Le texte théâtral et sa représentation du XVIIe à nos jours", topic: "Français", subtopic: "Théâtre", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Première", summary: "Selon Aristote, le théâtre occidental est apparu au VIe siècle avant J.-C.", description: "La forme d’origine s’appelle « les dithyrambes », sorte d’éloges dansés et chantés par un chœur à la gloire de Dionysos (dieu des arts, de la fête et du vin)", duration: 60, starts_at: "16:00", date: "2018-12-11")
 lesson_edward.skill_list.add("Caractéristiques", "Transition", "Drame romantique")
 lesson_edward.objective_list.add("La première tragédie", "L’origine du théâtre", "Les tragédies antiques")
 lesson_edward.save!
@@ -133,7 +135,7 @@ lesson_edward_4.save!
 
 #SVT
 
-lesson_damien_1 = Lesson.create!(teacher: damien, name: "Les médicaments", topic: "SVT", subtopic: "Biologie", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "Elevé dans le cadre d’une culture (destinée à produire de la biomasse végétale)", description: "Cours de Pierre! Sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus.", duration: 60, starts_at: "19:00", date: "2018-12-22")
+lesson_damien_1 = Lesson.create!(teacher: damien, name: "Les médicaments", topic: "SVT", subtopic: "Biologie", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "Elevé dans le cadre d’une culture (destinée à produire de la biomasse végétale)", description: "Cours de Pierre! Sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus.", duration: 60, starts_at: "19:00", date: "2018-12-11")
 lesson_damien_1.skill_list.add("Pollution", "Air", "Daft")
 lesson_damien_1.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_damien_1.save!
@@ -158,7 +160,7 @@ lesson_damien_4.skill_list.add("Pollution", "Air", "Daft")
 lesson_damien_4.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_damien_4.save!
 
-lesson_helo_1 = Lesson.create!(teacher: helo, name: "Océans", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-16")
+lesson_helo_1 = Lesson.create!(teacher: helo, name: "Océans", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-11")
 lesson_helo_1.skill_list.add("Pollution", "Air", "Daft")
 lesson_helo_1.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_helo_1.save!
@@ -175,7 +177,7 @@ lesson_helo_3.save!
 
 #Philo
 
-lesson_charles = Lesson.create!(teacher: charles, name: "De l'écriture à l'imagination", topic: "Philosophie", subtopic: "Orthographe", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "La croissance de la population active.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "19:00", date: "2018-12-16")
+lesson_charles = Lesson.create!(teacher: charles, name: "De l'écriture à l'imagination", topic: "Philosophie", subtopic: "Orthographe", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "La croissance de la population active.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "19:00", date: "2018-12-11")
 lesson_charles.skill_list.add("Méditer", "Prier", "Dormir")
 lesson_charles.objective_list.add("Comprendre", "Apprendre", "Travailler")
 lesson_charles.save!
@@ -200,6 +202,7 @@ lesson_charles_4 = Lesson.create!(teacher: charles, name: "Notions", topic: "Mat
 lesson_charles_4.skill_list.add("Méditer", "Prier", "Dormir")
 lesson_charles_4.objective_list.add("Comprendre", "Apprendre", "Travailler")
 lesson_charles_4.save!
+
 
 
 # COURS HELO
@@ -267,6 +270,20 @@ Participation.create!(user: damien, lesson: lesson_anna_live)
 lesson_anna_live.update_price_per_user_up
 Participation.create!(user: edward, lesson: lesson_anna_live)
 lesson_anna_live.update_price_per_user_up
+
+
+Participation.create!(user: nico, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_2)
+lesson_anna_inscription.update_price_per_user_up
+
+
 
 
 #COURS GERMAIN
