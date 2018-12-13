@@ -443,6 +443,3 @@ Review.create!(content: "Bon Prof", rating: 4, user: charles)
 
 
 puts "8 users, a lot of lessons, a lot of participations and a lot of reviews created"
-
-
-
