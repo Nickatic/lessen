@@ -5,11 +5,7 @@ class PagesController < ApplicationController
     @lessons = Lesson.where.not(teacher: current_user).where("date >= ?", Date.today)
     @upcoming_lessons = @lessons.sort_by {|lesson| lesson.date}.first(3)
     @popular_lessons = @lessons.sort_by do |lesson|
-      sum = 0
-      lesson.teacher.reviews.each do |review|
-        sum += review.rating
-      end
-      sum.fdiv(lesson.teacher.reviews.count)
+      lesson.participations.count
     end
     @ordered_popular_lessons = @popular_lessons.reverse.first(3)
   end
