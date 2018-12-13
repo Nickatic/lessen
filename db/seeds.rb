@@ -49,7 +49,7 @@ lesson_anna_live.save!
 
 #Trigonométrie
 
-lesson_anna_1 = Lesson.create!(teacher: anna, name: "Triangle rectangle", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 50, current_price: 50, price_per_user: 50, grade: "Terminale", summary: "Dans un triangle rectangle, on définit trois côtés : l'hypoténuse, le côté adjacent, le côté opposé à l’angle étudié.", description: "Attention, seule l'hypoténuse est toujours la même quel que soit l’angle étudié. Le côté opposé à l’angle {ABC} ABC est [AC][AC], mais le côté opposé à l’angle {ACB} ACB est [AB][AB].", duration: 60, starts_at: "12:00", date: "2018-12-17")
+lesson_anna_1 = Lesson.create!(teacher: anna, name: "Triangle rectangle", topic: "Mathématiques", subtopic: "Trigonométrie", min_num_of_participants: 4, max_num_of_participants: 6, price: 50, current_price: 50, price_per_user: 50, grade: "Terminale", summary: "Dans un triangle rectangle, on définit trois côtés : l'hypoténuse, le côté adjacent, le côté opposé à l’angle étudié.", description: "Attention, seule l'hypoténuse est toujours la même quel que soit l’angle étudié. Le côté opposé à l’angle {ABC} ABC est [AC][AC], mais le côté opposé à l’angle {ACB} ACB est [AB][AB].", duration: 60, starts_at: "12:00", date: "2018-12-11")
 lesson_anna_1.skill_list.add("Modéliser", "Représenter", "Raisonner")
 lesson_anna_1.objective_list.add("Traduire en langage mathématique une situation réelle", "Simplifier ou particulariser une situation", "Reformuler un problème")
 lesson_anna_1.save!
@@ -66,7 +66,7 @@ lesson_germain_1.save!
 
 #Equations et inéquations
 
-lesson_germain_2 = Lesson.create!(teacher: germain, name: "Système à une inconnue", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Étudier le signe de A times BA×B pour tout xx réel, revient à étudier le signe de AA et de BB puis de A times BA×B sur mathbb{R}R. Ces résultats sont synthétisés dans un tableau de signes.",description: "Dans un tableau de signes relatif à un quotient, on précise les racines du dénominateur par une double barre.", duration: 13, starts_at: "13:00", date: "2018-12-18")
+lesson_germain_2 = Lesson.create!(teacher: germain, name: "Système à une inconnue", topic: "Mathématiques", subtopic: "Equations et inéquations", min_num_of_participants: 3, max_num_of_participants: 10, price: 20, current_price: 20, price_per_user: 20, grade: "Première", summary: "Étudier le signe de A times BA×B pour tout xx réel, revient à étudier le signe de AA et de BB puis de A times BA×B sur mathbb{R}R. Ces résultats sont synthétisés dans un tableau de signes.",description: "Dans un tableau de signes relatif à un quotient, on précise les racines du dénominateur par une double barre.", duration: 13, starts_at: "13:00", date: "2018-12-11")
 lesson_germain_2.skill_list.add("Critiquer une démarche", "Méthode de combinaison", "Représenter un objet mathématique")
 lesson_germain_2.objective_list.add("Méthode", "Opérer la conversion", "Factorisation et développement")
 lesson_germain_2.save!
@@ -108,7 +108,7 @@ lesson_anna_4.save!
 
 #francais
 
-lesson_edward = Lesson.create!(teacher: edward, name: "Le texte théâtral et sa représentation du XVIIe à nos jours", topic: "Français", subtopic: "Théâtre", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Première", summary: "Selon Aristote, le théâtre occidental est apparu au VIe siècle avant J.-C.", description: "La forme d’origine s’appelle « les dithyrambes », sorte d’éloges dansés et chantés par un chœur à la gloire de Dionysos (dieu des arts, de la fête et du vin)", duration: 60, starts_at: "16:00", date: "2018-12-21")
+lesson_edward = Lesson.create!(teacher: edward, name: "Le texte théâtral et sa représentation du XVIIe à nos jours", topic: "Français", subtopic: "Théâtre", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Première", summary: "Selon Aristote, le théâtre occidental est apparu au VIe siècle avant J.-C.", description: "La forme d’origine s’appelle « les dithyrambes », sorte d’éloges dansés et chantés par un chœur à la gloire de Dionysos (dieu des arts, de la fête et du vin)", duration: 60, starts_at: "16:00", date: "2018-12-11")
 lesson_edward.skill_list.add("Caractéristiques", "Transition", "Drame romantique")
 lesson_edward.objective_list.add("La première tragédie", "L’origine du théâtre", "Les tragédies antiques")
 lesson_edward.save!
@@ -135,7 +135,7 @@ lesson_edward_4.save!
 
 #SVT
 
-lesson_damien_1 = Lesson.create!(teacher: damien, name: "Les médicaments", topic: "SVT", subtopic: "Biologie", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "Elevé dans le cadre d’une culture (destinée à produire de la biomasse végétale)", description: "Cours de Pierre! Sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus.", duration: 60, starts_at: "19:00", date: "2018-12-22")
+lesson_damien_1 = Lesson.create!(teacher: damien, name: "Les médicaments", topic: "SVT", subtopic: "Biologie", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "Elevé dans le cadre d’une culture (destinée à produire de la biomasse végétale)", description: "Cours de Pierre! Sur les identités trigonométriques, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam, perspiciatis voluptatum asperiores autem aperiam expedita ipsam obcaecati, maxime, voluptates. Maxime autem labore ullam temporibus animi necessitatibus.", duration: 60, starts_at: "19:00", date: "2018-12-11")
 lesson_damien_1.skill_list.add("Pollution", "Air", "Daft")
 lesson_damien_1.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_damien_1.save!
@@ -160,7 +160,7 @@ lesson_damien_4.skill_list.add("Pollution", "Air", "Daft")
 lesson_damien_4.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_damien_4.save!
 
-lesson_helo_1 = Lesson.create!(teacher: helo, name: "Océans", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-16")
+lesson_helo_1 = Lesson.create!(teacher: helo, name: "Océans", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-11")
 lesson_helo_1.skill_list.add("Pollution", "Air", "Daft")
 lesson_helo_1.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_helo_1.save!
@@ -177,7 +177,7 @@ lesson_helo_3.save!
 
 #Philo
 
-lesson_charles = Lesson.create!(teacher: charles, name: "De l'écriture à l'imagination", topic: "Philosophie", subtopic: "Orthographe", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "La croissance de la population active.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "19:00", date: "2018-12-16")
+lesson_charles = Lesson.create!(teacher: charles, name: "De l'écriture à l'imagination", topic: "Philosophie", subtopic: "Orthographe", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "La croissance de la population active.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "19:00", date: "2018-12-11")
 lesson_charles.skill_list.add("Méditer", "Prier", "Dormir")
 lesson_charles.objective_list.add("Comprendre", "Apprendre", "Travailler")
 lesson_charles.save!
