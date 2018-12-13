@@ -414,7 +414,7 @@ lesson_charles_3.update_price_per_user_up
 
 Participation.create!(user: damien, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
-Participation.create!(user: edward, lesson: lesson_charles
+Participation.create!(user: edward, lesson: lesson_charles)
 lesson_charles_4.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
