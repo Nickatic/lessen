@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @lessons = Lesson.where.not(teacher: current_user).where("date >= ?", Date.today)
-    @upcoming_lessons = @lessons.first(3)
+    @upcoming_lessons = @lessons.sort_by {|lesson| lesson.date}.first(3)
     @popular_lessons = @lessons.sort_by do |lesson|
       sum = 0
       lesson.teacher.reviews.each do |review|

@@ -18,7 +18,7 @@
           <% if @lesson.participations.any? %>
             <p>Prix d'origine : <strong><%= @lesson.price.round %>€</strong></p>
             <p>Inscrits : <strong><%= @lesson.participations.count + 1 %></strong></p>
-            <p>Prix actuel : <strong><%= @lesson.price.fdiv(@lesson.participations.count + 1).round(2) %>€</strong></p>
+            <p>Prix actuel : <strong><%= @lesson.next_price_per_user.round(1) %>0€</strong></p>
           <% else %>
             <p>Prix actuel : <strong><%= @lesson.price.round %>€</strong></p>
             <p>Propose à tes camarades de rejoindre ce cours pour faire baisser le prix!</p>
@@ -28,7 +28,7 @@
         </div>
          <div class="modal-footer">
           <div class="btn-inscription">
-            <%= link_to "Confirmer mon inscpition", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
+            <%= link_to "Confirmer mon inscription", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
           </div>
         </div>
       </div>
@@ -60,7 +60,6 @@
         <h4 style="background-color: #3d588e;" %><%=@lesson.topic %></h4>
       <% end %>
     </div>
-    <h4><%=@lesson.topic%></h4>
     <h6><em><%= @lesson.duration%> minutes</em></h6>
     <div class="box-description">
     <h4>A propos du cours</h4>
@@ -95,33 +94,43 @@
       <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
         <div class="price-box">
                 <div class="live-price-size">
-                  <h4 > <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></i </h4>
+
+                  <h4 > <%= @lesson.price_per_user.round(1) %>0<i class="fas fa-euro-sign fa-xs"></i></i </h4>
+
                 </div>
                 <div class="participants-live">
                   <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
                 </div>
               </div>
-        <div class="btn-position">
-          <%= link_to "Rejoindre le Live", lesson_live_path(@lesson), class: "btn-lessen"%>
-        </div>
+        <h1 class="lign-a"></h1>
+        <div class="bordure"></div>
+        <h1 class="lign-a"></h1>
         <div class="live-countdown-text">
-          <p>dans</p>
+          <p>Commence dans</p>
         </div>
         <div id="live-countdown" data-starts-at="<%= "#{@lesson.date.to_s.gsub('-', '/')} #{@lesson.starts_at}:00" %>" style= "font-family: 'PT Sans Caption', sans-serif;"></div>
+        <div class="btn-position">
+          <%= link_to "Rejoindre le Live", lesson_live_path(@lesson), class: "btn-lessen-show"%>
+        </div>
       <% else %>
         <div class="price-box">
           <div class="live-price-size">
-            <h4> <%= @lesson.price_per_user.round(2) %><i class="fas fa-euro-sign fa-xs"></i></h4>
+
+            <h4> <%= @lesson.next_price_per_user.round(1) %>0<i class="fas fa-euro-sign fa-xs"></i></h4>
+
           </div>
           <div class="participants-live">
             <h4><%= @lesson.participations.count %> <i class="fas fa-users"></i> </h4>
           </div>
         </div>
-        <div class="btn-position">
-          <button class="btn-lessen" data-toggle="modal", data-dismiss="modal" data-target="#exampleModalCenter2">S'inscrire</button>
-        </div>
+        <h1 class="lign-a"></h1>
+        <div class="bordure"></div>
+        <h1 class="lign-a"></h1>
         <div class="lesson-date-time" style= "font-family: 'PT Sans Caption', sans-serif";>
-          <p> Horaires: <%= @lesson.date.to_s.split("-").reverse.join("/") %> à <%= @lesson.starts_at %></p>
+          <p> Le <%= @lesson.date.to_s.split("-").reverse.join("/") %> à <%= @lesson.starts_at %></p>
+        </div>
+        <div class="btn-position">
+          <button class="btn-lessen-show" data-toggle="modal", data-dismiss="modal" data-target="#exampleModalCenter2">S'inscrire</button>
         </div>
       <% end %>
     </div>
