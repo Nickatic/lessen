@@ -9,22 +9,26 @@
     <div class="container-modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalCenterTitle">Félicitations!</h3>
+          <h3 class="modal-title" id="exampleModalCenterTitle">Ton inscription au cours "<strong><%= @lesson.name %></strong></h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
         <div class="modal-body modal2body">
-          <h4>Tu t'es inscrite au cours</h4>
-          <h4>'<strong><%= @lesson.name %></strong>'</h4>
-          <p> Prix actuel: <%= @lesson.price_per_user.round(2) %></p>
-          <p> N'oublie pas de te reconnecter sur Lessen</p>
-          <p>le <strong><%= @lesson.date.to_s.split("-").reverse.join("/") %></strong> à <strong><%= @lesson.starts_at.split(":").join("H") %></strong>
+          <% if @lesson.participations.any? %>
+            <p>Prix d'origine : <strong><%= @lesson.price.round %>€</strong></p>
+            <p>Inscrits : <strong><%= @lesson.participations.count + 1 %></strong></p>
+            <p>Prix actuel : <strong><%= @lesson.price.fdiv(@lesson.participations.count + 1).round(2) %>€</strong></p>
+          <% else %>
+            <p>Prix actuel : <strong><%= @lesson.price.round %>€</strong></p>
+            <p>Propose à tes camarades de rejoindre ce cours pour faire baisser le prix!</p>
+          <% end %>
+          <span class="boldeddate">le <%= @lesson.date.strftime('%d %b') %> à <%= @lesson.starts_at.split(":").join("H") %></span>
           </p>
         </div>
          <div class="modal-footer">
-          <div class="btn-position">
-            <%= link_to "Confirmer mon inscription", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
+          <div class="btn-inscription">
+            <%= link_to "Confirmer mon inscpition", lesson_participations_path(@lesson), method: :post, class: "btn-lessen" %>
           </div>
         </div>
       </div>
@@ -77,17 +81,17 @@
     <h1 class="lign-a"></h1>
     <h4>Objectifs</h4>
     <div class="disposition-tag">
-      <% @lesson.objectives.each do |objectif| %>
-        <div class="tag-word">
-          <p><%= objectif.name %></p>
-        </div>
-      <% end %>
+      <ul>
+        <% @lesson.objectives.each do |objectif| %>
+          <li><%= objectif.name %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 
   </div>
   <div class="second-column">
-    <div class="price text-center review-container">
+    <div class="price text-center ">
       <% if current_user.participations.any? { |participation| participation.lesson_id == @lesson.id}  %>
         <div class="price-box">
                 <div class="live-price-size">
@@ -138,7 +142,7 @@
           <% end %>
           <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
         </div>
-        <p>I’m a teacher and absolutely love sharing my knowledge. I hope you enjoy these 45 minutes with me :) </p>
+        <p>J'ai vécu à Paris jusque mes 18 ans au lycée Jeannine Manuel. Je suis partie étudier les mathématiques quantiques et la neuroscience à Northwestern University aux Etats Unis. J'ai découvert là-bas mon interêt pour transmettre l'apprentissage à autrui et en revenant à Paris, j'ai décidé de commencer une carrière en tant que professeur de mathématiques.</p>
         <h1 class="lign-a"></h1>
         <h1 class="lign-a"></h1>
         <%= link_to "Voir le profil", user_path(@lesson.teacher),  class:"text-space-profile" %>

@@ -19,7 +19,7 @@
   width: 65%;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  // box-shadow: 0 8px 24px rgba(0,0,0,0.02);
   border-radius: 4px;
   margin-bottom: 30px;
 }
@@ -31,6 +31,8 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  border-radius: 4px;
 }
 
 .merci-replay-box {
@@ -41,6 +43,8 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  border-radius: 4px;
 }
 .ressources-replay-box {
   width: 100%;
@@ -50,6 +54,8 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  border-radius: 4px;
 }
 
 .recap-replay-box {
@@ -60,6 +66,8 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+  border-radius: 4px;
 }
 
 .container-replaylessons {
