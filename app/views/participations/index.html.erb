@@ -3,14 +3,16 @@
     <h1>Bienvenue <%=current_user.first_name%> !</h1>
   </div>
 </div>
-<div class="container">
+<div class="container-participations">
   <div class="row welcome-my-lessons">
-    <h3><em class="welcome-welldone" style="color: #8A3231;"><strong>Bravo - tu t'es inscrit à <%=current_user.participations.count %> leçons!</strong></em></h3>
+    <div class="welcome-welldone">
+      <div><h3><strong>Bravo !</strong></h3></div>
+    </div> <div>
+      <h3>Tu t'es inscrit à <%=current_user.participations.count %> leçons</h3>
+    </div>
   </div>
-  <br>
-  <div class="bordure"></div>
   <div class="row">
-    <div class="upcoming-classes-title" style="color: #EA8C55">
+    <div class="upcoming-classes-title" style="color: #f37f7f">
       <h3><strong>Mes leçons à venir</strong></h3>
     </div>
   </div>
@@ -57,14 +59,12 @@
       </div>
     <% end %>
     <% if  is_none %>
-      <h4 class="no-lesson-upcoming">Tu n'as pas de leçons à venir</h4>
+      <h4 class="no-lesson-upcoming"><em>Tu n'as pas de leçons à venir</em></h4>
     <% end %>
   </div>
 
-
-
    <div class="row past-classes-header">
-    <div class="past-classes-title" style="color: #EA8C55">
+    <div class="past-classes-title" style="color: #f37f7f">
       <h3><strong>Mes leçons précédentes</strong></h3>
     </div>
   </div>
@@ -111,7 +111,7 @@
     </div>
   <% end %>
   <% if  is_none %>
-    <h4>Tu n'as pas encore pris de leçons</h4>
+    <h4><em>Tu n'as pas encore pris de leçon</em></h4>
   <% end %>
   </div>
 </div>
