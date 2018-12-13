@@ -82,3 +82,18 @@ input.form-control.string.optional.search-input-index.flatpickr-input.form-contr
   text-decoration: none;
   border-style: none;
 }
+
+.btn-lessen-show {
+  width: 200px;
+  padding: 10px 15px;
+  border: 1.3px solid #8a3331;
+  border-radius: 5px;
+  color: #8a3331;
+}
+
+.btn-lessen-show:hover {
+  opacity: 1;
+  background-color: #8a3331;
+  color: white;
+  text-decoration: none;
+}
