@@ -1,14 +1,14 @@
 <div class="participations-banner">
-  <div class="participations-banner-content">
+  <div class="participations-banner-content typewriter">
     <h1>Bienvenue <%=current_user.first_name%> !</h1>
   </div>
 </div>
 <div class="container-participations">
   <div class="row welcome-my-lessons">
     <div class="welcome-welldone">
-      <div><h3><strong>Bravo !</strong></h3></div>
-    </div> <div>
-      <h3>Tu t'es inscrit à <%=current_user.participations.count %> leçons</h3>
+      <div><h2><strong>Ton Parcours Lessen</strong></h2></div>
+    </div>
+      <h4><em style="font-size: 18px; color: black">Tu t'es inscrite à <%=current_user.participations.count %> leçons</em></h4>
     </div>
   </div>
   <div class="row">
@@ -111,7 +111,7 @@
     </div>
   <% end %>
   <% if  is_none %>
-    <h4><em>Tu n'as pas encore pris de leçon</em></h4>
+    <h4><em style="padding-left: 50px">Tu n'as pas encore pris de leçon</em></h4>
   <% end %>
   </div>
 </div>
