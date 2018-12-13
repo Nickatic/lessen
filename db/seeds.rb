@@ -83,7 +83,7 @@ lesson_germain_2.skill_list.add("Critiquer une démarche", "Méthode de combinai
 lesson_germain_2.objective_list.add("Méthode", "Opérer la conversion", "Factorisation et développement")
 lesson_germain_2.save!
 
-lesson_edward_3 = Lesson.create!(teacher: edward, name: "Loi Binomiale", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 60, current_price: 60, price_per_user: 60, grade: "Première", summary: "Une éventualité est un résultat possible de l’expérience.", description: "Ω est une partie de \OmegaΩ, c’est l’évènement certain.", duration: 60, starts_at: "16:00", date: "2018-12-17")
+lesson_edward_3 = Lesson.create!(teacher: edward, name: "Loi Binomiale", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 60, current_price: 60, price_per_user: 60, grade: "Première", summary: "Une éventualité est un résultat possible de l’expérience.", description: "Ω est une partie de OmegaΩ, c’est l’évènement certain.", duration: 60, starts_at: "16:00", date: "2018-12-17")
 lesson_edward_3.skill_list.add("Analyse et synthèse", "Conduire une démonstration", "Méthode de combinaison")
 lesson_edward_3.objective_list.add("Méthode de substituion", "Méthode de combinaison", "Factorisation et développement")
 lesson_edward_3.save!
