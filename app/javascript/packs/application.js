@@ -13,6 +13,7 @@ import { carouselIndex } from '../components/carousel-participations-index.js';
 import { initStars } from '../components/rating-stars';
 import { initHowBox } from '../components/how-diagram-home';
 import { initCountdown } from '../components/lesson-countdown';
+import {initGallery} from '../components/photogallery'
 
 
 initFlatpickr();
@@ -25,3 +26,4 @@ carouselIndex();
 initStars();
 initHowBox();
 initCountdown();
+initGallery();
