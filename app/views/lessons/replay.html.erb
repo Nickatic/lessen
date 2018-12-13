@@ -1,8 +1,34 @@
 <!-- Don't delete this line ! 👇 -->
 <div id="chat_lesson" data-lesson-id="<%= @lesson.id %>" data-current-id="<%= current_user.id %>"></div>
 <!-- Don't delete this line ! ☝️ -->
-<div class="live-title">
-  <h1>Replay</h1>
+<div class="review-head">
+  <div class="review-title">
+    <h1><strong>REPLAY</strong></h1>
+  </div>
+   <!-- Modal -->
+  <div class="modal fade" id="ReviewModal" tabindex="-1" role="dialog" aria-labelledby="ConfirmationModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><%=@lesson.name%></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class= "modal-body">
+        <%= simple_form_for Review.new, url: lesson_reviews_path(@lesson) do |f| %>
+          <%= f.input :rating, label: "Note", required: false, input_html: {id: 'star-id'} %>
+          <%= f.input :content, label: "Commentaire", required: false, input_html: { class: "modal-review-content"} %>
+          </div>
+          <div class="modal-footer">
+            <div class="btn-position">
+               <%= f.submit  "Valider", class: "btn-lessen" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="main-live">
@@ -37,50 +63,56 @@
 </div>
 
 
- <div class="container-showlessons">
-  <div class="first-column">
-    <h1><%=@lesson.name%></h1>
-
-    <h4><strong><%=@lesson.subtopic%></strong> </h4>
-    <div class="card-title-topic">
-      <% if @lesson.topic == "Français" %>
-        <h4 style="background-color: #EA8C55;"><%=@lesson.topic %></h4>
-      <% elsif @lesson.topic == "Mathématiques" %>
-        <h4 style="background-color: #c75146;"><%=@lesson.topic %></h4>
-      <% elsif @lesson.topic == "Physique-chimie" %>
-        <h4 style="background-color: #540804;" %><%=@lesson.topic %></h4>
-      <% elsif @lesson.topic == "SVT" %>
-        <h4 style="background-color: #32493E;" %><%=@lesson.topic %></h4>
-      <% elsif @lesson.topic == "Philosophie" %>
-        <h4 style="background-color: #3d588e;" %><%=@lesson.topic %></h4>
-      <% end %>
+ <div class="container-replaylessons">
+  <div class="replay-first-column">
+    <div class="replay-ressources-title">
+      <h2><strong><%=@lesson.name%></strong></h2>
+      <h4><strong><%=@lesson.subtopic%></strong> </h4>
+      <div class="card-title-topic">
+        <% if @lesson.topic == "Français" %>
+          <h4 style="background-color: #EA8C55;"><%=@lesson.topic %></h4>
+        <% elsif @lesson.topic == "Mathématiques" %>
+          <h4 style="background-color: #c75146;"><%=@lesson.topic %></h4>
+        <% elsif @lesson.topic == "Physique-chimie" %>
+          <h4 style="background-color: #540804;" %><%=@lesson.topic %></h4>
+        <% elsif @lesson.topic == "SVT" %>
+          <h4 style="background-color: #32493E;" %><%=@lesson.topic %></h4>
+        <% elsif @lesson.topic == "Philosophie" %>
+          <h4 style="background-color: #3d588e;" %><%=@lesson.topic %></h4>
+        <% end %>
+      </div>
+      <h5>Cours de <em><%= @lesson.duration%> minutes</em> donné le <em><%= @lesson.date.to_s.split("-").reverse.join("/") %></em></h5>
     </div>
 
-    <h6><em><%= @lesson.duration%> minutes</em></h6>
-    <div class="box-description">
-    <h4>A propos du cours</h4>
-    <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique.</p>
-    <h1 class="lign-a"></h1>
-    <div class="bordure"></div>
-    <h1 class="lign-a"></h1>
-    <h4>Compétences dans cette classe</h4>
-    <p>
-    L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
-    </p>
-    <h1 class="lign-a"></h1>
-    <div class="bordure"></div>
-    <h1 class="lign-a"></h1>
-    <h4>Objectifs</h4>
-    <p>1. Formules de multiplication des arcs</p>
-    <p>2. Identité remarquable</p>
-    <p>3. Fonctions trigonométriques</p>
-    <p>4. Formules de multiplication des arcs</p>
-    <p>5. Identité remarquable</p>
-    <p>6. Fonctions trigonométriques</p>
+
+    <div class="merci-replay-box">
+      <h4><strong>Commentaire du professeur</strong></h4>
+      <p>Merci d'avoir participé à mon cours sur les systèmes. J'espère qu'il a pu vous préparer pour les semaines à venir et que vous avez une plus grande maitrise du sujet. J'ai ajouté sur cette page des resources si besoin et un récapitulatif des deux méthodes pour résoudre des systèmes a deux équations et deux inconnues. N'hésitez pas à m'envoyer un email si vous avez des questions!</p>
     </div>
 
+    <div class="ressources-replay-box">
+      <h4><strong>Ressources</strong></h4>
+      <p> ANNA DOIT AJOUTER RESSOURCES ICI - faux liens
+      L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
+      </p>
+    </div>
+
+    <div class="recap-replay-box">
+      <h4><strong>Récapitulatif</strong></h4>
+      <p>1. Formules de multiplication des arcs</p>
+      <p>2. Identité remarquable</p>
+      <p>3. Fonctions trigonométriques</p>
+      <p>4. Formules de multiplication des arcs</p>
+      <p>5. Identité remarquable</p>
+      <p>6. Fonctions trigonométriques</p>
+    </div>
   </div>
-  <div class="second-column">
+
+  <div class="replay-second-column">
+    <div class="review-btn-position">
+      <button class="btn-lessen btn-review" data-toggle="modal" data-target="#ReviewModal">Ajouter un avis
+      </button>
+    </div>
     <div class="card-review-profile">
       <div class="card-profile">
         <h3>Le professeur</h3>
@@ -92,7 +124,10 @@
           <% end %>
           <h5><%=@lesson.teacher.first_name%> <%=@lesson.teacher.last_name%></h5>
         </div>
-        <p>I’m a teacher and absolutely love sharing my knowledge. I hope you enjoy these 45 minutes with me :) </p>
+        <div class="prof-anna-description">
+          <p style="font-size: 14px"> Comme l'a dit Jacques Prévert, <em>'Il n'y a pas de problèmes,
+          Il n'y a que des professeurs'</em> et sur Lessen il y a des professeurs mais il y a surtout <em>moi</em> - parisienne passionnée par les mathématiques quantiques et les dérivées. Ensemble nous résoudrons tous tes problèmes de maths pour que tu gères au Bac!</p>
+        </div>
         <h1 class="lign-a"></h1>
         <h1 class="lign-a"></h1>
         <%= link_to "Voir le profil", user_path(@lesson.teacher),  class:"text-space-profile" %>
