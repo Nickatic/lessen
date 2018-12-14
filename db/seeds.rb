@@ -200,11 +200,16 @@ lesson_helo_2.skill_list.add("Pollution", "Air", "Daft")
 lesson_helo_2.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_helo_2.save!
 
-lesson_helo_3 = Lesson.create!(teacher: helo, name: "Pression de sélection par l'Homme", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Les végétaux jouent un rôle essentiel pour la survie de l’espèce humaine. Ils sont à la base de l’alimentation animale qui sert à nourrir l’Homme. Au cours des siècles, l’Homme a toujours cherché à améliorer les espèces végétales qu’il cultive.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-26")
+
+lesson_helo_3 = Lesson.create!(teacher: helo, name: "Pression de sélection par l'Homme", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Les végétaux jouent un rôle essentiel pour la survie de l’espèce humaine. Ils sont à la base de l’alimentation animale qui sert à nourrir l’Homme. Au cours des siècles, depuis les débuts de l’agriculture il y a 11 500 ans, l’Homme a toujours cherché à améliorer les espèces végétales qu’il cultive.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-10")
 lesson_helo_3.skill_list.add("Pollution", "Air", "Daft")
 lesson_helo_3.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_helo_3.save!
 
+lesson_helo_4 = Lesson.create!(teacher: helo, name: "La disparition des reliefs", topic: "SVT", subtopic: "Altération des reliefs", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Terminale", summary: "Nous aborderons l’altération et l’érosion des reliefs. Dans la troisième partie, nous analyserons les processus tectoniques participant à la disparition des reliefs. Nous expliquerons enfin le recyclage de la lithosphère continentale.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", description: "Dès sa mise en place, tout relief est soumis par l'eau sous forme liquide (ruissellement) ou solide (glaciers) à des phénomènes d'altération et d'érosion ce qui a pour conséquence sa désintégration inexorable. Le glissement lent des glaciers rabote le substrat rocheux et les débris minéraux obtenus sont plus facilement hydrolysés. On estime à quelques dixièmes de millimètre par an la vitesse d'érosion d'un relief montagneux.", duration: 60, starts_at: "20:30", date: "2018-12-26")
+lesson_helo_4.skill_list.add("Pollution", "Air", "Daft")
+lesson_helo_4.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
+lesson_helo_4.save!
 #Philo
 
 lesson_charles = Lesson.create!(teacher: charles, name: "Le travail", topic: "Philosophie", subtopic: "La culture", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "«Tu travailleras à la sueur de ton front», dans cet extrait de la Genèse, le travail prend la forme d'une ultime punition de Dieu faite à l'homme.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "19:00", date: "2018-12-11")
@@ -234,6 +239,15 @@ lesson_charles_4.objective_list.add("Comprendre", "Apprendre", "Travailler")
 lesson_charles_4.save!
 
 
+# COURS PRECEDENTS LILY
+Participation.create!(user: lily, lesson: lesson_anna_replay)
+lesson_anna_replay.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_edward_1)
+lesson_edward_1.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_damien_1)
+lesson_damien_1.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_helo_4)
+lesson_helo_4.update_price_per_user_up
 
 # COURS HELO
 Participation.create!(user: anna, lesson: lesson_helo_1)
@@ -278,7 +292,7 @@ Participation.create!(user: charles, lesson: lesson_anna_replay)
 lesson_anna_replay.update_price_per_user_up
 Participation.create!(user: germain, lesson: lesson_anna_replay)
 lesson_anna_replay.update_price_per_user_up
-Participation.create!(user: damien, lesson: lesson_anna_replay)
+Participation.create!(user: lily, lesson: lesson_anna_replay)
 lesson_anna_replay.update_price_per_user_up
 
 Participation.create!(user: nico, lesson: lesson_anna_inscription)
@@ -292,8 +306,6 @@ lesson_anna_inscription.update_price_per_user_up
 Participation.create!(user: edward, lesson: lesson_anna_inscription)
 lesson_anna_inscription.update_price_per_user_up
 
-Participation.create!(user: lily, lesson: lesson_anna_live)
-lesson_anna_live.update_price_per_user_up
 Participation.create!(user: germain, lesson: lesson_anna_live)
 lesson_anna_live.update_price_per_user_up
 Participation.create!(user: damien, lesson: lesson_anna_live)
@@ -320,8 +332,6 @@ lesson_anna_inscription.update_price_per_user_up
 Participation.create!(user: anna, lesson: lesson_germain_1)
 lesson_germain_1.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_germain_1)
-lesson_germain_1.update_price_per_user_up
-Participation.create!(user: lily, lesson: lesson_germain_1)
 lesson_germain_1.update_price_per_user_up
 
 
@@ -361,7 +371,7 @@ lesson_damien_1.update_price_per_user_up
 
 
 
-Participation.create!(user: anna, lesson: lesson_damien_2)
+Participation.create!(user: lily, lesson: lesson_damien_2)
 lesson_damien_2.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_damien_2)
 lesson_damien_2.update_price_per_user_up
@@ -372,7 +382,7 @@ lesson_damien_2.update_price_per_user_up
 
 Participation.create!(user: anna, lesson: lesson_damien_3)
 lesson_damien_3.update_price_per_user_up
-Participation.create!(user: helo, lesson: lesson_damien_3)
+Participation.create!(user: lily, lesson: lesson_damien_3)
 lesson_damien_3.update_price_per_user_up
 Participation.create!(user: germain, lesson: lesson_damien_3)
 lesson_damien_3.update_price_per_user_up
@@ -386,8 +396,6 @@ lesson_damien_4.update_price_per_user_up
 Participation.create!(user: anna, lesson: lesson_edward_1)
 lesson_edward_1.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_edward_1)
-lesson_edward_1.update_price_per_user_up
-Participation.create!(user: lily, lesson: lesson_edward_1)
 lesson_edward_1.update_price_per_user_up
 
 
@@ -454,7 +462,7 @@ Participation.create!(user: edward, lesson: lesson_charles)
 lesson_charles_4.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
-Participation.create!(user: germain, lesson: lesson_charles_4)
+Participation.create!(user: lily, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
 Participation.create!(user: anna, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
