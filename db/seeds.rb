@@ -292,8 +292,6 @@ Participation.create!(user: charles, lesson: lesson_anna_replay)
 lesson_anna_replay.update_price_per_user_up
 Participation.create!(user: germain, lesson: lesson_anna_replay)
 lesson_anna_replay.update_price_per_user_up
-Participation.create!(user: lily, lesson: lesson_anna_replay)
-lesson_anna_replay.update_price_per_user_up
 
 Participation.create!(user: nico, lesson: lesson_anna_inscription)
 lesson_anna_inscription.update_price_per_user_up
@@ -314,17 +312,86 @@ Participation.create!(user: edward, lesson: lesson_anna_live)
 lesson_anna_live.update_price_per_user_up
 
 
-Participation.create!(user: nico, lesson: lesson_anna_2)
-lesson_anna_inscription.update_price_per_user_up
-Participation.create!(user: charles, lesson: lesson_anna_2)
-lesson_anna_inscription.update_price_per_user_up
-Participation.create!(user: germain, lesson: lesson_anna_2)
-lesson_anna_inscription.update_price_per_user_up
-Participation.create!(user: damien, lesson: lesson_anna_2)
-lesson_anna_inscription.update_price_per_user_up
-Participation.create!(user: edward, lesson: lesson_anna_2)
-lesson_anna_inscription.update_price_per_user_up
+Participation.create!(user: nico, lesson: lesson_anna_1)
+lesson_anna_1.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_1)
+lesson_anna_1.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_1)
+lesson_anna_1.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_1)
+lesson_anna_1.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_1)
+lesson_anna_1.update_price_per_user_up
 
+Participation.create!(user: nico, lesson: lesson_anna_2)
+lesson_anna_2.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_2)
+lesson_anna_2.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_2)
+lesson_anna_2.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_2)
+lesson_anna_2.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_2)
+lesson_anna_2.update_price_per_user_up
+
+Participation.create!(user: nico, lesson: lesson_anna_3)
+lesson_anna_3.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_3)
+lesson_anna_3.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_3)
+lesson_anna_3.update_price_per_user_up
+
+
+Participation.create!(user: nico, lesson: lesson_anna_4)
+lesson_anna_4.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_4)
+lesson_anna_4.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_4)
+lesson_anna_4.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_4)
+lesson_anna_4.update_price_per_user_up
+
+
+Participation.create!(user: nico, lesson: lesson_anna_5)
+lesson_anna_5.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_5)
+lesson_anna_5.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_5)
+lesson_anna_5.update_price_per_user_up
+
+Participation.create!(user: nico, lesson: lesson_anna_6)
+lesson_anna_6.update_price_per_user_up
+
+Participation.create!(user: nico, lesson: lesson_anna_7)
+lesson_anna_7.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_7)
+lesson_anna_7.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_7)
+lesson_anna_7.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_7)
+lesson_anna_7.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_7)
+lesson_anna_7.update_price_per_user_up
+
+Participation.create!(user: nico, lesson: lesson_anna_8)
+lesson_anna_8.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_8)
+lesson_anna_8.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_8)
+lesson_anna_8.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_8)
+lesson_anna_8.update_price_per_user_up
+Participation.create!(user: edward, lesson: lesson_anna_8)
+lesson_anna_8.update_price_per_user_up
+
+Participation.create!(user: nico, lesson: lesson_anna_9)
+lesson_anna_9.update_price_per_user_up
+Participation.create!(user: charles, lesson: lesson_anna_9)
+lesson_anna_9.update_price_per_user_up
+Participation.create!(user: germain, lesson: lesson_anna_9)
+lesson_anna_9.update_price_per_user_up
+Participation.create!(user: damien, lesson: lesson_anna_9)
+lesson_anna_9.update_price_per_user_up
 
 
 
