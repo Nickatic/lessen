@@ -1,6 +1,6 @@
 class ParticipationsController < ApplicationController
   def index
-    @participations = Participation.all
+    @participations = Participation.all.sort_by { |participation| participation.lesson.date}
   end
 
   def create

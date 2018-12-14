@@ -40,7 +40,7 @@
         <% end %>
       <% else %>
         <div class="carousel-index">
-          <%current_user.participations.each do |participation|%>
+          <% current_user.participations.order(created_at: :desc).each do |participation| %>
            <!--  <% lesson = participation.lesson %> -->
             <% if Date.today <= participation.lesson.date %>
               <% if  Date.today == participation.lesson.date %>
