@@ -20,14 +20,14 @@ puts "destroying all participations"
 Participation.destroy_all
 puts "participations destroyed"
 
-lily = User.create!(email: "lily@gmail.com", password: "123456", first_name: "Lily", last_name: "Gasztowtt")
-anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Hercot")
-nico = User.create!(email: "nico@gmail.com", password: "123456", first_name: "Nicolas", last_name: "Descreux")
-helo = User.create!(email: "helo@gmail.com", password: "123456", first_name: "Héloise", last_name: "Guillemot")
-germain = User.create!(email: "germain@gmail.com", password: "123456", first_name: "Germain", last_name: "Loret")
-damien = User.create!(email: "damien@gmail.com", password: "123456", first_name: "Damien", last_name: "Milon")
-edward = User.create!(email: "edward@gmail.com", password: "123456", first_name: "Edward", last_name: "Schults")
-charles = User.create!(email: "charles@gmail.com", password: "123456", first_name: "Charles", last_name: "Pernet")
+lily = User.create!(email: "lily@gmail.com", password: "123456", first_name: "Lily", last_name: "Gasztowtt", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/lilyjoannag")
+anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Hercot", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/annahercot")
+nico = User.create!(email: "nico@gmail.com", password: "123456", first_name: "Nicolas", last_name: "Descreux", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/Nickatic")
+helo = User.create!(email: "helo@gmail.com", password: "123456", first_name: "Héloise", last_name: "Guillemot", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/ladylo")
+germain = User.create!(email: "germain@gmail.com", password: "123456", first_name: "Germain", last_name: "Loret", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/grmnlrt")
+damien = User.create!(email: "damien@gmail.com", password: "123456", first_name: "Damien", last_name: "Milon", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/ssaunier")
+edward = User.create!(email: "edward@gmail.com", password: "123456", first_name: "Edward", last_name: "Schults", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/Eschults")
+charles = User.create!(email: "charles@gmail.com", password: "123456", first_name: "Charles", last_name: "Pernet", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/charlespernet")
 
 #anna
 
