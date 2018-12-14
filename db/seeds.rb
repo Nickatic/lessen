@@ -306,7 +306,7 @@ lesson_anna_inscription.update_price_per_user_up
 Participation.create!(user: edward, lesson: lesson_anna_inscription)
 lesson_anna_inscription.update_price_per_user_up
 
-Participation.create!(user: germain, lesson: lesson_anna_live)
+Participation.create!(user: lily, lesson: lesson_anna_live)
 lesson_anna_live.update_price_per_user_up
 Participation.create!(user: damien, lesson: lesson_anna_live)
 lesson_anna_live.update_price_per_user_up
