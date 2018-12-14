@@ -37,7 +37,7 @@ lesson_anna_inscription.skill_list.add("raisonnement", "construire une démonstr
 lesson_anna_inscription.objective_list.add("Découverte des relations trigonométriques  dans le premier cadran du cercle", "Valeurs caractéristiques du  cercle trigonométrique", "Désignations des axes de coordonnées")
 lesson_anna_inscription.save!
 
-lesson_anna_replay= Lesson.create!(teacher: anna, name: "Limites de suites", topic: "Mathématiques", subtopic: "Suites", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Calculs de limites de suites lorsque n tend vers l'infini", description: "Dans ce cours, nous déterminerons ensemble la limite d'une suite lorsque n tend vers l'infini, puis je vous proposerai un exercice d'approfondissement.", duration: 13, starts_at: "13:00", date: "2018-12-11")
+lesson_anna_replay= Lesson.create!(teacher: anna, name: "Limites de suites", topic: "Mathématiques", subtopic: "Suites", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Calculs de limites de suites lorsque n tend vers l'infini", description: "Dans ce cours, nous déterminerons ensemble la limite d'une suite lorsque n tend vers l'infini, puis je vous proposerai un exercice d'approfondissement.", duration: 13, starts_at: "13:00", date: "2018-12-10")
 lesson_anna_replay.skill_list.add("logique", "raisonnement", "calcul")
 lesson_anna_replay.objective_list.add("Résolution graphique", "Limites usuelles")
 lesson_anna_replay.save!
@@ -169,11 +169,15 @@ lesson_helo_2.skill_list.add("Pollution", "Air", "Daft")
 lesson_helo_2.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_helo_2.save!
 
-lesson_helo_3 = Lesson.create!(teacher: helo, name: "Pression de sélection par l'Homme", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Les végétaux jouent un rôle essentiel pour la survie de l’espèce humaine. Ils sont à la base de l’alimentation animale qui sert à nourrir l’Homme. Au cours des siècles, depuis les débuts de l’agriculture il y a 11 500 ans, l’Homme a toujours cherché à améliorer les espèces végétales qu’il cultive.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-26")
+lesson_helo_3 = Lesson.create!(teacher: helo, name: "Pression de sélection par l'Homme", topic: "SVT", subtopic: "Enjeux Planétaires", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Première", summary: "Les végétaux jouent un rôle essentiel pour la survie de l’espèce humaine. Ils sont à la base de l’alimentation animale qui sert à nourrir l’Homme. Au cours des siècles, depuis les débuts de l’agriculture il y a 11 500 ans, l’Homme a toujours cherché à améliorer les espèces végétales qu’il cultive.", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "13:30", date: "2018-12-10")
 lesson_helo_3.skill_list.add("Pollution", "Air", "Daft")
 lesson_helo_3.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
 lesson_helo_3.save!
 
+lesson_helo_4 = Lesson.create!(teacher: helo, name: "La disparition des reliefs", topic: "SVT", subtopic: "Altération des reliefs", min_num_of_participants: 3, max_num_of_participants: 10, price: 25, current_price: 25, price_per_user: 25, grade: "Terminale", summary: "Nous aborderons l’altération et l’érosion des reliefs. Dans la troisième partie, nous analyserons les processus tectoniques participant à la disparition des reliefs. Nous expliquerons enfin le recyclage de la lithosphère continentale.", duration: 60, starts_at: "13:30", date: "2018-12-26")
+lesson_helo_4.skill_list.add("Pollution", "Air", "Daft")
+lesson_helo_4.objective_list.add("Surfaces au sol", "Quantités d’eau", "Quantités d’air")
+lesson_helo_4.save!
 #Philo
 
 lesson_charles = Lesson.create!(teacher: charles, name: "Le travail", topic: "Philosophie", subtopic: "La culture", min_num_of_participants: 3, max_num_of_participants: 10, price: 30, current_price: 30, price_per_user: 30, grade: "Terminale", summary: "«Tu travailleras à la sueur de ton front», dans cet extrait de la Genèse, le travail prend la forme d'une ultime punition de Dieu faite à l'homme qui ne pourra plus récolter les fruits de la nature sans effort. Cette conception se retrouve au cœur même de l'étymologie du terme «travail».", description: "Chômage modéré sur la période, sauf dans les périodes de crise", duration: 60, starts_at: "19:00", date: "2018-12-11")
@@ -203,6 +207,15 @@ lesson_charles_4.objective_list.add("Comprendre", "Apprendre", "Travailler")
 lesson_charles_4.save!
 
 
+# COURS PRECEDENTS LILY
+Participation.create!(user: lily, lesson: lesson_anna_replay)
+lesson_anna_replay.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_edward_1)
+lesson_edward_1.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_damien_1)
+lesson_damien_1.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_helo_3)
+lesson_helo_3.update_price_per_user_up
 
 # COURS HELO
 Participation.create!(user: anna, lesson: lesson_helo_1)
@@ -261,8 +274,6 @@ lesson_anna_inscription.update_price_per_user_up
 Participation.create!(user: edward, lesson: lesson_anna_inscription)
 lesson_anna_inscription.update_price_per_user_up
 
-Participation.create!(user: lily, lesson: lesson_anna_live)
-lesson_anna_live.update_price_per_user_up
 Participation.create!(user: germain, lesson: lesson_anna_live)
 lesson_anna_live.update_price_per_user_up
 Participation.create!(user: damien, lesson: lesson_anna_live)
@@ -289,8 +300,6 @@ lesson_anna_inscription.update_price_per_user_up
 Participation.create!(user: anna, lesson: lesson_germain_1)
 lesson_germain_1.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_germain_1)
-lesson_germain_1.update_price_per_user_up
-Participation.create!(user: lily, lesson: lesson_germain_1)
 lesson_germain_1.update_price_per_user_up
 
 
@@ -355,8 +364,6 @@ lesson_damien_4.update_price_per_user_up
 Participation.create!(user: anna, lesson: lesson_edward_1)
 lesson_edward_1.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_edward_1)
-lesson_edward_1.update_price_per_user_up
-Participation.create!(user: lily, lesson: lesson_edward_1)
 lesson_edward_1.update_price_per_user_up
 
 
