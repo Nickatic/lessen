@@ -260,7 +260,7 @@ Participation.create!(user: charles, lesson: lesson_anna_replay)
 lesson_anna_replay.update_price_per_user_up
 Participation.create!(user: germain, lesson: lesson_anna_replay)
 lesson_anna_replay.update_price_per_user_up
-Participation.create!(user: damien, lesson: lesson_anna_replay)
+Participation.create!(user: lily, lesson: lesson_anna_replay)
 lesson_anna_replay.update_price_per_user_up
 
 Participation.create!(user: nico, lesson: lesson_anna_inscription)
@@ -339,7 +339,7 @@ lesson_damien_1.update_price_per_user_up
 
 
 
-Participation.create!(user: anna, lesson: lesson_damien_2)
+Participation.create!(user: lily, lesson: lesson_damien_2)
 lesson_damien_2.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_damien_2)
 lesson_damien_2.update_price_per_user_up
@@ -350,7 +350,7 @@ lesson_damien_2.update_price_per_user_up
 
 Participation.create!(user: anna, lesson: lesson_damien_3)
 lesson_damien_3.update_price_per_user_up
-Participation.create!(user: helo, lesson: lesson_damien_3)
+Participation.create!(user: lily, lesson: lesson_damien_3)
 lesson_damien_3.update_price_per_user_up
 Participation.create!(user: germain, lesson: lesson_damien_3)
 lesson_damien_3.update_price_per_user_up
@@ -430,7 +430,7 @@ Participation.create!(user: edward, lesson: lesson_charles)
 lesson_charles_4.update_price_per_user_up
 Participation.create!(user: nico, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
-Participation.create!(user: germain, lesson: lesson_charles_4)
+Participation.create!(user: lily, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
 Participation.create!(user: anna, lesson: lesson_charles_4)
 lesson_charles_4.update_price_per_user_up
