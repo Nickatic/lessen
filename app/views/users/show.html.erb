@@ -27,7 +27,11 @@
             <%  @user.reviews.each do |review| %>
               <% sum += review.rating %>
             <% end %>
-            <%  rating = (sum.fdiv(@user.reviews.count)).round %>
+            <% if @user.reviews.count != 0 %>
+              <%  rating = (sum.fdiv(@user.reviews.count)).round %>
+            <% else %>
+              <% rating = 0 %>
+            <% end %>
             <% rating.times do  %>
               <i class="fas fa-star yellow"></i>
             <% end %>

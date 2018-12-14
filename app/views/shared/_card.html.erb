@@ -18,24 +18,24 @@
             <% end %>
            <!-- <h4><%= lesson.topic %></h4> -->
           </div>
-       </div>
-       <div>
-        <div class="card-price-button">
-          <% if current_user %>
-            <% if current_user.participations.any? { |participation| participation.lesson_id == lesson.id}  %>
-              <h4><%= lesson.price_per_user.round(1) %>0  €</h4>
+        </div>
+        <div>
+          <div class="card-price-button">
+            <% if current_user %>
+              <% if current_user.participations.any? { |participation| participation.lesson_id == lesson.id}  %>
+                <h4><%= lesson.price_per_user.round(1) %>0  €</h4>
+              <% else %>
+                <h4><%= lesson.next_price_per_user.round(1) %>0  €</h4>
+              <% end %>
             <% else %>
               <h4><%= lesson.next_price_per_user.round(1) %>0  €</h4>
             <% end %>
-          <% else %>
-            <h4><%= lesson.next_price_per_user.round(1) %>0  €</h4>
-          <% end %>
 
+          </div>
+          <div class="card-date">
+            <p><em><%= lesson.date.to_s.split("-").reverse.join("/") %></em> à <%= lesson.starts_at.split(":").join("H") %> </p>
+          </div>
         </div>
-        <div class="card-date">
-          <p><em><%= lesson.date.to_s.split("-").reverse.join("/") %></em> à <%= lesson.starts_at.split(":").join("H") %> </p>
-        </div>
-       </div>
       </div>
       <div class="card-body">
         <div class="card-lesson-info">
@@ -55,10 +55,15 @@
           <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
           <div class="card-stars">
             <% sum = 0 %>
-            <%  lesson.teacher.reviews.each do |review| %>
+            <% lesson.teacher.reviews.each do |review| %>
               <% sum += review.rating %>
             <% end %>
-            <%  rating = sum.fdiv(lesson.teacher.reviews.count).round%>
+
+            <% if lesson.teacher.reviews.count != 0 %>
+              <% rating = sum.fdiv(lesson.teacher.reviews.count).round %>
+            <% else %>
+              <% rating = 0 %>
+            <% end %>
             <% rating.times do  %>
               <i class="fas fa-star"></i>
             <% end %>
