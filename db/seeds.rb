@@ -214,8 +214,8 @@ Participation.create!(user: lily, lesson: lesson_edward_1)
 lesson_edward_1.update_price_per_user_up
 Participation.create!(user: lily, lesson: lesson_damien_1)
 lesson_damien_1.update_price_per_user_up
-Participation.create!(user: lily, lesson: lesson_helo_3)
-lesson_helo_3.update_price_per_user_up
+Participation.create!(user: lily, lesson: lesson_helo_4)
+lesson_helo_4.update_price_per_user_up
 
 # COURS HELO
 Participation.create!(user: anna, lesson: lesson_helo_1)
