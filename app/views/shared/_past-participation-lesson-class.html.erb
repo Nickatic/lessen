@@ -41,7 +41,11 @@
 
 
     <div class="card-footer">
-    <img src="<%= asset_path("user-default.jpg") %>" alt="" class="avatar-card">
+    <% if lesson.teacher.photo_user.present? %>
+      <%= cl_image_tag(lesson.teacher.photo_user, class: "avatar-card") %>
+    <% else %>
+      <%= cl_image_tag(image_path("user-default.jpg"), class: "avatar-card") %>
+    <% end %>
       <div class="professor-info">
         <p><%=  lesson.teacher.first_name + " " + lesson.teacher.last_name%></p>
         <div class="card-stars">

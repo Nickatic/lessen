@@ -20,14 +20,14 @@ puts "destroying all participations"
 Participation.destroy_all
 puts "participations destroyed"
 
-lily = User.create!(email: "lily@gmail.com", password: "123456", first_name: "Lily", last_name: "Gasztowtt")
-anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Hercot")
-nico = User.create!(email: "nico@gmail.com", password: "123456", first_name: "Nicolas", last_name: "Descreux")
-helo = User.create!(email: "helo@gmail.com", password: "123456", first_name: "Héloise", last_name: "Guillemot")
-germain = User.create!(email: "germain@gmail.com", password: "123456", first_name: "Germain", last_name: "Loret")
-damien = User.create!(email: "damien@gmail.com", password: "123456", first_name: "Damien", last_name: "Milon")
-edward = User.create!(email: "edward@gmail.com", password: "123456", first_name: "Edward", last_name: "Schults")
-charles = User.create!(email: "charles@gmail.com", password: "123456", first_name: "Charles", last_name: "Pernet")
+lily = User.create!(email: "lily@gmail.com", password: "123456", first_name: "Lily", last_name: "Gasztowtt", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/lilyjoannag")
+anna = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Hercot", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/annahercot")
+nico = User.create!(email: "nico@gmail.com", password: "123456", first_name: "Nicolas", last_name: "Descreux", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/Nickatic")
+helo = User.create!(email: "helo@gmail.com", password: "123456", first_name: "Héloise", last_name: "Guillemot", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/ladylo")
+germain = User.create!(email: "germain@gmail.com", password: "123456", first_name: "Germain", last_name: "Loret", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/grmnlrt")
+damien = User.create!(email: "damien@gmail.com", password: "123456", first_name: "Damien", last_name: "Milon", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/ssaunier")
+edward = User.create!(email: "edward@gmail.com", password: "123456", first_name: "Edward", last_name: "Schults", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/Eschults")
+charles = User.create!(email: "charles@gmail.com", password: "123456", first_name: "Charles", last_name: "Pernet", remote_photo_user_url: "https://kitt.lewagon.com/placeholder/users/charlespernet")
 
 #anna
 
@@ -41,7 +41,9 @@ lesson_anna_replay.skill_list.add("logique", "raisonnement", "calcul")
 lesson_anna_replay.objective_list.add("Résolution graphique", "Limites usuelles")
 lesson_anna_replay.save!
 
+
 lesson_anna_live = Lesson.create!(teacher: anna, name: "Variables aléatoires", topic: "Mathématiques", subtopic: "Probabilités", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Déterminer une loi de probabilité d'une variable aléatoire et comprendre comment construire un tableau de probabilités.", description: "Cours sur les variables aléatoires avec l'étude d'un scénario précis. Nous allons voir ensembles comment résumer les informations dans un tableau et quelles valeurs assigner à la variable X dépendant du scénario. Si nous avons le temps, nous verrons la fonction de répartition, l'espérance, la variance et l'écart type. ", duration: 60, starts_at: "19:00", date: "2019-02-14",channel_id: "1ux79Xb9YLI")
+
 lesson_anna_live.skill_list.add("logique", "raisonnement", "extraction d'information")
 lesson_anna_live.objective_list.add(" Lister l’ensemble des valeurs xi prises par  X", "Construire le tableau de probabilité")
 lesson_anna_live.save!
@@ -52,11 +54,13 @@ lesson_anna_5.objective_list.add(" Lister l’ensemble des valeurs xi prises par
 lesson_anna_5.save!
 
 lesson_anna_6 = Lesson.create!(teacher: anna, name: "Nombres complexes", topic: "Mathématiques", subtopic: " Géométrie", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Il existe un ensemble de nombres appelé ensemble des nombres complexes qui possède des propriétés que nous allons voir dans ce cours.", description: "Cours sur les variables aléatoires avec l'étude d'un scénario précis. Nous allons voir ensembles comment résumer les informations dans un tableau et quelles valeurs assigner à la variable X dépendant du scénario.", duration: 60, starts_at: "19:00", date: "2019-02-14",channel_id: "1ux79Xb9YLI")
+
 lesson_anna_6.skill_list.add("logique", "raisonnement", "extraction d'information")
 lesson_anna_6.objective_list.add(" Lister l’ensemble des valeurs xi prises par  X", "Construire le tableau de probabilité")
 lesson_anna_6.save!
 
 lesson_anna_9 = Lesson.create!(teacher: anna, name: "Produit scalaire dans l'espace", topic: "Mathématiques", subtopic: " Géométrie", min_num_of_participants: 3, max_num_of_participants: 10, price: 40, current_price: 40, price_per_user: 40, grade: "Terminale", summary: "Produits scalaires de deux vecteurs et la conservation de propriétés dans l'espace.", description: "Cours sur les variables aléatoires avec l'étude d'un scénario précis. Nous allons voir ensembles comment résumer les informations dans un tableau et quelles valeurs assigner à la variable X dépendant du scénario.", duration: 60, starts_at: "19:00", date: "2019-02-14",channel_id: "1ux79Xb9YLI")
+
 lesson_anna_9.skill_list.add("logique", "raisonnement", "extraction d'information")
 lesson_anna_9.objective_list.add(" Lister l’ensemble des valeurs xi prises par  X", "Construire le tableau de probabilité")
 lesson_anna_9.save!
