@@ -63,7 +63,7 @@
   <% if  @upcoming_lessons.count > 0 %>
     <div class="row margin-upcoming">
       <div class="row-title-upcoming">
-        <h2>Sur le point de commencer</h2>
+        <h2>Leçons à venir</h2>
       </div>
         <% @upcoming_lessons.each do |lesson| %>
           <%= render "shared/card", lesson: lesson %>
