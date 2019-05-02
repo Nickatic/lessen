@@ -89,6 +89,12 @@
   background-color: white;
 }
 .wrapper-cards-upcoming {
+  position: relative;
   background-color: #eaeaea;
 }
 
+.no-lesson-upcoming {
+  position: absolute;
+  top: 50px;
+  left: 300px;
+}
